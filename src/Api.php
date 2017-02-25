@@ -75,6 +75,8 @@ class Api
 
     /**
      * @param bool $clearCredentials
+     *
+     * @return $this
      */
     public function logout($clearCredentials = false)
     {
@@ -83,9 +85,12 @@ class Api
         if ($clearCredentials === false) {
             $this->clearCredentials();
         }
+
+        return $this;
     }
 
     /**
+     * @return $this
      * @throws ApiException
      */
     public function clearCredentials()
@@ -95,10 +100,12 @@ class Api
         } else {
             throw new ApiException('You must logout before clearing credentials. Use `logout()` first.');
         }
+
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return bool
      */
     public function isAuthenticated()
     {
@@ -114,7 +121,7 @@ class Api
      *
      * @return mixed|ResponseInterface
      */
-    public function send(string $method, string $uri, array $body = [], array $params = [], array $headers = [])
+    public function send($method, $uri, array $body = [], array $params = [], array $headers = [])
     {
         $defaultHeaders = [
             'Content-type'  => 'application/json',
