@@ -16,13 +16,14 @@ class ApiTest extends \PHPUnit_Framework_TestCase
 
         // Keep this in memory
         $credentials = $api->login();
+        $credentials = json_decode($credentials->getBody()->getContents(), true);
 
         // Play authenticated calls
         $api = new Api(new OAuthTokenGrant($credentials, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
         $api->setBaseUrl('http://api.global-exam.dev')->login();
 
-        $response = $api->user()->me();
-        var_dump($response);
+        $response = $api->organization()->getUsers(1);
+        var_dump($response->getBody()->getContents());
 
         $api->logout();
 
@@ -30,8 +31,8 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         $api = new Api();
         $api->setBaseUrl('http://api.global-exam.dev');
 
-        $response = $api->auth()->create([]);
-        var_dump($response);
+        //$response = $api->user()->auth()->register([]);
+        //var_dump($response->getBody()->getContents());
 
         // Expired token
         //if ($response['status'] === 401) {

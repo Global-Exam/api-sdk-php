@@ -4,12 +4,12 @@ use GlobalExam\Api\Sdk\Api;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class OrganizationType
+ * Class Organization
  * @package GlobalExam\Api\Sdk\Resource\Organization
  */
-class OrganizationType
+class OrganizationGroup
 {
-    const RESOURCE_KEY = 'organization-type';
+    const RESOURCE_KEY = 'organization-group';
 
     /**
      * @var
@@ -76,5 +76,16 @@ class OrganizationType
     public function delete($id)
     {
         return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function syncUser($id, array $body = [])
+    {
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/relationships/user', $body);
     }
 }

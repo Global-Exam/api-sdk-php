@@ -1,6 +1,7 @@
 <?php namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class Auth
@@ -28,10 +29,40 @@ class Auth
     /**
      * @param array $body
      *
-     * @return \Psr\Http\Message\StreamInterface
+     * @return mixed|ResponseInterface
      */
-    public function create(array $body)
+    public function register(array $body)
     {
         return $this->api->send('POST', self::RESOURCE_KEY . '/register', $body);
+    }
+
+    /**
+     * @param $token
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function confirm($token)
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/confirm/' . $token);
+    }
+
+    /**
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function forgottenPassword(array $body)
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/forgotten-password', $body);
+    }
+
+    /**
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function resetPassword(array $body)
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/reset-password', $body);
     }
 }

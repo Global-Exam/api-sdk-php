@@ -2,14 +2,10 @@
 
 use GlobalExam\Api\Sdk\Authentication\AuthenticationInterface;
 use GlobalExam\Api\Sdk\Authentication\OAuthPasswordGrant;
-use GlobalExam\Api\Sdk\Output\ArrayOutput;
-use GlobalExam\Api\Sdk\Output\OutputInterface;
-use GlobalExam\Api\Sdk\Resource\Organization\OrganizationType;
-use GlobalExam\Api\Sdk\Resource\User\Auth;
-use GlobalExam\Api\Sdk\Resource\User\OAuth;
+use GlobalExam\Api\Sdk\Resource\Organization\Organization;
 use GlobalExam\Api\Sdk\Resource\User\User;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * @property AuthenticationInterface authenticator
@@ -19,7 +15,6 @@ class Api
     const API_VERSION = 'v1.0';
 
     protected $baseUrl = 'http://api.global-exam.com';
-    protected $output;
     protected $authenticated;
     public    $authenticator;
 
@@ -33,7 +28,6 @@ class Api
     {
         $this->authenticator = $authenticator;
         $this->client        = $client === null ? new Client() : $client;
-        $this->output        = new ArrayOutput();
     }
 
     /**
@@ -44,23 +38,6 @@ class Api
     public function setBaseUrl($baseUrl)
     {
         $this->baseUrl = $baseUrl;
-
-        return $this;
-    }
-
-    /**
-     * @param OutputInterface $output
-     *
-     * @return $this
-     * @throws ApiException
-     */
-    public function setOutput(OutputInterface $output)
-    {
-        if ($this->authenticator instanceof OAuthPasswordGrant) {
-            throw new ApiException('Could not change output with "OAuthPasswordGrant".');
-        }
-
-        $this->output = $output;
 
         return $this;
     }
@@ -78,19 +55,19 @@ class Api
     }
 
     /**
-     * @return mixed|null
+     * @return $this|mixed|ResponseInterface
      * @throws ApiException
      */
     public function login()
     {
         if ($this->authenticator === null) {
-            throw new ApiException('Cannot login. You must specify the credentials first. Pass a class to the constructor');
+            throw new ApiException('Cannot login. You must specify the credentials first.');
         }
 
         $this->authenticated = true;
 
         if ($this->authenticator instanceof OAuthPasswordGrant) {
-            return $this->oauth()->getToken();
+            return $this->user()->oauth()->getToken();
         }
 
         return $this;
@@ -116,7 +93,7 @@ class Api
         if ($this->isAuthenticated() === false) {
             $this->authenticator = null;
         } else {
-            throw new ApiException('You must logout before clearing credentials. Use logout() first');
+            throw new ApiException('You must logout before clearing credentials. Use `logout()` first.');
         }
     }
 
@@ -135,7 +112,7 @@ class Api
      * @param array  $params
      * @param array  $headers
      *
-     * @return \Psr\Http\Message\StreamInterface
+     * @return mixed|ResponseInterface
      */
     public function send(string $method, string $uri, array $body = [], array $params = [], array $headers = [])
     {
@@ -156,16 +133,18 @@ class Api
             $url .= '?' . http_build_query($params);
         }
 
-        try {
-            $response = $this->client->request($method, $url, [
-                'headers' => $headers,
-                'body'    => json_encode($body)
-            ]);
+        return $this->client->request($method, $url, [
+            'headers' => $headers,
+            'body'    => json_encode($body)
+        ]);
+    }
 
-            return $this->output->transform($response->getBody());
-        } catch (ClientException $e) {
-            return $this->output->transform($e->getResponse()->getBody()->getContents());
-        }
+    /**
+     * @return Organization
+     */
+    public function organization()
+    {
+        return new Organization($this);
     }
 
     /**
@@ -176,29 +155,6 @@ class Api
         return new User($this);
     }
 
-    /**
-     * @return OrganizationType
-     */
-    public function organizationType()
-    {
-        return new OrganizationType($this);
-    }
-
-    /**
-     * @return OAuth
-     */
-    public function oauth()
-    {
-        return new OAuth($this);
-    }
-
-    /**
-     * @return Auth
-     */
-    public function auth()
-    {
-        return new Auth($this);
-    }
 }
 
 /**

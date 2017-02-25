@@ -4,12 +4,12 @@ use GlobalExam\Api\Sdk\Api;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class OrganizationType
+ * Class OrganizationBusinessType
  * @package GlobalExam\Api\Sdk\Resource\Organization
  */
-class OrganizationType
+class OrganizationBusinessType
 {
-    const RESOURCE_KEY = 'organization-type';
+    const RESOURCE_KEY = 'organization-business-type';
 
     /**
      * @var

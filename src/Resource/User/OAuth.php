@@ -1,6 +1,7 @@
 <?php namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class OAuth
@@ -26,7 +27,7 @@ class OAuth
     }
 
     /**
-     * @return mixed
+     * @return mixed|ResponseInterface
      */
     public function getToken()
     {
@@ -45,7 +46,7 @@ class OAuth
     }
 
     /**
-     * @return mixed
+     * @return mixed|ResponseInterface
      */
     public function renewToken()
     {
@@ -58,9 +59,6 @@ class OAuth
             'refresh_token' => $authenticator->refreshToken,
             'scope'         => $authenticator->scope
         ];
-
-        //var_dump($body);
-        //die();
 
         return $this->api->send('POST', self::RESOURCE_KEY . '/token', $body);
     }
