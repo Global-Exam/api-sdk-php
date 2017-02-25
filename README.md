@@ -58,8 +58,8 @@ $response = $api->user()->me(); // ResponseInterface
 * [`setAuthenticator`](#setauthenticator)
 * [`login`](#login)
 * [`logout`](#logout)
-* [`clearCredentials`](#clearCredentials)
-* [`isAuthenticated`](#isAuthenticated)
+* [`clearCredentials`](#clearcredentials)
+* [`isAuthenticated`](#isauthenticated)
 * [`send`](#send)
 
 ### `setBaseUrl`
@@ -238,7 +238,8 @@ $api->isAuthenticated(); // false
 
 #### Description
 
-Perform an HTTP request to the API.
+Performs an HTTP request to the API.
+
 Most of time, you won't use this method because there are already shortcuts methods to access to a given resource.
 
 ```php
@@ -261,7 +262,7 @@ Any array that will be JSON-encoded and attached to the request.
 
 ##### params
 
-Any array that will converted to query string and be added to the URI.
+Any array that will converted to a query string and be added to the URI.
 
 ##### headers
 
@@ -280,6 +281,41 @@ $response = $api->send('GET', '/user/me');
 
 // $response->getStatusCode()
 // $response->getBody()->getContents()
+```
+
+## Resources
+
+Resources allow you to have a quick response instead of building a request by your own.
+
+
+```php
+$api->user()->me();
+$api->user()->auth()->register(array $body);
+```
+
+Browse the `Resource` folder to see what is available.
+
+* [`Organization`](#organization)
+* [`User`](#user)
+
+### User
+
+```php
+$api->user()->auth()->register(array $body);
+$api->user()->auth()->confirm(string $token);
+$api->user()->auth()->forgottenPassword(array $body);
+$api->user()->auth()->resetPassword(array $body);
+
+$api->user()->oauth()->getToken();
+$api->user()->oauth()->renewToken();
+
+$api->user()->userRole()->getAll();
+$api->user()->userRole()->getOne();
+$api->user()->userRole()->create();
+$api->user()->userRole()->update();
+$api->user()->userRole()->delete();
+
+$api->user()->me();
 ```
 
 ## Tests
