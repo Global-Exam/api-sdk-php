@@ -59,32 +59,32 @@ class ApiTest extends \PHPUnit_Framework_TestCase
     /**
      *
      */
-    public function testConstructor()
-    {
-        $api = new Api();
-
-        $this->assertNull($api->authenticator);
-        $this->assertInstanceOf(Client::class, $api->client);
-
-        $api = new Api(new OAuthPasswordGrant('email@domain.com', 'password', '', ['country' => 'fr', 'ip' => '0.0.0.0']));
-
-        $this->assertInstanceOf(OAuthPasswordGrant::class, $api->authenticator);
-        $this->assertInstanceOf(Client::class, $api->client);
-
-        $api = new Api(new OAuthTokenGrant(['access_token' => 'a', 'refresh_token' => 'b', 'expires_in' => 1], '', ['country' => 'fr', 'ip' => '0.0.0.0']), null);
-
-        $this->assertInstanceOf(OAuthTokenGrant::class, $api->authenticator);
-        $this->assertInstanceOf(Client::class, $api->client);
-    }
+    //public function testConstructor()
+    //{
+    //    $api = new Api();
+    //
+    //    $this->assertNull($api->authenticator);
+    //    $this->assertInstanceOf(Client::class, $api->client);
+    //
+    //    $api = new Api(new OAuthPasswordGrant('email@domain.com', 'password', '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+    //
+    //    $this->assertInstanceOf(OAuthPasswordGrant::class, $api->authenticator);
+    //    $this->assertInstanceOf(Client::class, $api->client);
+    //
+    //    $api = new Api(new OAuthTokenGrant(['access_token' => 'a', 'refresh_token' => 'b', 'expires_in' => 1], '', ['country' => 'fr', 'ip' => '0.0.0.0']), null);
+    //
+    //    $this->assertInstanceOf(OAuthTokenGrant::class, $api->authenticator);
+    //    $this->assertInstanceOf(Client::class, $api->client);
+    //}
 
     /**
      *
      */
-    public function testSetBaseUrl()
-    {
-        $api = new Api();
-
-        $this->assertInstanceOf(Api::class, $api->setBaseUrl('http://api.global-exam.io'));
-    }
+    //public function testSetBaseUrl()
+    //{
+    //    $api = new Api();
+    //
+    //    $this->assertInstanceOf(Api::class, $api->setBaseUrl('http://api.global-exam.io'));
+    //}
 
 }
