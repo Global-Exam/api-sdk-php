@@ -1,6 +1,6 @@
 # API SDK PHP
 
-[![Build Status](https://travis-ci.com/Global-Exam/api-sdk-php.svg?branch=master)](https://travis-ci.com/Global-Exam/api-sdk-php)
+[![Build Status](https://travis-ci.org/Global-Exam/api-sdk-php.svg?branch=master)](https://travis-ci.org/Global-Exam/api-sdk-php)
 
 ## Requirements
 
@@ -12,7 +12,7 @@
 ### Composer
 
 ```
-composer require Global-Exam/api-sdk-php
+composer require Global-Exam/api-sdk-php:dev-master
 ```
 
 ## Usage
