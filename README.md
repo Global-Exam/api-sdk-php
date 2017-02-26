@@ -52,6 +52,31 @@ $api->login();
 $response = $api->user()->me(); // ResponseInterface
 ```
 
+### Deal with token expiration
+
+You may receive a `401 Unauthorized` response from a [Guzzle exception](http://docs.guzzlephp.org/en/latest/quickstart.html?highlight=clientexception#exceptions). 
+
+Try to get another access token based on the current credentials.
+
+```php
+try {
+    $api->user()->me();
+} catch (\GuzzleHttp\Exception\ClientException $e) {
+    // Expired token
+    if ($e->getResponse()->getStatusCode() === 401) {
+        // Ask new credentials based on the current refresh token
+        $credentials = $api->user()->oauth()->renewToken();
+        $credentials = json_decode($credentials->getBody()->getContents(), true);
+
+        // Set a fresh authenticator
+        $api->setAuthenticator(new OAuthTokenGrant($credentials, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+
+        $response = $api->user()->me();
+        $response->getStatusCode(); // 200
+    }
+}
+```
+
 ## API Reference
 
 * [`setBaseUrl`](#setbaseurl)
@@ -293,7 +318,7 @@ $api->user()->me();
 $api->user()->auth()->register(array $body);
 ```
 
-Browse the `Resource` folder to see what is available.
+Browse the [src/Resource](src/Resource) folder to see what is available.
 
 * [`Organization`](#organization)
 * [`User`](#user)

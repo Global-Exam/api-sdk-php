@@ -28,7 +28,7 @@ class OAuthPasswordGrant implements AuthenticationInterface
     /**
      * @var array
      */
-    private $meta;
+    public $meta;
 
     /**
      * OAuthPasswordGrant constructor.

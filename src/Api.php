@@ -9,14 +9,26 @@ use Psr\Http\Message\ResponseInterface;
 
 /**
  * @property AuthenticationInterface authenticator
+ * @property Client|null             client
  */
 class Api
 {
     const API_VERSION = 'v1.0';
 
+    /**
+     * @var string
+     */
     protected $baseUrl = 'http://api.global-exam.com';
+
+    /**
+     * @var
+     */
     protected $authenticated;
-    public    $authenticator;
+
+    /**
+     * @var AuthenticationInterface
+     */
+    public $authenticator;
 
     /**
      * Api constructor.
