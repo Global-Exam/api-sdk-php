@@ -1,6 +1,6 @@
 # API SDK PHP
 
-[![Build Status](https://travis-ci.com/Global-Exam/api-sdk-php.svg)](https://travis-ci.com/Global-Exam/api-sdk-ph)
+[![Build Status](https://travis-ci.com/Global-Exam/api-sdk-php.svg?branch=master)](https://travis-ci.com/Global-Exam/api-sdk-php)
 
 ## Requirements
 
