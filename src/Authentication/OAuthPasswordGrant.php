@@ -38,7 +38,7 @@ class OAuthPasswordGrant implements AuthenticationInterface
      * @param string $scope
      * @param array  $meta
      */
-    public function __construct(string $username, string $password, string $scope = '', array $meta = [])
+    public function __construct($username, $password, $scope = '', array $meta = [])
     {
         $this->username = $username;
         $this->password = $password;
