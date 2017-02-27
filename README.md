@@ -318,7 +318,7 @@ $api->isAuthenticated(); // false
 
 Performs an HTTP request to the API.
 
-Most of time, you won't use this method because there are already shortcuts methods to access to a given resource.
+Most of time, you won't use this method because there are public methods to access to a given resource.
 
 ```php
 send ( string $method, string $uri, array $body = [], array $params = [], array $headers = [] ): ResponseInterface
