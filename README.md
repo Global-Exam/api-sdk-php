@@ -71,7 +71,7 @@ try {
     if ($e->getResponse()->getStatusCode() === 401) {
         // Ask new credentials based on the current refresh token
         $tokens = $api->user()->oauth()->renewToken();
-        $tokens = json_decode($credentials->getBody()->getContents(), true);
+        $tokens = json_decode($tokens->getBody()->getContents(), true);
 
         // Set a fresh authenticator
         $api->setAuthenticator(new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']));

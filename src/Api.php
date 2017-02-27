@@ -1,7 +1,6 @@
 <?php namespace GlobalExam\Api\Sdk;
 
 use GlobalExam\Api\Sdk\Authentication\AuthenticationInterface;
-use GlobalExam\Api\Sdk\Authentication\OAuthPasswordGrant;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 use GlobalExam\Api\Sdk\Resource\Organization\Organization;
 use GlobalExam\Api\Sdk\Resource\User\User;

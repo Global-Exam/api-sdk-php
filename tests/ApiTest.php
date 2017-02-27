@@ -4,10 +4,6 @@ use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Authentication\AuthorizationCodeGrant;
 use GlobalExam\Api\Sdk\Authentication\OAuthClient;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
-use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Psr7\Response;
 
 /**
  * Class ApiTest
