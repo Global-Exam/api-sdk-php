@@ -1,6 +1,8 @@
 <?php namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
+use GlobalExam\Api\Sdk\Authentication\AuthorizationCodeGrant;
+use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -31,15 +33,16 @@ class OAuth
      */
     public function getToken()
     {
-        $authenticator = $this->api->authenticator;
+        /** @var PasswordCredentialsGrant $authenticator */
+        $authenticator = $this->api->getAuthenticator();
 
         $body = [
-            'grant_type'    => $authenticator::GRANT_TYPE,
-            'client_id'     => $authenticator::CLIENT_ID,
-            'client_secret' => $authenticator::CLIENT_SECRET,
-            'username'      => $authenticator->username,
-            'password'      => $authenticator->password,
-            'scope'         => $authenticator->scope
+            'grant_type'    => 'password',
+            'client_id'     => $authenticator->getOAuthClient()->getClientId(),
+            'client_secret' => $authenticator->getOAuthClient()->getClientSecret(),
+            'username'      => $authenticator->getUsername(),
+            'password'      => $authenticator->getPassword(),
+            'scope'         => $authenticator->getScope()
         ];
 
         return $this->api->send('POST', self::RESOURCE_KEY . '/token', $body);
@@ -50,14 +53,15 @@ class OAuth
      */
     public function renewToken()
     {
-        $authenticator = $this->api->authenticator;
+        /** @var AuthorizationCodeGrant $authenticator */
+        $authenticator = $this->api->getAuthenticator();
 
         $body = [
             'grant_type'    => 'refresh_token',
-            'client_id'     => $authenticator::CLIENT_ID,
-            'client_secret' => $authenticator::CLIENT_SECRET,
-            'refresh_token' => $authenticator->refreshToken,
-            'scope'         => $authenticator->scope
+            'client_id'     => $authenticator->getOAuthClient()->getClientId(),
+            'client_secret' => $authenticator->getOAuthClient()->getClientSecret(),
+            'refresh_token' => $authenticator->getRefreshToken(),
+            'scope'         => $authenticator->getScope()
         ];
 
         return $this->api->send('POST', self::RESOURCE_KEY . '/token', $body);

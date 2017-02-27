@@ -2,14 +2,15 @@
 
 use GlobalExam\Api\Sdk\Authentication\AuthenticationInterface;
 use GlobalExam\Api\Sdk\Authentication\OAuthPasswordGrant;
+use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 use GlobalExam\Api\Sdk\Resource\Organization\Organization;
 use GlobalExam\Api\Sdk\Resource\User\User;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * @property AuthenticationInterface authenticator
- * @property Client|null             client
+ * Class Api
+ * @package GlobalExam\Api\Sdk
  */
 class Api
 {
@@ -18,23 +19,23 @@ class Api
     /**
      * @var string
      */
-    protected $baseUrl = 'http://api.global-exam.com';
+    private $baseUrl = 'http://api.global-exam.com';
 
     /**
      * @var
      */
-    protected $authenticated;
+    private $isAuthenticated;
 
     /**
      * @var AuthenticationInterface
      */
-    public $authenticator;
+    private $authenticator;
 
     /**
      * Api constructor.
      *
-     * @param AuthenticationInterface $authenticator
-     * @param Client|null             $client
+     * @param AuthenticationInterface|null $authenticator
+     * @param Client|null                  $client
      */
     public function __construct(AuthenticationInterface $authenticator = null, Client $client = null)
     {
@@ -52,6 +53,14 @@ class Api
         $this->baseUrl = $baseUrl;
 
         return $this;
+    }
+
+    /**
+     * @return AuthenticationInterface
+     */
+    public function getAuthenticator()
+    {
+        return $this->authenticator;
     }
 
     /**
@@ -76,9 +85,9 @@ class Api
             throw new ApiException('Cannot login. You must specify the credentials first.');
         }
 
-        $this->authenticated = true;
+        $this->isAuthenticated = true;
 
-        if ($this->authenticator instanceof OAuthPasswordGrant) {
+        if ($this->authenticator instanceof PasswordCredentialsGrant) {
             return $this->user()->oauth()->getToken();
         }
 
@@ -92,7 +101,7 @@ class Api
      */
     public function logout($clearCredentials = false)
     {
-        $this->authenticated = false;
+        $this->isAuthenticated = false;
 
         if ($clearCredentials === false) {
             $this->clearCredentials();
@@ -121,7 +130,7 @@ class Api
      */
     public function isAuthenticated()
     {
-        return $this->authenticated;
+        return $this->isAuthenticated;
     }
 
     /**

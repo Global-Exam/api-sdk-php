@@ -29,24 +29,29 @@ $api = new Api();
 
 ```php
 use GlobalExam\Api\Sdk\Api;
-use GlobalExam\Api\Sdk\Authentication\OAuthPasswordGrant;
+use GlobalExam\Api\Sdk\Authentication\OAuthClient;
+use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 
-$api = new Api(new OAuthPasswordGrant('email@domain.com', 'password', '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+$oauthClient   = new OAuthClient('clientId', 'clientSecret');
+$authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', ['country' => 'fr', 'ip' => '0.0.0.0']);
 
-// Keep credentials for future calls
-$credentials = $api->login();
+$api = new Api($authenticator);
+
+// Keep tokens for future calls
+$tokens = $api->login();
 ```
 
 ### As a known user
 
 ```php
 use GlobalExam\Api\Sdk\Api;
-use GlobalExam\Api\Sdk\Authentication\OAuthTokenGrant;
+use GlobalExam\Api\Sdk\Authentication\AuthorizationCodeGrant;
 
-$credentials = json_decode($credentials->getBody()->getContents(), true);
+$tokens = json_decode($tokens->getBody()->getContents(), true);
 
 // Play authenticated calls
-$api = new Api(new OAuthTokenGrant($credentials, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$api           = new Api($authenticator);
 $api->login();
 
 $response = $api->user()->me(); // ResponseInterface
@@ -65,11 +70,11 @@ try {
     // Expired token
     if ($e->getResponse()->getStatusCode() === 401) {
         // Ask new credentials based on the current refresh token
-        $credentials = $api->user()->oauth()->renewToken();
-        $credentials = json_decode($credentials->getBody()->getContents(), true);
+        $tokens = $api->user()->oauth()->renewToken();
+        $tokens = json_decode($credentials->getBody()->getContents(), true);
 
         // Set a fresh authenticator
-        $api->setAuthenticator(new OAuthTokenGrant($credentials, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+        $api->setAuthenticator(new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
 
         $response = $api->user()->me();
         $response->getStatusCode(); // 200
@@ -79,6 +84,7 @@ try {
 
 ## API Reference
 
+* [`constructor`](#constructor)
 * [`setBaseUrl`](#setbaseurl)
 * [`setAuthenticator`](#setauthenticator)
 * [`login`](#login)
@@ -87,11 +93,40 @@ try {
 * [`isAuthenticated`](#isauthenticated)
 * [`send`](#send)
 
+### `constructor`
+
+#### Description
+
+Creates a new `Api` instance.
+
+```php
+Api ( AuthenticationInterface $authenticator = null ): Api
+```
+
+#### Input
+
+##### authenticator
+
+A valid authenticator.
+
+#### Output
+
+Returns the `Api` instance.
+
+#### Example
+
+```php
+$oauthClient   = new OAuthClient('clientId', 'clientSecret');
+$authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+
+$api = new Api($authenticator);
+```
+
 ### `setBaseUrl`
 
 #### Description
 
-Set another base URL.
+Sets another base URL.
 
 ```php
 setBaseUrl ( string $baseUrl ): Api
@@ -130,8 +165,8 @@ setAuthenticator ( AuthenticationInterface $authenticator ): Api
 
 Any class that implements `AuthenticationInterface`. Prebuilt classes are:
 
-* `OAuthPasswordGrant`
-* `OAuthTokenGrant`
+* `PasswordCredentialsGrant`
+* `AuthorizationCodeGrant`
 
 #### Output
 
@@ -141,7 +176,11 @@ Returns the `Api` instance.
 
 ```php
 $api = new Api();
-$api->setAuthenticator(new OAuthTokenGrant(array $credentials, string $scope, array $meta));
+
+$oauthClient   = new OAuthClient('clientId', 'clientSecret');
+$authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+
+$api->setAuthenticator($authenticator);
 ```
 
 ### `login`
@@ -164,14 +203,19 @@ Otherwise it returns the current `Api` instance.
 #### Example
 
 ```php
-$api = new Api(new OAuthPasswordGrant('email@domain.com', 'password', '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+$oauthClient   = new OAuthClient('clientId', 'clientSecret');
+$authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$api           = new Api($authenticator);
 
 // Keep credentials for future calls
-$credentials = $api->login();
+$tokens = $api->login();
 
 // Or
 
-$api = new Api(new OAuthTokenGrant($credentials, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+$oauthClient   = new OAuthClient('clientId', 'clientSecret');
+$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$api           = new Api($authenticator);
+
 $api->login();
 ```
 
@@ -198,7 +242,10 @@ Returns the `Api` instance.
 #### Example
 
 ```php
-$api = new Api(new OAuthTokenGrant($credentials, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+$oauthClient   = new OAuthClient('clientId', 'clientSecret');
+$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$api           = new Api($authenticator);
+
 $api->login();
 
 // Perform actions
@@ -223,7 +270,10 @@ Returns the `Api` instance.
 #### Example
 
 ```php
-$api = new Api(new OAuthTokenGrant($credentials, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+$oauthClient   = new OAuthClient('clientId', 'clientSecret');
+$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$api           = new Api($authenticator);
+
 $api->login();
 
 // Perform actions
@@ -249,7 +299,10 @@ Returns `true` or `false`.
 #### Example
 
 ```php
-$api = new Api(new OAuthTokenGrant($credentials, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+$oauthClient   = new OAuthClient('clientId', 'clientSecret');
+$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$api           = new Api($authenticator);
+
 $api->login();
 
 $api->isAuthenticated(); // true
@@ -300,7 +353,9 @@ Returns a [response](http://docs.guzzlephp.org/en/latest/psr7.html#responses) th
 #### Example
 
 ```php
-$api = new Api(new OAuthTokenGrant($credentials, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+$oauthClient   = new OAuthClient('clientId', 'clientSecret');
+$authenticator = new AuthorizationCodeGrant($oauthClient, ['access_token' => 'a', 'refresh_token' => 'b', 'expires_in' => 1], '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$api           = new Api($authenticator);
         
 $response = $api->send('GET', '/user/me');
 
@@ -312,35 +367,13 @@ $response = $api->send('GET', '/user/me');
 
 Resources allow you to have a quick response instead of building a request by your own.
 
-
-```php
-$api->user()->me();
-$api->user()->auth()->register(array $body);
-```
-
 Browse the [src/Resource](src/Resource) folder to see what is available.
 
-* [`Organization`](#organization)
-* [`User`](#user)
-
-### User
+#### Example
 
 ```php
-$api->user()->auth()->register(array $body);
-$api->user()->auth()->confirm(string $token);
-$api->user()->auth()->forgottenPassword(array $body);
-$api->user()->auth()->resetPassword(array $body);
-
-$api->user()->oauth()->getToken();
-$api->user()->oauth()->renewToken();
-
-$api->user()->userRole()->getAll();
-$api->user()->userRole()->getOne();
-$api->user()->userRole()->create();
-$api->user()->userRole()->update();
-$api->user()->userRole()->delete();
-
 $api->user()->me();
+$api->user()->auth()->register(array $body);
 ```
 
 ## Tests
