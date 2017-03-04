@@ -72,10 +72,4 @@ trait Resource
     {
         return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id);
     }
-
-    public function setAuthorization(Api $api)
-    {
-        $this->api = $api;
-        $this->api->login();
-    }
 }
