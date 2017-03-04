@@ -2,8 +2,7 @@
 
 use GlobalExam\Api\Sdk\Authentication\AuthenticationInterface;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
-use GlobalExam\Api\Sdk\Resource\Board\Board;
-use GlobalExam\Api\Sdk\Resource\Board\BoardSection;
+use GlobalExam\Api\Sdk\Module\BoardModule;
 use GlobalExam\Api\Sdk\Resource\Organization\Organization;
 use GlobalExam\Api\Sdk\Resource\User\User;
 use GuzzleHttp\Client;
@@ -15,6 +14,8 @@ use Psr\Http\Message\ResponseInterface;
  */
 class Api
 {
+    use BoardModule;
+
     const API_VERSION = 'v1.0';
 
     /**
@@ -183,23 +184,6 @@ class Api
     {
         return new User($this);
     }
-
-    /**
-     * @return Board
-     */
-    public function board()
-    {
-        return new Board($this);
-    }
-
-    /**
-     * @return BoardSection
-     */
-    public function boardSection()
-    {
-        return new BoardSection($this);
-    }
-
 }
 
 /**
