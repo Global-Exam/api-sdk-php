@@ -3,8 +3,6 @@
 namespace GlobalExam\Api\Sdk\Resource;
 
 use GlobalExam\Api\Sdk\Api;
-use GlobalExam\Api\Sdk\Authentication\AuthorizationCodeGrant;
-use GlobalExam\Api\Sdk\Authentication\OAuthClient;
 use Psr\Http\Message\ResponseInterface;
 
 trait Resource
@@ -15,19 +13,24 @@ trait Resource
     private $api;
 
     /**
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getAll(array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY, [], $params);
+    }
+
+    /**
      * @param $parentId
      * @param array $params
      *
      * @return mixed|ResponseInterface
      */
-    public function getAll($parentId, array $params = [])
+    public function getAllByParentId($parentId, array $params = [])
     {
-        return json_decode($this->api->send(
-            'GET',
-            static::PARENT_RESOURCE_KEY . '/' . $parentId . '/' . static::RESOURCE_KEY,
-            [],
-            $params
-        )->getBody()->getContents(), true);
+        return $this->api->send('GET', static::PARENT_RESOURCE_KEY . '/' . $parentId . '/' . static::RESOURCE_KEY, [], $params);
     }
 
     /**
@@ -38,8 +41,7 @@ trait Resource
      */
     public function getOne($id, array $params = [])
     {
-        return json_decode($this->api->send('GET', static::RESOURCE_KEY . '/' . $id, [],
-            $params)->getBody()->getContents(), true);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id, [], $params);
     }
 
     /**
