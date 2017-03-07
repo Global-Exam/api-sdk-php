@@ -9,8 +9,6 @@ class BoardTraining
 {
     use Resource;
 
-    const PARENT_RESOURCE_KEY = 'board-exercise';
-
     const RESOURCE_KEY = 'board-training';
 
     /**

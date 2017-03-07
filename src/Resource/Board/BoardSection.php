@@ -9,8 +9,6 @@ class BoardSection
 {
     use Resource;
 
-    const PARENT_RESOURCE_KEY = 'board-mode';
-
     const RESOURCE_KEY = 'board-section';
 
     /**

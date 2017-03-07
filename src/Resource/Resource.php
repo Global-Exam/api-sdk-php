@@ -23,17 +23,6 @@ trait Resource
     }
 
     /**
-     * @param $parentId
-     * @param array $params
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getAllByParentId($parentId, array $params = [])
-    {
-        return $this->api->send('GET', static::PARENT_RESOURCE_KEY . '/' . $parentId . '/' . static::RESOURCE_KEY, [], $params);
-    }
-
-    /**
      * @param       $id
      * @param array $params
      *
