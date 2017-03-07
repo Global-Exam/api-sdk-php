@@ -15,11 +15,19 @@ class ApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testBase()
     {
-        //$oauthClient = new OAuthClient(1, 'Yq7pUe8Ne1LRe6J2qS3kyBz9FNJkyMKYA1d471dz');
+        //$oauthClient = new OAuthClient(2, 'Lf5H4IkaaiJLJ7b8oG6Hhaf9hEtUUA9Bh2izltHm');
+        //
+        //$api = new Api(new ClientCredentialsGrant($oauthClient));
+        //$api->setBaseUrl('https://api.global-exam.dev');
+        //
+        //$tokens = $api->login();
+        //$tokens = json_decode($tokens->getBody()->getContents(), true);
+
+        //var_dump($tokens);
 
         // First login: Email/Password
         //$api = new Api(new PasswordCredentialsGrant($oauthClient, 'yolo@yopmail.com', 'oklolmdr', '', ['country' => 'fr', 'ip' => '0.0.0.0']));
-        //$api->setBaseUrl('http://api.global-exam.dev');
+        //$api->setBaseUrl('https://api.global-exam.dev');
 
         // Keep this in memory
         //$tokens = $api->login();
@@ -31,7 +39,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase
 
         // Play authenticated calls
         //$api = new Api(new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
-        //$api->setBaseUrl('http://api.global-exam.dev')->login();
+        //$api->setBaseUrl('https://api.global-exam.dev')->login();
         //
         //$response = $api->user()->me();
         //var_dump($response->getStatusCode());
@@ -58,7 +66,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase
 
         // Guest call
         //$api = new Api();
-        //$api->setBaseUrl('http://api.global-exam.dev');
+        //$api->setBaseUrl('https://api.global-exam.dev');
 
         //$response = $api->user()->auth()->register([]);
         //var_dump($response->getBody()->getContents());

@@ -26,6 +26,17 @@ class PasswordCredentialsGrantTest extends \PHPUnit_Framework_TestCase
     /**
      *
      */
+    public function testGetGrantType()
+    {
+        $oauthClient   = new OAuthClient('clientId', 'clientSecret');
+        $authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+
+        $this->assertEquals('password', $authenticator->getGrantType());
+    }
+
+    /**
+     *
+     */
     public function testGetHeaders()
     {
         $oauthClient   = new OAuthClient('clientId', 'clientSecret');

@@ -26,6 +26,17 @@ class AuthorizationCodeGrantTest extends \PHPUnit_Framework_TestCase
     /**
      *
      */
+    public function testGetGrantType()
+    {
+        $oauthClient   = new OAuthClient('clientId', 'clientSecret');
+        $authenticator = new AuthorizationCodeGrant($oauthClient, ['access_token' => 'a', 'refresh_token' => 'b', 'expires_in' => 1], '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+
+        $this->assertEquals(null, $authenticator->getGrantType());
+    }
+
+    /**
+     *
+     */
     public function testGetHeaders()
     {
         $oauthClient   = new OAuthClient('clientId', 'clientSecret');
