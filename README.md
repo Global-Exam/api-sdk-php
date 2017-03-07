@@ -66,10 +66,11 @@ use GlobalExam\Api\Sdk\Authentication\ClientCredentialsGrant;
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new ClientCredentialsGrant($oauthClient);
 
-$api           = new Api($authenticator);
-$tokens        = $api->login();
-
+$api    = new Api($authenticator);
+$tokens = $api->login();
 $tokens = json_decode($tokens->getBody()->getContents(), true);
+
+$this->api->setAuthenticator(new AuthorizationCodeGrant($oauthClient, $tokens));
 ```
 
 ### Deal with token expiration

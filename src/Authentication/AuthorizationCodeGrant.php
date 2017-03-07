@@ -53,8 +53,8 @@ class AuthorizationCodeGrant implements AuthenticationInterface
     {
         $this->OAuthClient  = $OAuthClient;
         $this->accessToken  = $tokens['access_token'];
-        $this->refreshToken = $tokens['refresh_token'];
-        $this->expiresIn    = $tokens['expires_in'];
+        $this->refreshToken = isset($tokens['refresh_token']) === true ? $tokens['refresh_token'] : null;
+        $this->expiresIn    = isset($tokens['expires_in']) === true ? $tokens['expires_in'] : null;
         $this->scope        = $scope;
         $this->meta         = $meta;
     }
@@ -120,10 +120,16 @@ class AuthorizationCodeGrant implements AuthenticationInterface
      */
     public function getHeaders()
     {
-        return [
-            'x-agent-country' => $this->meta['country'],
-            'x-forwarded-for' => $this->meta['ip'],
-            'Authorization'   => 'Bearer ' . $this->accessToken
-        ];
+        $headers = ['Authorization' => 'Bearer ' . $this->accessToken];
+
+        if (isset($this->meta['country']) === true) {
+            $headers['x-agent-country'] = $this->meta['country'];
+        }
+
+        if (isset($this->meta['ip']) === true) {
+            $headers['x-forwarded-for'] = $this->meta['ip'];
+        }
+
+        return $headers;
     }
 }

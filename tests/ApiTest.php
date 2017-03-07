@@ -2,6 +2,7 @@
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Authentication\AuthorizationCodeGrant;
+use GlobalExam\Api\Sdk\Authentication\ClientCredentialsGrant;
 use GlobalExam\Api\Sdk\Authentication\OAuthClient;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 
@@ -22,9 +23,13 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         //
         //$tokens = $api->login();
         //$tokens = json_decode($tokens->getBody()->getContents(), true);
-
-        //var_dump($tokens);
-
+        //
+        //// Play authenticated calls
+        //$api->setAuthenticator(new AuthorizationCodeGrant($oauthClient, $tokens));
+        //
+        //$response = $api->send('GET', '/blog-category');
+        //
+        //var_dump(json_decode($response->getBody()->getContents(), true));
         // First login: Email/Password
         //$api = new Api(new PasswordCredentialsGrant($oauthClient, 'yolo@yopmail.com', 'oklolmdr', '', ['country' => 'fr', 'ip' => '0.0.0.0']));
         //$api->setBaseUrl('https://api.global-exam.dev');
