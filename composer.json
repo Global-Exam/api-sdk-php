@@ -1,12 +1,12 @@
 {
-    "name": "Global-Exam/api-sdk-php",
+    "name": "global-exam/api-sdk-php",
     "description": "GlobalExam API PHP SDK",
     "type": "library",
     "minimum-stability": "stable",
-    "homepage": "https://github.com/Global-Exam/api-sdk-php",
+    "homepage": "https://github.com/global-exam/api-sdk-php",
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/Global-Exam/api-sdk-php/issues"
+        "issues": "https://github.com/global-exam/api-sdk-php/issues"
     },
     "require": {
         "guzzlehttp/guzzle": "6.2.*"
