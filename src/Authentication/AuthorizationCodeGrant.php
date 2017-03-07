@@ -7,6 +7,11 @@
 class AuthorizationCodeGrant implements AuthenticationInterface
 {
     /**
+     * @var string
+     */
+    private $grantType = null;
+
+    /**
      * @var OAuthClient
      */
     private $OAuthClient;
@@ -52,6 +57,14 @@ class AuthorizationCodeGrant implements AuthenticationInterface
         $this->expiresIn    = $tokens['expires_in'];
         $this->scope        = $scope;
         $this->meta         = $meta;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGrantType()
+    {
+        return $this->grantType;
     }
 
     /**

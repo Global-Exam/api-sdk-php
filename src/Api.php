@@ -1,6 +1,7 @@
 <?php namespace GlobalExam\Api\Sdk;
 
 use GlobalExam\Api\Sdk\Authentication\AuthenticationInterface;
+use GlobalExam\Api\Sdk\Authentication\ClientCredentialsGrant;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 use GlobalExam\Api\Sdk\Module\BoardModule;
 use GlobalExam\Api\Sdk\Resource\Organization\Organization;
@@ -89,8 +90,8 @@ class Api
 
         $this->isAuthenticated = true;
 
-        if ($this->authenticator instanceof PasswordCredentialsGrant) {
-            return $this->user()->oauth()->getToken();
+        if ($this->authenticator instanceof PasswordCredentialsGrant || $this->authenticator instanceof ClientCredentialsGrant) {
+            return $this->user()->oauth()->getToken($this->authenticator->getGrantType());
         }
 
         return $this;

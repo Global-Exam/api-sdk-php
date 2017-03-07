@@ -7,6 +7,11 @@
 class PasswordCredentialsGrant implements AuthenticationInterface
 {
     /**
+     * @var string
+     */
+    private $grantType = 'password';
+
+    /**
      * @var OAuthClient
      */
     private $OAuthClient;
@@ -47,6 +52,14 @@ class PasswordCredentialsGrant implements AuthenticationInterface
         $this->password    = $password;
         $this->scope       = $scope;
         $this->meta        = $meta;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGrantType()
+    {
+        return $this->grantType;
     }
 
     /**

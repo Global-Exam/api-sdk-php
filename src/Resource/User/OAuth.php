@@ -29,21 +29,38 @@ class OAuth
     }
 
     /**
+     * @param string $grantType
+     *
      * @return mixed|ResponseInterface
      */
-    public function getToken()
+    public function getToken($grantType)
     {
-        /** @var PasswordCredentialsGrant $authenticator */
         $authenticator = $this->api->getAuthenticator();
 
-        $body = [
-            'grant_type'    => 'password',
-            'client_id'     => $authenticator->getOAuthClient()->getClientId(),
-            'client_secret' => $authenticator->getOAuthClient()->getClientSecret(),
-            'username'      => $authenticator->getUsername(),
-            'password'      => $authenticator->getPassword(),
-            'scope'         => $authenticator->getScope()
-        ];
+        switch ($grantType) {
+            case 'password':
+                /** @var PasswordCredentialsGrant $authenticator */
+                $body = [
+                    'grant_type'    => $grantType,
+                    'client_id'     => $authenticator->getOAuthClient()->getClientId(),
+                    'client_secret' => $authenticator->getOAuthClient()->getClientSecret(),
+                    'username'      => $authenticator->getUsername(),
+                    'password'      => $authenticator->getPassword(),
+                    'scope'         => $authenticator->getScope()
+                ];
+                break;
+            case 'client_credentials':
+                $body = [
+                    'grant_type'    => $grantType,
+                    'client_id'     => $authenticator->getOAuthClient()->getClientId(),
+                    'client_secret' => $authenticator->getOAuthClient()->getClientSecret(),
+                    'scope'         => $authenticator->getScope()
+                ];
+                break;
+            default:
+                $body = [];
+                break;
+        }
 
         return $this->api->send('POST', self::RESOURCE_KEY . '/token', $body);
     }

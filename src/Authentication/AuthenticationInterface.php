@@ -3,6 +3,11 @@
 interface AuthenticationInterface
 {
     /**
+     * @return string
+     */
+    public function getGrantType();
+
+    /**
      * @return mixed
      */
     public function getOAuthClient();
@@ -14,11 +19,6 @@ interface AuthenticationInterface
 
     /**
      * @return array
-     */
-    public function getMeta();
-
-    /**
-     * @return mixed
      */
     public function getHeaders();
 }
