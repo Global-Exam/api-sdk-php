@@ -57,6 +57,18 @@ $api->login();
 $response = $api->user()->me(); // ResponseInterface
 ```
 
+### As a server
+
+```php
+use GlobalExam\Api\Sdk\Api;
+use GlobalExam\Api\Sdk\Authentication\ClientCredentialsGrant;
+
+$oauthClient   = new OAuthClient('clientId', 'clientSecret');
+$authenticator = new ClientCredentialsGrant($oauthClient);
+
+$tokens = json_decode($tokens->getBody()->getContents(), true);
+```
+
 ### Deal with token expiration
 
 You may receive a `401 Unauthorized` response from a [Guzzle exception](http://docs.guzzlephp.org/en/latest/quickstart.html?highlight=clientexception#exceptions). 
