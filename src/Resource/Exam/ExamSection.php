@@ -1,23 +1,23 @@
 <?php
 
-namespace GlobalExam\Api\Sdk\Resource\Board;
+namespace GlobalExam\Api\Sdk\Resource\Exam;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class BoardExercise
- * @package GlobalExam\Api\Sdk\Resource\Board
+ * Class ExamSection
+ * @package GlobalExam\Api\Sdk\Resource\Exam
  */
-class BoardExercise
+class ExamSection
 {
     use Resource;
 
-    const RESOURCE_KEY = 'board-exercise';
+    const RESOURCE_KEY = 'exam-section';
 
     /**
-     * BoardExercise constructor.
+     * ExamSection constructor.
      *
      * @param Api $api
      */
@@ -32,8 +32,8 @@ class BoardExercise
      *
      * @return mixed|ResponseInterface
      */
-    public function getBoardTrainings($id, array $params = [])
+    public function getExamExercises($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/board-training', [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/exam-exercise', [], $params);
     }
 }

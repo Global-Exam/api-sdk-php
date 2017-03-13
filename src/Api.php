@@ -4,8 +4,9 @@ use GlobalExam\Api\Sdk\Authentication\AuthenticationInterface;
 use GlobalExam\Api\Sdk\Authentication\ClientCredentialsGrant;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 use GlobalExam\Api\Sdk\Module\BoardModule;
-use GlobalExam\Api\Sdk\Resource\Organization\Organization;
-use GlobalExam\Api\Sdk\Resource\User\User;
+use GlobalExam\Api\Sdk\Module\ExamModule;
+use GlobalExam\Api\Sdk\Module\OrganizationModule;
+use GlobalExam\Api\Sdk\Module\UserModule;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 
@@ -15,14 +16,14 @@ use Psr\Http\Message\ResponseInterface;
  */
 class Api
 {
-    use BoardModule;
+    use BoardModule, ExamModule, OrganizationModule, UserModule;
 
     const API_VERSION = 'v1.0';
 
     /**
      * @var string
      */
-    private $baseUrl = 'http://api.global-exam.com';
+    private $baseUrl = 'https://api.global-exam.com';
 
     /**
      * @var
@@ -33,6 +34,11 @@ class Api
      * @var AuthenticationInterface
      */
     private $authenticator;
+
+    /**
+     * @var Client|null
+     */
+    private $client;
 
     /**
      * Api constructor.
@@ -91,7 +97,7 @@ class Api
         $this->isAuthenticated = true;
 
         if ($this->authenticator instanceof PasswordCredentialsGrant || $this->authenticator instanceof ClientCredentialsGrant) {
-            return $this->user()->oauth()->getToken($this->authenticator->getGrantType());
+            return $this->oauth()->getToken($this->authenticator->getGrantType());
         }
 
         return $this;
@@ -168,22 +174,6 @@ class Api
             'headers' => $headers,
             'body'    => json_encode($body)
         ]);
-    }
-
-    /**
-     * @return Organization
-     */
-    public function organization()
-    {
-        return new Organization($this);
-    }
-
-    /**
-     * @return Resource\User\User
-     */
-    public function user()
-    {
-        return new User($this);
     }
 }
 

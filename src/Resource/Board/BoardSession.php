@@ -7,17 +7,17 @@ use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class BoardExercise
+ * Class BoardSession
  * @package GlobalExam\Api\Sdk\Resource\Board
  */
-class BoardExercise
+class BoardSession
 {
     use Resource;
 
-    const RESOURCE_KEY = 'board-exercise';
+    const RESOURCE_KEY = 'board-session';
 
     /**
-     * BoardExercise constructor.
+     * BoardSession constructor.
      *
      * @param Api $api
      */
@@ -28,12 +28,12 @@ class BoardExercise
 
     /**
      * @param       $id
-     * @param array $params
+     * @param array $body
      *
      * @return mixed|ResponseInterface
      */
-    public function getBoardTrainings($id, array $params = [])
+    public function syncExamPart($id, array $body = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/board-training', [], $params);
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/exam-part', $body);
     }
 }

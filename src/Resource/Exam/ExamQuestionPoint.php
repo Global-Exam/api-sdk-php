@@ -1,22 +1,22 @@
 <?php
 
-namespace GlobalExam\Api\Sdk\Resource\Board;
+namespace GlobalExam\Api\Sdk\Resource\Exam;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
- * Class BoardTraining
- * @package GlobalExam\Api\Sdk\Resource\Board
+ * Class ExamQuestionPoint
+ * @package GlobalExam\Api\Sdk\Resource\Exam
  */
-class BoardTraining
+class ExamQuestionPoint
 {
     use Resource;
 
-    const RESOURCE_KEY = 'board-training';
+    const RESOURCE_KEY = 'exam-question-point';
 
     /**
-     * BoardTraining constructor.
+     * ExamQuestionPoint constructor.
      *
      * @param Api $api
      */
@@ -25,3 +25,4 @@ class BoardTraining
         $this->api = $api;
     }
 }
+

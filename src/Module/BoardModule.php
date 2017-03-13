@@ -9,9 +9,12 @@ use GlobalExam\Api\Sdk\Resource\Board\BoardMode;
 use GlobalExam\Api\Sdk\Resource\Board\BoardSection;
 use GlobalExam\Api\Sdk\Resource\Board\BoardTraining;
 
+/**
+ * Class BoardModule
+ * @package GlobalExam\Api\Sdk\Module
+ */
 trait BoardModule
 {
-
     /**
      * @return Board
      */

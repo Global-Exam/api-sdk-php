@@ -5,17 +5,17 @@ use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class UserRole
+ * Class UserProvider
  * @package GlobalExam\Api\Sdk\Resource\User
  */
-class UserRole
+class UserProvider
 {
     use Resource;
 
-    const RESOURCE_KEY = 'user-role';
+    const RESOURCE_KEY = 'user-provider';
 
     /**
-     * UserRole constructor.
+     * UserProvider constructor.
      *
      * @param Api $api
      */

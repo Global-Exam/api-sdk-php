@@ -3,6 +3,7 @@
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Authentication\AuthorizationCodeGrant;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
+use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -11,12 +12,9 @@ use Psr\Http\Message\ResponseInterface;
  */
 class OAuth
 {
-    const RESOURCE_KEY = 'oauth';
+    use Resource;
 
-    /**
-     * @var
-     */
-    private $api;
+    const RESOURCE_KEY = 'oauth';
 
     /**
      * User constructor.

@@ -1,20 +1,22 @@
-<?php namespace GlobalExam\Api\Sdk\Resource\Organization;
+<?php
+
+namespace GlobalExam\Api\Sdk\Resource\Exam;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
- * Class OrganizationType
- * @package GlobalExam\Api\Sdk\Resource\Organization
+ * Class ExamSupport
+ * @package GlobalExam\Api\Sdk\Resource\Exam
  */
-class OrganizationType
+class ExamSupport
 {
     use Resource;
 
-    const RESOURCE_KEY = 'organization-type';
+    const RESOURCE_KEY = 'exam-support';
 
     /**
-     * User constructor.
+     * ExamSupport constructor.
      *
      * @param Api $api
      */
@@ -23,3 +25,4 @@ class OrganizationType
         $this->api = $api;
     }
 }
+

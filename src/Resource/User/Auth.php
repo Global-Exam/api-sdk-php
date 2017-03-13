@@ -1,6 +1,7 @@
 <?php namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
+use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -9,12 +10,9 @@ use Psr\Http\Message\ResponseInterface;
  */
 class Auth
 {
-    const RESOURCE_KEY = 'auth';
+    use Resource;
 
-    /**
-     * @var
-     */
-    private $api;
+    const RESOURCE_KEY = 'auth';
 
     /**
      * User constructor.

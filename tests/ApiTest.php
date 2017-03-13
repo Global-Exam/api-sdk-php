@@ -16,7 +16,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testBase()
     {
-        //$oauthClient = new OAuthClient(2, 'Lf5H4IkaaiJLJ7b8oG6Hhaf9hEtUUA9Bh2izltHm');
+        //$oauthClient = new OAuthClient(1, 'vR2iYYhndOn1jpxOwBHYXnwRMtUs9vUTjkKmM6Fc');
         //
         //$api = new Api(new ClientCredentialsGrant($oauthClient));
         //$api->setBaseUrl('https://api.global-exam.dev');
@@ -46,8 +46,8 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         //$api = new Api(new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
         //$api->setBaseUrl('https://api.global-exam.dev')->login();
         //
-        //$response = $api->user()->me();
-        //var_dump($response->getStatusCode());
+        //$response = $api->board()->getBoardLevels(1);
+        //var_dump(json_decode($response->getBody()->getContents(), true));
 
         //try {
         //    $api->user()->me();

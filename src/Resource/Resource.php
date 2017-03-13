@@ -5,6 +5,10 @@ namespace GlobalExam\Api\Sdk\Resource;
 use GlobalExam\Api\Sdk\Api;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * Class Resource
+ * @package GlobalExam\Api\Sdk\Resource
+ */
 trait Resource
 {
     /**
