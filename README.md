@@ -70,7 +70,7 @@ $api    = new Api($authenticator);
 $tokens = $api->login();
 $tokens = json_decode($tokens->getBody()->getContents(), true);
 
-$this->api->setAuthenticator(new AuthorizationCodeGrant($oauthClient, $tokens));
+$api->setAuthenticator(new AuthorizationCodeGrant($oauthClient, $tokens));
 ```
 
 ### Deal with token expiration
