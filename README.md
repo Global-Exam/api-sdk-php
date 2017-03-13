@@ -183,6 +183,7 @@ Any class that implements `AuthenticationInterface`. Prebuilt classes are:
 
 * `PasswordCredentialsGrant`
 * `AuthorizationCodeGrant`
+* `ClientCredentialsGrant`
 
 #### Output
 
