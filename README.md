@@ -12,7 +12,7 @@
 ### Composer
 
 ```
-composer require Global-Exam/api-sdk-php:dev-master
+composer require global-exam/api-sdk-php:dev-master
 ```
 
 ## Usage
