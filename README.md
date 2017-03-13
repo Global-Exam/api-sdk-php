@@ -389,7 +389,7 @@ Browse the [src/Resource](src/Resource) folder to see what is available.
 
 ```php
 $api->user()->me();
-$api->user()->auth()->register(array $body);
+$api->auth()->register(array $body);
 ```
 
 ## Tests
