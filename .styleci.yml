@@ -7,3 +7,5 @@ enabled:
   - blank_line_before_return
   - concat_with_spaces
   - hash_to_slash_comment
+  - method_separation
+  - new_with_braces
