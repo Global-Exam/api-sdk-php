@@ -2,3 +2,5 @@ preset: psr2
 
 enabled:
   - align_double_arrow
+  - align_equals
+  - alpha_ordered_imports
