@@ -34,3 +34,6 @@ enabled:
   - single_line_class_definition
   - single_quote
   - space_after_semicolon
+  - standardize_not_equals
+  - strict_comparison
+  - whitespace_after_comma_in_array
