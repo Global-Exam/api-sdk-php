@@ -16,6 +16,7 @@ class ExamExercise
 
     const RESOURCE_KEY = 'exam-exercise';
 
+
     /**
      * ExamExercise constructor.
      *
