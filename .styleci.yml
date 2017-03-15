@@ -30,3 +30,7 @@ enabled:
   - object_operator_without_whitespace
   - return_type_declaration
   - self_accessor
+  - short_array_syntax
+  - single_line_class_definition
+  - single_quote
+  - space_after_semicolon
