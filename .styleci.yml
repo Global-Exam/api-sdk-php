@@ -22,4 +22,3 @@ enabled:
   - no_short_bool_cast
   - no_short_echo_tag
   - no_singleline_whitespace_before_semicolons
-  - no_spaces_after_function_name
