@@ -8,9 +8,6 @@ use GlobalExam\Api\Sdk\Authentication\OAuthClient;
  */
 class AuthorizationCodeGrantTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     *
-     */
     public function testConstructor()
     {
         $oauthClient   = new OAuthClient('clientId', 'clientSecret');
@@ -23,9 +20,6 @@ class AuthorizationCodeGrantTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('', $authenticator->getScope());
     }
 
-    /**
-     *
-     */
     public function testGetGrantType()
     {
         $oauthClient   = new OAuthClient('clientId', 'clientSecret');
@@ -34,9 +28,6 @@ class AuthorizationCodeGrantTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(null, $authenticator->getGrantType());
     }
 
-    /**
-     *
-     */
     public function testGetHeaders()
     {
         $oauthClient   = new OAuthClient('clientId', 'clientSecret');

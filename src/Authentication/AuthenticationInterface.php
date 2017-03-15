@@ -1,4 +1,5 @@
-<?php namespace GlobalExam\Api\Sdk\Authentication;
+<?php
+namespace GlobalExam\Api\Sdk\Authentication;
 
 interface AuthenticationInterface
 {

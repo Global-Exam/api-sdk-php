@@ -11,9 +11,6 @@ use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
  */
 class ApiTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     *
-     */
     public function testBase()
     {
         //$oauthClient = new OAuthClient(1, 'vR2iYYhndOn1jpxOwBHYXnwRMtUs9vUTjkKmM6Fc');
@@ -79,9 +76,6 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         // Expired token
     }
 
-    /**
-     *
-     */
     public function testConstructor()
     {
         $api = new Api();
@@ -99,9 +93,6 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(AuthorizationCodeGrant::class, $api->getAuthenticator());
     }
 
-    /**
-     *
-     */
     public function testBaseUrl()
     {
         $api = new Api();
@@ -109,9 +100,6 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf(Api::class, $api->setBaseUrl('http://api.global-exam.io'));
     }
 
-    /**
-     *
-     */
     public function testAuthenticator()
     {
         $api = new Api();

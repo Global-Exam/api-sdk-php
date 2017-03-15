@@ -7,6 +7,7 @@ use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
  * Class ExamSupportType
+ *
  * @package GlobalExam\Api\Sdk\Resource\Exam
  */
 class ExamSupportType

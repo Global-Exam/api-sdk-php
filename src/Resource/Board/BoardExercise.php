@@ -8,6 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class BoardExercise
+ *
  * @package GlobalExam\Api\Sdk\Resource\Board
  */
 class BoardExercise

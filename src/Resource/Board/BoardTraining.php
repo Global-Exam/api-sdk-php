@@ -7,6 +7,7 @@ use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
  * Class BoardTraining
+ *
  * @package GlobalExam\Api\Sdk\Resource\Board
  */
 class BoardTraining

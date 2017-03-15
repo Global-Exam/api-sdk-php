@@ -1,10 +1,12 @@
-<?php namespace GlobalExam\Api\Sdk\Resource\User;
+<?php
+namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
  * Class UserRole
+ *
  * @package GlobalExam\Api\Sdk\Resource\User
  */
 class UserRole

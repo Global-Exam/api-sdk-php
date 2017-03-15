@@ -10,6 +10,7 @@ use GlobalExam\Api\Sdk\Resource\User\UserRole;
 
 /**
  * Class UserModule
+ *
  * @package GlobalExam\Api\Sdk\Module
  */
 trait UserModule

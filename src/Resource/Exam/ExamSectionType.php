@@ -7,6 +7,7 @@ use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
  * Class ExamSectionType
+ *
  * @package GlobalExam\Api\Sdk\Resource\Exam
  */
 class ExamSectionType

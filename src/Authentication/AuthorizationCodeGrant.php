@@ -1,7 +1,9 @@
-<?php namespace GlobalExam\Api\Sdk\Authentication;
+<?php
+namespace GlobalExam\Api\Sdk\Authentication;
 
 /**
  * Class OAuthTokenGrant
+ *
  * @package GlobalExam\Api\Sdk\Authentication
  */
 class AuthorizationCodeGrant implements AuthenticationInterface

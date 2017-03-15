@@ -1,10 +1,12 @@
-<?php namespace GlobalExam\Api\Sdk\Resource\Organization;
+<?php
+namespace GlobalExam\Api\Sdk\Resource\Organization;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
  * Class OrganizationBusinessType
+ *
  * @package GlobalExam\Api\Sdk\Resource\Organization
  */
 class OrganizationBusinessType

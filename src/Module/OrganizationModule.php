@@ -9,6 +9,7 @@ use GlobalExam\Api\Sdk\Resource\Organization\OrganizationType;
 
 /**
  * Class OrganizationModule
+ *
  * @package GlobalExam\Api\Sdk\Module
  */
 trait OrganizationModule

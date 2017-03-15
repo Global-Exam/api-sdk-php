@@ -1,4 +1,5 @@
-<?php namespace GlobalExam\Api\Sdk\Resource\User;
+<?php
+namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Authentication\AuthorizationCodeGrant;
@@ -8,6 +9,7 @@ use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class OAuth
+ *
  * @package GlobalExam\Api\Sdk\Resource\User
  */
 class OAuth
