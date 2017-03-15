@@ -25,4 +25,3 @@ class ExamQuestion
         $this->api = $api;
     }
 }
-

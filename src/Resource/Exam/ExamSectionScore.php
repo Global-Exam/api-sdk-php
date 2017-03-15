@@ -25,4 +25,3 @@ class ExamSectionScore
         $this->api = $api;
     }
 }
-

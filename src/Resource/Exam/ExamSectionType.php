@@ -25,4 +25,3 @@ class ExamSectionType
         $this->api = $api;
     }
 }
-
