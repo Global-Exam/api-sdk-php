@@ -6,5 +6,4 @@ enabled:
   - alpha_ordered_imports
   - blank_line_before_return
   - concat_with_spaces
-  - function_declaration
   - hash_to_slash_comment
