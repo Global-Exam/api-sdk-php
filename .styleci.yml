@@ -24,3 +24,7 @@ enabled:
   - no_singleline_whitespace_before_semicolons
   - no_spaces_inside_offset
   - no_unused_imports
+  - no_whitespace_before_comma_in_array
+  - no_whitespace_in_blank_line
+  - normalize_index_brace
+  - object_operator_without_whitespace
