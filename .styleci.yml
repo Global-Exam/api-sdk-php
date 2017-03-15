@@ -15,3 +15,11 @@ enabled:
   - no_blank_lines_after_throw
   - no_blank_lines_between_imports
   - no_blank_lines_between_traits
+  - no_extra_block_blank_lines
+  - no_empty_comment
+  - no_extra_consecutive_blank_lines
+  - no_php4_constructor
+  - no_short_bool_cast
+  - no_short_echo_tag
+  - no_singleline_whitespace_before_semicolons
+  - no_spaces_after_function_name
