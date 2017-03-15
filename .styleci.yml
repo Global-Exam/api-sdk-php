@@ -4,3 +4,5 @@ enabled:
   - align_double_arrow
   - align_equals
   - alpha_ordered_imports
+  - blank_line_before_return
+  - concat_with_spaces
