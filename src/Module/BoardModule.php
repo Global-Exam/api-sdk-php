@@ -11,6 +11,7 @@ use GlobalExam\Api\Sdk\Resource\Board\BoardTraining;
 
 /**
  * Class BoardModule
+ *
  * @package GlobalExam\Api\Sdk\Module
  */
 trait BoardModule

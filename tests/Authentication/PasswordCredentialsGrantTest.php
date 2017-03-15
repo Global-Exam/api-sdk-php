@@ -8,9 +8,6 @@ use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
  */
 class PasswordCredentialsGrantTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     *
-     */
     public function testConstructor()
     {
         $oauthClient   = new OAuthClient('clientId', 'clientSecret');
@@ -23,9 +20,6 @@ class PasswordCredentialsGrantTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(['country' => 'fr', 'ip' => '0.0.0.0'], $authenticator->getMeta());
     }
 
-    /**
-     *
-     */
     public function testGetGrantType()
     {
         $oauthClient   = new OAuthClient('clientId', 'clientSecret');
@@ -34,9 +28,6 @@ class PasswordCredentialsGrantTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('password', $authenticator->getGrantType());
     }
 
-    /**
-     *
-     */
     public function testGetHeaders()
     {
         $oauthClient   = new OAuthClient('clientId', 'clientSecret');

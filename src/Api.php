@@ -1,4 +1,5 @@
-<?php namespace GlobalExam\Api\Sdk;
+<?php
+namespace GlobalExam\Api\Sdk;
 
 use GlobalExam\Api\Sdk\Authentication\AuthenticationInterface;
 use GlobalExam\Api\Sdk\Authentication\ClientCredentialsGrant;
@@ -12,6 +13,7 @@ use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class Api
+ *
  * @package GlobalExam\Api\Sdk
  */
 class Api
@@ -85,8 +87,9 @@ class Api
     }
 
     /**
-     * @return $this|mixed|ResponseInterface
      * @throws ApiException
+     *
+     * @return $this|mixed|ResponseInterface
      */
     public function login()
     {
@@ -120,8 +123,9 @@ class Api
     }
 
     /**
-     * @return $this
      * @throws ApiException
+     *
+     * @return $this
      */
     public function clearCredentials()
     {

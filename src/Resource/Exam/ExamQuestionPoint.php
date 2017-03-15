@@ -7,6 +7,7 @@ use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
  * Class ExamQuestionPoint
+ *
  * @package GlobalExam\Api\Sdk\Resource\Exam
  */
 class ExamQuestionPoint

@@ -1,7 +1,9 @@
-<?php namespace GlobalExam\Api\Sdk\Authentication;
+<?php
+namespace GlobalExam\Api\Sdk\Authentication;
 
 /**
  * Class OAuthClient
+ *
  * @package GlobalExam\Api\Sdk\Authentication
  */
 class OAuthClient

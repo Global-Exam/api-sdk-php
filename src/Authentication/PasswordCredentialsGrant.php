@@ -1,7 +1,9 @@
-<?php namespace GlobalExam\Api\Sdk\Authentication;
+<?php
+namespace GlobalExam\Api\Sdk\Authentication;
 
 /**
  * Class OAuthPasswordGrant
+ *
  * @package GlobalExam\Api\Sdk\Authentication
  */
 class PasswordCredentialsGrant implements AuthenticationInterface

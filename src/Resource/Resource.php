@@ -7,6 +7,7 @@ use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class Resource
+ *
  * @package GlobalExam\Api\Sdk\Resource
  */
 trait Resource

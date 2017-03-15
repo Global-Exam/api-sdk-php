@@ -8,6 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class ExamExercise
+ *
  * @package GlobalExam\Api\Sdk\Resource\Exam
  */
 class ExamExercise
@@ -15,7 +16,6 @@ class ExamExercise
     use Resource;
 
     const RESOURCE_KEY = 'exam-exercise';
-
 
     /**
      * ExamExercise constructor.

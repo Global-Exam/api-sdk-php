@@ -8,6 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class ExamPart
+ *
  * @package GlobalExam\Api\Sdk\Resource\Exam
  */
 class ExamPart

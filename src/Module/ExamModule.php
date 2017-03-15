@@ -20,6 +20,7 @@ use GlobalExam\Api\Sdk\Resource\Exam\ExamTraining;
 
 /**
  * Class ExamModule
+ *
  * @package GlobalExam\Api\Sdk\Module
  */
 trait ExamModule
