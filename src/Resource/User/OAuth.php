@@ -46,7 +46,7 @@ class OAuth
                     'client_secret' => $authenticator->getOAuthClient()->getClientSecret(),
                     'username'      => $authenticator->getUsername(),
                     'password'      => $authenticator->getPassword(),
-                    'scope'         => $authenticator->getScope()
+                    'scope'         => $authenticator->getScope(),
                 ];
                 break;
             case 'client_credentials':
@@ -54,7 +54,7 @@ class OAuth
                     'grant_type'    => $grantType,
                     'client_id'     => $authenticator->getOAuthClient()->getClientId(),
                     'client_secret' => $authenticator->getOAuthClient()->getClientSecret(),
-                    'scope'         => $authenticator->getScope()
+                    'scope'         => $authenticator->getScope(),
                 ];
                 break;
             default:
@@ -78,7 +78,7 @@ class OAuth
             'client_id'     => $authenticator->getOAuthClient()->getClientId(),
             'client_secret' => $authenticator->getOAuthClient()->getClientSecret(),
             'refresh_token' => $authenticator->getRefreshToken(),
-            'scope'         => $authenticator->getScope()
+            'scope'         => $authenticator->getScope(),
         ];
 
         return $this->api->send('POST', self::RESOURCE_KEY . '/token', $body);

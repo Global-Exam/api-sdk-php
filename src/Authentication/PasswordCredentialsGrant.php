@@ -111,7 +111,7 @@ class PasswordCredentialsGrant implements AuthenticationInterface
     {
         return [
             'x-agent-country' => $this->meta['country'],
-            'x-forwarded-for' => $this->meta['ip']
+            'x-forwarded-for' => $this->meta['ip'],
         ];
     }
 }
