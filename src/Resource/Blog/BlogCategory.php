@@ -8,6 +8,7 @@ use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class BlogCategory
+ *
  * @package GlobalExam\Api\Sdk\Resource\Blog
  */
 class BlogCategory
@@ -34,7 +35,7 @@ class BlogCategory
      */
     public function getBlogPosts($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/'. BlogPost::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BlogPost::RESOURCE_KEY, [], $params);
     }
 
     /**

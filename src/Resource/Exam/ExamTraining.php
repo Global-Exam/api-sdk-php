@@ -35,7 +35,7 @@ class ExamTraining
      */
     public function getExamParts($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/'. ExamPart::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . ExamPart::RESOURCE_KEY, [], $params);
     }
 
     /**

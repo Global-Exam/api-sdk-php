@@ -7,6 +7,7 @@ use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
  * Class BlogPostSlugHistory
+ *
  * @package GlobalExam\Api\Sdk\Resource\Blog
  */
 class BlogPostSlugHistory
