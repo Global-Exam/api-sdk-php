@@ -30,6 +30,17 @@ class Coupon
 
     /**
      * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getPlans($id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . Plan::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
      * @param array $body
      *
      * @return mixed|ResponseInterface

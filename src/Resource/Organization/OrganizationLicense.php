@@ -1,25 +1,24 @@
 <?php
-namespace GlobalExam\Api\Sdk\Resource\Plan;
+namespace GlobalExam\Api\Sdk\Resource\Organization;
 
 use GlobalExam\Api\Sdk\Api;
-use GlobalExam\Api\Sdk\Resource\Board\Board;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use GlobalExam\Api\Sdk\Resource\User\User;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class Plan
+ * Class OrganizationLicense
  *
- * @package GlobalExam\Api\Sdk\Resource\Plan
+ * @package GlobalExam\Api\Sdk\Resource\Organization
  */
-class Plan
+class OrganizationLicense
 {
     use Resource;
 
-    const RESOURCE_KEY = 'plan';
+    const RESOURCE_KEY = 'organization-license';
 
     /**
-     * Organization constructor.
+     * User constructor.
      *
      * @param Api $api
      */
@@ -37,28 +36,6 @@ class Plan
     public function getUsers($id, array $params = [])
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY, [], $params);
-    }
-
-    /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function syncLanguage($id, array $body = [])
-    {
-        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/relationships/language', $body);
-    }
-
-    /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function syncBoard($id, array $body = [])
-    {
-        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/relationships/' . Board::RESOURCE_KEY, $body);
     }
 
     /**
