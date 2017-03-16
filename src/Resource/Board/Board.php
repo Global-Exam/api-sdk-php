@@ -35,6 +35,6 @@ class Board
      */
     public function getBoardLevels($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/board-level', [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/'. BoardLevel::RESOURCE_KEY, [], $params);
     }
 }

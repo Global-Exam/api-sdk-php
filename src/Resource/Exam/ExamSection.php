@@ -35,6 +35,17 @@ class ExamSection
      */
     public function getExamExercises($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/exam-exercise', [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/'. ExamExercise::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function syncLanguage($id, array $body = [])
+    {
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/language', $body);
     }
 }

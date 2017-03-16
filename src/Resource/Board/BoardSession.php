@@ -3,6 +3,7 @@
 namespace GlobalExam\Api\Sdk\Resource\Board;
 
 use GlobalExam\Api\Sdk\Api;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamPart;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
@@ -35,6 +36,6 @@ class BoardSession
      */
     public function syncExamPart($id, array $body = [])
     {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/exam-part', $body);
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/'. ExamPart::RESOURCE_KEY, $body);
     }
 }

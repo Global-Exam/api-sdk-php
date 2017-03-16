@@ -35,6 +35,6 @@ class ExamPart
      */
     public function getExamQuestions($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/exam-question', [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/'. ExamQuestion::RESOURCE_KEY, [], $params);
     }
 }

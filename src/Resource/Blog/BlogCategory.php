@@ -1,24 +1,23 @@
 <?php
 
-namespace GlobalExam\Api\Sdk\Resource\Exam;
+namespace GlobalExam\Api\Sdk\Resource\Blog;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class ExamLevel
- *
- * @package GlobalExam\Api\Sdk\Resource\Exam
+ * Class BlogCategory
+ * @package GlobalExam\Api\Sdk\Resource\Blog
  */
-class ExamLevel
+class BlogCategory
 {
     use Resource;
 
-    const RESOURCE_KEY = 'exam-level';
+    const RESOURCE_KEY = 'blog-category';
 
     /**
-     * ExamLevel constructor.
+     * BlogCategory constructor.
      *
      * @param Api $api
      */
@@ -33,9 +32,9 @@ class ExamLevel
      *
      * @return mixed|ResponseInterface
      */
-    public function getExamSections($id, array $params = [])
+    public function getBlogPosts($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/'. ExamSection::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/'. BlogPost::RESOURCE_KEY, [], $params);
     }
 
     /**

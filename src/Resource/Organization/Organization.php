@@ -3,6 +3,8 @@ namespace GlobalExam\Api\Sdk\Resource\Organization;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
+use GlobalExam\Api\Sdk\Resource\User\User;
+use GlobalExam\Api\Sdk\Resource\User\UserProvider;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -28,13 +30,35 @@ class Organization
 
     /**
      * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getUsers($id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizationGroups($id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
      * @param array $body
      *
      * @return mixed|ResponseInterface
      */
     public function syncUser($id, array $body = [])
     {
-        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/relationships/user', $body);
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/relationships/' . User::RESOURCE_KEY, $body);
     }
 
     /**
@@ -45,17 +69,6 @@ class Organization
      */
     public function syncUserProvider($id, array $body = [])
     {
-        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/relationships/user-provider', $body);
-    }
-
-    /**
-     * @param       $id
-     * @param array $params
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getUsers($id, array $params = [])
-    {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/user', [], $params);
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/relationships/' . UserProvider::RESOURCE_KEY, $body);
     }
 }

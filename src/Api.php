@@ -4,9 +4,12 @@ namespace GlobalExam\Api\Sdk;
 use GlobalExam\Api\Sdk\Authentication\AuthenticationInterface;
 use GlobalExam\Api\Sdk\Authentication\ClientCredentialsGrant;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
+use GlobalExam\Api\Sdk\Module\BlogModule;
 use GlobalExam\Api\Sdk\Module\BoardModule;
+use GlobalExam\Api\Sdk\Module\CouponModule;
 use GlobalExam\Api\Sdk\Module\ExamModule;
 use GlobalExam\Api\Sdk\Module\OrganizationModule;
+use GlobalExam\Api\Sdk\Module\PlanModule;
 use GlobalExam\Api\Sdk\Module\UserModule;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
@@ -18,7 +21,7 @@ use Psr\Http\Message\ResponseInterface;
  */
 class Api
 {
-    use BoardModule, ExamModule, OrganizationModule, UserModule;
+    use BlogModule, BoardModule, CouponModule, ExamModule, OrganizationModule, PlanModule, UserModule;
 
     const API_VERSION = 'v1.0';
 
@@ -159,7 +162,7 @@ class Api
     {
         $defaultHeaders = [
             'Content-type'  => 'application/json',
-            'X-API-VERSION' => self::API_VERSION
+            'X-API-VERSION' => self::API_VERSION,
         ];
 
         $headers = array_merge($defaultHeaders, $headers);
@@ -176,7 +179,7 @@ class Api
 
         return $this->client->request($method, $url, [
             'headers' => $headers,
-            'body'    => json_encode($body)
+            'body'    => json_encode($body),
         ]);
     }
 }

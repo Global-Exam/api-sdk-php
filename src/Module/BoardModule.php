@@ -6,7 +6,9 @@ use GlobalExam\Api\Sdk\Resource\Board\Board;
 use GlobalExam\Api\Sdk\Resource\Board\BoardExercise;
 use GlobalExam\Api\Sdk\Resource\Board\BoardLevel;
 use GlobalExam\Api\Sdk\Resource\Board\BoardMode;
+use GlobalExam\Api\Sdk\Resource\Board\BoardModeType;
 use GlobalExam\Api\Sdk\Resource\Board\BoardSection;
+use GlobalExam\Api\Sdk\Resource\Board\BoardSession;
 use GlobalExam\Api\Sdk\Resource\Board\BoardTraining;
 
 /**
@@ -22,6 +24,14 @@ trait BoardModule
     public function board()
     {
         return new Board($this);
+    }
+
+    /**
+     * @return BoardExercise
+     */
+    public function boardExercise()
+    {
+        return new BoardExercise($this);
     }
 
     /**
@@ -41,6 +51,14 @@ trait BoardModule
     }
 
     /**
+     * @return BoardModeType
+     */
+    public function boardModeType()
+    {
+        return new BoardModeType($this);
+    }
+
+    /**
      * @return BoardSection
      */
     public function boardSection()
@@ -49,11 +67,11 @@ trait BoardModule
     }
 
     /**
-     * @return BoardExercise
+     * @return BoardSession
      */
-    public function boardExercise()
+    public function boardSession()
     {
-        return new BoardExercise($this);
+        return new BoardSession($this);
     }
 
     /**
