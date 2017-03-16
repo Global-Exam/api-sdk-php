@@ -36,6 +36,6 @@ class BoardSession
      */
     public function syncExamPart($id, array $body = [])
     {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/'. ExamPart::RESOURCE_KEY, $body);
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamPart::RESOURCE_KEY, $body);
     }
 }

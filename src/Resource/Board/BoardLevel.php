@@ -35,6 +35,6 @@ class BoardLevel
      */
     public function getBoardModes($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/'. BoardMode::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BoardMode::RESOURCE_KEY, [], $params);
     }
 }

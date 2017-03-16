@@ -2,10 +2,7 @@
 namespace GlobalExam\Api\Sdk\Resource\Plan;
 
 use GlobalExam\Api\Sdk\Api;
-use GlobalExam\Api\Sdk\Resource\Board\Board;
 use GlobalExam\Api\Sdk\Resource\Resource;
-use GlobalExam\Api\Sdk\Resource\User\User;
-use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class PlanType

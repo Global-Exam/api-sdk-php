@@ -36,6 +36,6 @@ class Coupon
      */
     public function syncPlan($id, array $body = [])
     {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/'. Plan::RESOURCE_KEY, $body);
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Plan::RESOURCE_KEY, $body);
     }
 }

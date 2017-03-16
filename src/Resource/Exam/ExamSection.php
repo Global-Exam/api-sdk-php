@@ -35,7 +35,7 @@ class ExamSection
      */
     public function getExamExercises($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/'. ExamExercise::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . ExamExercise::RESOURCE_KEY, [], $params);
     }
 
     /**

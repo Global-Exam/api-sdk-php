@@ -2,9 +2,6 @@
 
 namespace GlobalExam\Api\Sdk\Module;
 
-use GlobalExam\Api\Sdk\Resource\Blog\BlogCategory;
-use GlobalExam\Api\Sdk\Resource\Blog\BlogPost;
-use GlobalExam\Api\Sdk\Resource\Blog\BlogPostSlugHistory;
 use GlobalExam\Api\Sdk\Resource\Coupon\Coupon;
 
 /**

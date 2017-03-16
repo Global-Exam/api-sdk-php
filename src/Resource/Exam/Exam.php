@@ -35,6 +35,6 @@ class Exam
      */
     public function getExamLevels($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/'. ExamLevel::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . ExamLevel::RESOURCE_KEY, [], $params);
     }
 }

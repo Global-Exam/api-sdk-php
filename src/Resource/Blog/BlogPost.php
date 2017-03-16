@@ -9,6 +9,7 @@ use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class BlogPost
+ *
  * @package GlobalExam\Api\Sdk\Resource\Blog
  */
 class BlogPost

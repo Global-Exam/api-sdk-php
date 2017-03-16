@@ -35,6 +35,6 @@ class BoardSection
      */
     public function getBoardExercises($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/'. BoardExercise::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BoardExercise::RESOURCE_KEY, [], $params);
     }
 }

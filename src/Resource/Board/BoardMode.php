@@ -35,7 +35,7 @@ class BoardMode
      */
     public function getBoardSections($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/'. BoardSection::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BoardSection::RESOURCE_KEY, [], $params);
     }
 
     /**
