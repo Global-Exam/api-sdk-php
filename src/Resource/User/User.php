@@ -27,11 +27,13 @@ class User
     }
 
     /**
+     * @param array $params
+     *
      * @return mixed|ResponseInterface
      */
-    public function me()
+    public function me(array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/me');
+        return $this->api->send('GET', self::RESOURCE_KEY . '/me', [], $params);
     }
 
     /**
