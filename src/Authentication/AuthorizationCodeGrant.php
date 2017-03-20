@@ -124,6 +124,10 @@ class AuthorizationCodeGrant implements AuthenticationInterface
     {
         $headers = ['Authorization' => 'Bearer ' . $this->accessToken];
 
+        if (isset($this->meta['subdomain']) === true) {
+            $headers['x-subdomain'] = $this->meta['subdomain'];
+        }
+
         if (isset($this->meta['country']) === true) {
             $headers['x-agent-country'] = $this->meta['country'];
         }

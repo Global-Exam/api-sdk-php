@@ -21,5 +21,10 @@ interface AuthenticationInterface
     /**
      * @return array
      */
+    public function getMeta();
+
+    /**
+     * @return array
+     */
     public function getHeaders();
 }

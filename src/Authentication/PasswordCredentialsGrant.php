@@ -109,9 +109,20 @@ class PasswordCredentialsGrant implements AuthenticationInterface
      */
     public function getHeaders()
     {
-        return [
-            'x-agent-country' => $this->meta['country'],
-            'x-forwarded-for' => $this->meta['ip'],
-        ];
+        $headers = [];
+
+        if (isset($this->meta['subdomain']) === true) {
+            $headers['x-subdomain'] = $this->meta['subdomain'];
+        }
+
+        if (isset($this->meta['country']) === true) {
+            $headers['x-agent-country'] = $this->meta['country'];
+        }
+
+        if (isset($this->meta['ip']) === true) {
+            $headers['x-forwarded-for'] = $this->meta['ip'];
+        }
+
+        return $headers;
     }
 }

@@ -34,7 +34,11 @@ use GlobalExam\Api\Sdk\Authentication\OAuthClient;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
-$authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', [
+    'subdomain' => 'hec',
+    'country'   => 'fr',
+    'ip'        => '0.0.0.0'
+]);
 
 $api = new Api($authenticator);
 
@@ -51,7 +55,11 @@ use GlobalExam\Api\Sdk\Authentication\AuthorizationCodeGrant;
 $tokens = json_decode($tokens->getBody()->getContents(), true);
 
 // Play authenticated calls
-$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
+    'subdomain' => 'hec',
+    'country'   => 'fr',
+    'ip'        => '0.0.0.0'
+]);
 $api           = new Api($authenticator);
 $api->login();
 
@@ -91,7 +99,11 @@ try {
         $tokens = json_decode($tokens->getBody()->getContents(), true);
 
         // Set a fresh authenticator
-        $api->setAuthenticator(new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+        $api->setAuthenticator(new AuthorizationCodeGrant($oauthClient, $tokens, '', [
+            'subdomain' => 'hec',
+            'country'   => 'fr',
+            'ip'        => '0.0.0.0'
+        ]));
 
         $response = $api->user()->me();
         $response->getStatusCode(); // 200
@@ -134,7 +146,11 @@ Returns the `Api` instance.
 
 ```php
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
-$authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', [
+    'subdomain' => 'hec',
+    'country'   => 'fr',
+    'ip'        => '0.0.0.0'
+]);
 
 $api = new Api($authenticator);
 ```
@@ -196,7 +212,11 @@ Returns the `Api` instance.
 $api = new Api();
 
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
-$authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', [
+    'subdomain' => 'hec',
+    'country'   => 'fr',
+    'ip'        => '0.0.0.0'
+]);
 
 $api->setAuthenticator($authenticator);
 ```
@@ -222,7 +242,11 @@ Otherwise it returns the current `Api` instance.
 
 ```php
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
-$authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', [
+    'subdomain' => 'hec',
+    'country'   => 'fr',
+    'ip'        => '0.0.0.0'
+]);
 $api           = new Api($authenticator);
 
 // Keep credentials for future calls
@@ -231,7 +255,11 @@ $tokens = $api->login();
 // Or
 
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
-$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
+    'subdomain' => 'hec',
+    'country'   => 'fr',
+    'ip'        => '0.0.0.0'
+]);
 $api           = new Api($authenticator);
 
 $api->login();
@@ -261,7 +289,11 @@ Returns the `Api` instance.
 
 ```php
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
-$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
+    'subdomain' => 'hec',
+    'country'   => 'fr',
+    'ip'        => '0.0.0.0'
+]);
 $api           = new Api($authenticator);
 
 $api->login();
@@ -289,7 +321,11 @@ Returns the `Api` instance.
 
 ```php
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
-$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
+    'subdomain' => 'hec',
+    'country'   => 'fr',
+    'ip'        => '0.0.0.0'
+]);
 $api           = new Api($authenticator);
 
 $api->login();
@@ -318,7 +354,11 @@ Returns `true` or `false`.
 
 ```php
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
-$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
+    'subdomain' => 'hec',
+    'country'   => 'fr',
+    'ip'        => '0.0.0.0'
+]);
 $api           = new Api($authenticator);
 
 $api->login();
@@ -372,7 +412,15 @@ Returns a [response](http://docs.guzzlephp.org/en/latest/psr7.html#responses) th
 
 ```php
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
-$authenticator = new AuthorizationCodeGrant($oauthClient, ['access_token' => 'a', 'refresh_token' => 'b', 'expires_in' => 1], '', ['country' => 'fr', 'ip' => '0.0.0.0']);
+$authenticator = new AuthorizationCodeGrant($oauthClient, [
+    'access_token'  => 'a',
+    'refresh_token' => 'b',
+    'expires_in'    => 1
+], '', [
+    'subdomain' => 'hec',
+    'country'   => 'fr',
+    'ip'        => '0.0.0.0'
+]);
 $api           = new Api($authenticator);
         
 $response = $api->send('GET', '/user/me');
