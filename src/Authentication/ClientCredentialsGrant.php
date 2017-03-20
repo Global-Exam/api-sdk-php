@@ -82,6 +82,10 @@ class ClientCredentialsGrant implements AuthenticationInterface
         $headers = [];
 
         if (isset($this->meta['subdomain']) === true) {
+            $headers['Accept-Language'] = $this->meta['accept_language'];
+        }
+
+        if (isset($this->meta['subdomain']) === true) {
             $headers['x-subdomain'] = $this->meta['subdomain'];
         }
 

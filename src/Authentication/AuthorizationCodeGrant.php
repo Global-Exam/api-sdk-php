@@ -125,6 +125,10 @@ class AuthorizationCodeGrant implements AuthenticationInterface
         $headers = ['Authorization' => 'Bearer ' . $this->accessToken];
 
         if (isset($this->meta['subdomain']) === true) {
+            $headers['Accept-Language'] = $this->meta['accept_language'];
+        }
+
+        if (isset($this->meta['subdomain']) === true) {
             $headers['x-subdomain'] = $this->meta['subdomain'];
         }
 
