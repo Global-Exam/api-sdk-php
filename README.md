@@ -36,9 +36,9 @@ use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', [
     'Accept-Language' => 'fr',
-    'x-subdomain'     => 'hec',
-    'x-agent-country' => 'fr',
-    'x-forwarded-for' => '0.0.0.0',
+    'X-Subdomain'     => 'hec',
+    'X-Agent-Country' => 'fr',
+    'X-Forwarded-For' => '0.0.0.0',
 ]);
 
 $api = new Api($authenticator);
@@ -58,9 +58,9 @@ $tokens = json_decode($tokens->getBody()->getContents(), true);
 // Play authenticated calls
 $authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
     'Accept-Language' => 'fr',
-    'x-subdomain'     => 'hec',
-    'x-agent-country' => 'fr',
-    'x-forwarded-for' => '0.0.0.0',
+    'X-Subdomain'     => 'hec',
+    'X-Agent-Country' => 'fr',
+    'X-Forwarded-For' => '0.0.0.0',
 ]);
 $api           = new Api($authenticator);
 $api->login();
@@ -103,9 +103,9 @@ try {
         // Set a fresh authenticator
         $api->setAuthenticator(new AuthorizationCodeGrant($oauthClient, $tokens, '', [
             'Accept-Language' => 'fr',
-            'x-subdomain'     => 'hec',
-            'x-agent-country' => 'fr',
-            'x-forwarded-for' => '0.0.0.0',
+            'X-Subdomain'     => 'hec',
+            'X-Agent-Country' => 'fr',
+            'X-Forwarded-For' => '0.0.0.0',
         ]);
         
         $response = $api->user()->me();
@@ -151,9 +151,9 @@ Returns the `Api` instance.
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', [
     'Accept-Language' => 'fr',
-    'x-subdomain'     => 'hec',
-    'x-agent-country' => 'fr',
-    'x-forwarded-for' => '0.0.0.0',
+    'X-Subdomain'     => 'hec',
+    'X-Agent-Country' => 'fr',
+    'X-Forwarded-For' => '0.0.0.0',
 ]);
 
 $api = new Api($authenticator);
@@ -218,9 +218,9 @@ $api = new Api();
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', [
     'Accept-Language' => 'fr',
-    'x-subdomain'     => 'hec',
-    'x-agent-country' => 'fr',
-    'x-forwarded-for' => '0.0.0.0',
+    'X-Subdomain'     => 'hec',
+    'X-Agent-Country' => 'fr',
+    'X-Forwarded-For' => '0.0.0.0',
 ]);
 
 $api->setAuthenticator($authenticator);
@@ -249,9 +249,9 @@ Otherwise it returns the current `Api` instance.
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', [
     'Accept-Language' => 'fr',
-    'x-subdomain'     => 'hec',
-    'x-agent-country' => 'fr',
-    'x-forwarded-for' => '0.0.0.0',
+    'X-Subdomain'     => 'hec',
+    'X-Agent-Country' => 'fr',
+    'X-Forwarded-For' => '0.0.0.0',
 ]);
 $api           = new Api($authenticator);
 
@@ -263,9 +263,9 @@ $tokens = $api->login();
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
     'Accept-Language' => 'fr',
-    'x-subdomain'     => 'hec',
-    'x-agent-country' => 'fr',
-    'x-forwarded-for' => '0.0.0.0',
+    'X-Subdomain'     => 'hec',
+    'X-Agent-Country' => 'fr',
+    'X-Forwarded-For' => '0.0.0.0',
 ]);
 $api           = new Api($authenticator);
 
@@ -298,9 +298,9 @@ Returns the `Api` instance.
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
     'Accept-Language' => 'fr',
-    'x-subdomain'     => 'hec',
-    'x-agent-country' => 'fr',
-    'x-forwarded-for' => '0.0.0.0',
+    'X-Subdomain'     => 'hec',
+    'X-Agent-Country' => 'fr',
+    'X-Forwarded-For' => '0.0.0.0',
 ]);
 $api           = new Api($authenticator);
 
@@ -331,9 +331,9 @@ Returns the `Api` instance.
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
     'Accept-Language' => 'fr',
-    'x-subdomain'     => 'hec',
-    'x-agent-country' => 'fr',
-    'x-forwarded-for' => '0.0.0.0',
+    'X-Subdomain'     => 'hec',
+    'X-Agent-Country' => 'fr',
+    'X-Forwarded-For' => '0.0.0.0',
 ]);
 $api           = new Api($authenticator);
 
@@ -365,9 +365,9 @@ Returns `true` or `false`.
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
     'Accept-Language' => 'fr',
-    'x-subdomain'     => 'hec',
-    'x-agent-country' => 'fr',
-    'x-forwarded-for' => '0.0.0.0',
+    'X-Subdomain'     => 'hec',
+    'X-Agent-Country' => 'fr',
+    'X-Forwarded-For' => '0.0.0.0',
 ]);
 $api           = new Api($authenticator);
 
@@ -428,9 +428,9 @@ $authenticator = new AuthorizationCodeGrant($oauthClient, [
     'expires_in'    => 1,
 ], '', [
     'Accept-Language' => 'fr',
-    'x-subdomain'     => 'hec',
-    'x-agent-country' => 'fr',
-    'x-forwarded-for' => '0.0.0.0',
+    'X-Subdomain'     => 'hec',
+    'X-Agent-Country' => 'fr',
+    'X-Forwarded-For' => '0.0.0.0',
 ]);
 $api           = new Api($authenticator);
         
