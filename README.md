@@ -36,7 +36,7 @@ use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', [
     'Accept-Language' => 'fr',
-    'X-Subdomain'     => 'hec',
+    'X-Subdomain'     => 'your-organization-subdomain',
     'X-Agent-Country' => 'fr',
     'X-Forwarded-For' => '0.0.0.0',
 ]);
@@ -58,7 +58,7 @@ $tokens = json_decode($tokens->getBody()->getContents(), true);
 // Play authenticated calls
 $authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
     'Accept-Language' => 'fr',
-    'X-Subdomain'     => 'hec',
+    'X-Subdomain'     => 'your-organization-subdomain',
     'X-Agent-Country' => 'fr',
     'X-Forwarded-For' => '0.0.0.0',
 ]);
@@ -103,7 +103,7 @@ try {
         // Set a fresh authenticator
         $api->setAuthenticator(new AuthorizationCodeGrant($oauthClient, $tokens, '', [
             'Accept-Language' => 'fr',
-            'X-Subdomain'     => 'hec',
+            'X-Subdomain'     => 'your-organization-subdomain',
             'X-Agent-Country' => 'fr',
             'X-Forwarded-For' => '0.0.0.0',
         ]);
@@ -151,7 +151,7 @@ Returns the `Api` instance.
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', [
     'Accept-Language' => 'fr',
-    'X-Subdomain'     => 'hec',
+    'X-Subdomain'     => 'your-organization-subdomain',
     'X-Agent-Country' => 'fr',
     'X-Forwarded-For' => '0.0.0.0',
 ]);
@@ -218,7 +218,7 @@ $api = new Api();
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', [
     'Accept-Language' => 'fr',
-    'X-Subdomain'     => 'hec',
+    'X-Subdomain'     => 'your-organization-subdomain',
     'X-Agent-Country' => 'fr',
     'X-Forwarded-For' => '0.0.0.0',
 ]);
@@ -249,7 +249,7 @@ Otherwise it returns the current `Api` instance.
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new PasswordCredentialsGrant($oauthClient, 'email@domain.com', 'password', '', [
     'Accept-Language' => 'fr',
-    'X-Subdomain'     => 'hec',
+    'X-Subdomain'     => 'your-organization-subdomain',
     'X-Agent-Country' => 'fr',
     'X-Forwarded-For' => '0.0.0.0',
 ]);
@@ -263,7 +263,7 @@ $tokens = $api->login();
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
     'Accept-Language' => 'fr',
-    'X-Subdomain'     => 'hec',
+    'X-Subdomain'     => 'your-organization-subdomain',
     'X-Agent-Country' => 'fr',
     'X-Forwarded-For' => '0.0.0.0',
 ]);
@@ -298,7 +298,7 @@ Returns the `Api` instance.
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
     'Accept-Language' => 'fr',
-    'X-Subdomain'     => 'hec',
+    'X-Subdomain'     => 'your-organization-subdomain',
     'X-Agent-Country' => 'fr',
     'X-Forwarded-For' => '0.0.0.0',
 ]);
@@ -331,7 +331,7 @@ Returns the `Api` instance.
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
     'Accept-Language' => 'fr',
-    'X-Subdomain'     => 'hec',
+    'X-Subdomain'     => 'your-organization-subdomain',
     'X-Agent-Country' => 'fr',
     'X-Forwarded-For' => '0.0.0.0',
 ]);
@@ -365,7 +365,7 @@ Returns `true` or `false`.
 $oauthClient   = new OAuthClient('clientId', 'clientSecret');
 $authenticator = new AuthorizationCodeGrant($oauthClient, $tokens, '', [
     'Accept-Language' => 'fr',
-    'X-Subdomain'     => 'hec',
+    'X-Subdomain'     => 'your-organization-subdomain',
     'X-Agent-Country' => 'fr',
     'X-Forwarded-For' => '0.0.0.0',
 ]);
@@ -428,7 +428,7 @@ $authenticator = new AuthorizationCodeGrant($oauthClient, [
     'expires_in'    => 1,
 ], '', [
     'Accept-Language' => 'fr',
-    'X-Subdomain'     => 'hec',
+    'X-Subdomain'     => 'your-organization-subdomain',
     'X-Agent-Country' => 'fr',
     'X-Forwarded-For' => '0.0.0.0',
 ]);
