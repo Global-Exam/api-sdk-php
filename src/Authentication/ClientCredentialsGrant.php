@@ -26,20 +26,20 @@ class ClientCredentialsGrant implements AuthenticationInterface
     /**
      * @var array
      */
-    private $meta;
+    private $headers;
 
     /**
      * ClientCredentialsGrant constructor.
      *
      * @param OAuthClient $OAuthClient
      * @param string      $scope
-     * @param array       $meta
+     * @param array       $headers
      */
-    public function __construct(OAuthClient $OAuthClient, $scope = '', array $meta = [])
+    public function __construct(OAuthClient $OAuthClient, $scope = '', array $headers = [])
     {
         $this->OAuthClient = $OAuthClient;
         $this->scope       = $scope;
-        $this->meta        = $meta;
+        $this->headers     = $headers;
     }
 
     /**
@@ -69,26 +69,8 @@ class ClientCredentialsGrant implements AuthenticationInterface
     /**
      * @return array
      */
-    public function getMeta()
-    {
-        return $this->meta;
-    }
-
-    /**
-     * @return array
-     */
     public function getHeaders()
     {
-        $headers = [];
-
-        if (isset($this->meta['subdomain']) === true) {
-            $headers['Accept-Language'] = $this->meta['accept_language'];
-        }
-
-        if (isset($this->meta['subdomain']) === true) {
-            $headers['x-subdomain'] = $this->meta['subdomain'];
-        }
-
-        return $headers;
+        return $this->headers;
     }
 }

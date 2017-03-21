@@ -36,24 +36,24 @@ class PasswordCredentialsGrant implements AuthenticationInterface
     /**
      * @var array
      */
-    private $meta;
+    private $headers;
 
     /**
-     * OAuthPasswordGrant constructor.
+     * PasswordCredentialsGrant constructor.
      *
      * @param OAuthClient $OAuthClient
-     * @param string      $username
-     * @param string      $password
+     * @param             $username
+     * @param             $password
      * @param string      $scope
-     * @param array       $meta
+     * @param array       $headers
      */
-    public function __construct(OAuthClient $OAuthClient, $username, $password, $scope = '', array $meta = [])
+    public function __construct(OAuthClient $OAuthClient, $username, $password, $scope = '', array $headers = [])
     {
         $this->OAuthClient = $OAuthClient;
         $this->username    = $username;
         $this->password    = $password;
         $this->scope       = $scope;
-        $this->meta        = $meta;
+        $this->headers     = $headers;
     }
 
     /**
@@ -99,34 +99,8 @@ class PasswordCredentialsGrant implements AuthenticationInterface
     /**
      * @return array
      */
-    public function getMeta()
-    {
-        return $this->meta;
-    }
-
-    /**
-     * @return array
-     */
     public function getHeaders()
     {
-        $headers = [];
-
-        if (isset($this->meta['subdomain']) === true) {
-            $headers['Accept-Language'] = $this->meta['accept_language'];
-        }
-
-        if (isset($this->meta['subdomain']) === true) {
-            $headers['x-subdomain'] = $this->meta['subdomain'];
-        }
-
-        if (isset($this->meta['country']) === true) {
-            $headers['x-agent-country'] = $this->meta['country'];
-        }
-
-        if (isset($this->meta['ip']) === true) {
-            $headers['x-forwarded-for'] = $this->meta['ip'];
-        }
-
-        return $headers;
+        return $this->headers;
     }
 }

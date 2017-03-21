@@ -41,7 +41,7 @@ class AuthorizationCodeGrant implements AuthenticationInterface
     /**
      * @var array
      */
-    private $meta;
+    private $headers = [];
 
     /**
      * AuthorizationCodeGrant constructor.
@@ -49,16 +49,16 @@ class AuthorizationCodeGrant implements AuthenticationInterface
      * @param OAuthClient $OAuthClient
      * @param array       $tokens
      * @param string      $scope
-     * @param array       $meta
+     * @param array       $headers
      */
-    public function __construct(OAuthClient $OAuthClient, array $tokens, $scope = '', array $meta = [])
+    public function __construct(OAuthClient $OAuthClient, array $tokens, $scope = '', array $headers = [])
     {
         $this->OAuthClient  = $OAuthClient;
         $this->accessToken  = $tokens['access_token'];
         $this->refreshToken = isset($tokens['refresh_token']) === true ? $tokens['refresh_token'] : null;
         $this->expiresIn    = isset($tokens['expires_in']) === true ? $tokens['expires_in'] : null;
         $this->scope        = $scope;
-        $this->meta         = $meta;
+        $this->headers      = $headers;
     }
 
     /**
@@ -112,34 +112,10 @@ class AuthorizationCodeGrant implements AuthenticationInterface
     /**
      * @return array
      */
-    public function getMeta()
-    {
-        return $this->meta;
-    }
-
-    /**
-     * @return array
-     */
     public function getHeaders()
     {
         $headers = ['Authorization' => 'Bearer ' . $this->accessToken];
 
-        if (isset($this->meta['subdomain']) === true) {
-            $headers['Accept-Language'] = $this->meta['accept_language'];
-        }
-
-        if (isset($this->meta['subdomain']) === true) {
-            $headers['x-subdomain'] = $this->meta['subdomain'];
-        }
-
-        if (isset($this->meta['country']) === true) {
-            $headers['x-agent-country'] = $this->meta['country'];
-        }
-
-        if (isset($this->meta['ip']) === true) {
-            $headers['x-forwarded-for'] = $this->meta['ip'];
-        }
-
-        return $headers;
+        return array_merge($headers, $this->headers);
     }
 }
