@@ -6,6 +6,7 @@ use GlobalExam\Api\Sdk\Authentication\ClientCredentialsGrant;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 use GlobalExam\Api\Sdk\Module\BlogModule;
 use GlobalExam\Api\Sdk\Module\BoardModule;
+use GlobalExam\Api\Sdk\Module\CountryModule;
 use GlobalExam\Api\Sdk\Module\CouponModule;
 use GlobalExam\Api\Sdk\Module\ExamModule;
 use GlobalExam\Api\Sdk\Module\OrganizationModule;
@@ -21,7 +22,7 @@ use Psr\Http\Message\ResponseInterface;
  */
 class Api
 {
-    use BlogModule, BoardModule, CouponModule, ExamModule, OrganizationModule, PlanModule, UserModule;
+    use BlogModule, BoardModule, CountryModule, CouponModule, ExamModule, OrganizationModule, PlanModule, UserModule;
 
     const API_VERSION = 'v1.0';
 

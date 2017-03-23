@@ -19,7 +19,7 @@ class Coupon
     const RESOURCE_KEY = 'coupon';
 
     /**
-     * BoardMode constructor.
+     * Coupon constructor.
      *
      * @param Api $api
      */
