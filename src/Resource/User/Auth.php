@@ -1,4 +1,5 @@
 <?php
+
 namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
@@ -64,5 +65,15 @@ class Auth
     public function resetPassword(array $body)
     {
         return $this->api->send('POST', self::RESOURCE_KEY . '/reset-password', $body);
+    }
+
+    /**
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function createPassword(array $body)
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/create-password', $body);
     }
 }
