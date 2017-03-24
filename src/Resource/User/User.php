@@ -57,6 +57,16 @@ class User
     }
 
     /**
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function sendAccountConfirmation(array $body = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/me/send-account-confirmation', $body);
+    }
+
+    /**
      * @return mixed|ResponseInterface
      */
     public function logout()
