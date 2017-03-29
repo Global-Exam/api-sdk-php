@@ -1,4 +1,5 @@
 <?php
+
 namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
@@ -72,5 +73,38 @@ class User
     public function logout()
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/logout');
+    }
+
+    /**
+     * @param $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getBoardSessions($id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/board-session', [], $params);
+    }
+
+    /**
+     * @param $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getPlans($id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/plan', [], $params);
+    }
+
+    /**
+     * @param $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizationLicenses($id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/organization-license', [], $params);
     }
 }
