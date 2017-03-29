@@ -3,6 +3,9 @@
 namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
+use GlobalExam\Api\Sdk\Resource\Board\BoardSession;
+use GlobalExam\Api\Sdk\Resource\Organization\OrganizationLicense;
+use GlobalExam\Api\Sdk\Resource\Plan\Plan;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
@@ -83,7 +86,7 @@ class User
      */
     public function getBoardSessions($id, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/board-session', [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . BoardSession::RESOURCE_KEY, [], $params);
     }
 
     /**
@@ -94,7 +97,7 @@ class User
      */
     public function getPlans($id, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/plan', [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . Plan::RESOURCE_KEY, [], $params);
     }
 
     /**
@@ -105,6 +108,6 @@ class User
      */
     public function getOrganizationLicenses($id, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/organization-license', [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . OrganizationLicense::RESOURCE_KEY, [], $params);
     }
 }
