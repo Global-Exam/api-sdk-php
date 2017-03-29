@@ -30,6 +30,17 @@ class BoardSession
 
     /**
      * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getExamParts($id, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . ExamPart::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
      * @param array $body
      *
      * @return mixed|ResponseInterface
