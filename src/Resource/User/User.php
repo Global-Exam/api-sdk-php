@@ -97,7 +97,7 @@ class User
      */
     public function getPlans($id, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . Plan::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/relationships/' . Plan::RESOURCE_KEY, [], $params);
     }
 
     /**
@@ -108,6 +108,6 @@ class User
      */
     public function getOrganizationLicenses($id, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/relationships/' . OrganizationLicense::RESOURCE_KEY, [], $params);
     }
 }

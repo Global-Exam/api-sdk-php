@@ -41,6 +41,17 @@ class BlogPost
 
     /**
      * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getExams($id, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Exam::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
      * @param array $body
      *
      * @return mixed|ResponseInterface
