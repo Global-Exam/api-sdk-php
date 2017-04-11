@@ -5,6 +5,8 @@ namespace GlobalExam\Api\Sdk\Module;
 use GlobalExam\Api\Sdk\Resource\User\Auth;
 use GlobalExam\Api\Sdk\Resource\User\OAuth;
 use GlobalExam\Api\Sdk\Resource\User\User;
+use GlobalExam\Api\Sdk\Resource\User\UserPlan;
+use GlobalExam\Api\Sdk\Resource\User\UserPlanPeriod;
 use GlobalExam\Api\Sdk\Resource\User\UserProvider;
 use GlobalExam\Api\Sdk\Resource\User\UserRole;
 
@@ -37,6 +39,22 @@ trait UserModule
     public function user()
     {
         return new User($this);
+    }
+
+    /**
+     * @return UserPlan
+     */
+    public function userPlan()
+    {
+        return new UserPlan($this);
+    }
+
+    /**
+     * @return UserPlanPeriod
+     */
+    public function userPlanPeriod()
+    {
+        return new UserPlanPeriod($this);
     }
 
     /**

@@ -1,4 +1,5 @@
 <?php
+
 namespace GlobalExam\Api\Sdk;
 
 use GlobalExam\Api\Sdk\Authentication\AuthenticationInterface;
@@ -10,7 +11,6 @@ use GlobalExam\Api\Sdk\Module\CountryModule;
 use GlobalExam\Api\Sdk\Module\CouponModule;
 use GlobalExam\Api\Sdk\Module\ExamModule;
 use GlobalExam\Api\Sdk\Module\OrganizationModule;
-use GlobalExam\Api\Sdk\Module\PlanModule;
 use GlobalExam\Api\Sdk\Module\UserModule;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
@@ -22,7 +22,7 @@ use Psr\Http\Message\ResponseInterface;
  */
 class Api
 {
-    use BlogModule, BoardModule, CountryModule, CouponModule, ExamModule, OrganizationModule, PlanModule, UserModule;
+    use BlogModule, BoardModule, CountryModule, CouponModule, ExamModule, OrganizationModule, UserModule;
 
     const API_VERSION = 'v1.0';
 

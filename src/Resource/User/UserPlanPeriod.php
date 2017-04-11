@@ -1,22 +1,23 @@
 <?php
-namespace GlobalExam\Api\Sdk\Resource\Plan;
+
+namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
- * Class PlanType
+ * Class UserPlanPeriod
  *
- * @package GlobalExam\Api\Sdk\Resource\Plan
+ * @package GlobalExam\Api\Sdk\Resource\User
  */
-class PlanType
+class UserPlanPeriod
 {
     use Resource;
 
-    const RESOURCE_KEY = 'plan-type';
+    const RESOURCE_KEY = 'user-plan-period';
 
     /**
-     * Organization constructor.
+     * UserPlanPeriod constructor.
      *
      * @param Api $api
      */
