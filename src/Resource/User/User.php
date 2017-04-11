@@ -5,7 +5,6 @@ namespace GlobalExam\Api\Sdk\Resource\User;
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Board\BoardSession;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationLicense;
-use GlobalExam\Api\Sdk\Resource\Plan\Plan;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
