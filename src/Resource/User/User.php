@@ -95,9 +95,9 @@ class User
      *
      * @return mixed|ResponseInterface
      */
-    public function getPlans($id, array $params = [])
+    public function getUserLicenses($id, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/relationships/' . Plan::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . UserLicense::RESOURCE_KEY, [], $params);
     }
 
     /**
