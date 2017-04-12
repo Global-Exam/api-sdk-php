@@ -6,7 +6,10 @@ use GlobalExam\Api\Sdk\Resource\User\Auth;
 use GlobalExam\Api\Sdk\Resource\User\OAuth;
 use GlobalExam\Api\Sdk\Resource\User\User;
 use GlobalExam\Api\Sdk\Resource\User\UserLicense;
+use GlobalExam\Api\Sdk\Resource\User\UserLicensePayment;
 use GlobalExam\Api\Sdk\Resource\User\UserLicenseStatus;
+use GlobalExam\Api\Sdk\Resource\User\UserLicenseSubscription;
+use GlobalExam\Api\Sdk\Resource\User\UserPaymentStatus;
 use GlobalExam\Api\Sdk\Resource\User\UserPlan;
 use GlobalExam\Api\Sdk\Resource\User\UserPlanPeriod;
 use GlobalExam\Api\Sdk\Resource\User\UserProvider;
@@ -52,11 +55,35 @@ trait UserModule
     }
 
     /**
+     * @return UserLicensePayment
+     */
+    public function userLicensePayment()
+    {
+        return new UserLicensePayment($this);
+    }
+
+    /**
      * @return UserLicenseStatus
      */
     public function userLicenseStatus()
     {
         return new UserLicenseStatus($this);
+    }
+
+    /**
+     * @return UserLicenseSubscription
+     */
+    public function userLicenseSubscription()
+    {
+        return new UserLicenseSubscription($this);
+    }
+
+    /**
+     * @return UserPaymentStatus
+     */
+    public function userPaymentStatus()
+    {
+        return new UserPaymentStatus($this);
     }
 
     /**
