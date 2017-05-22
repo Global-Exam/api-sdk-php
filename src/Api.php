@@ -10,6 +10,7 @@ use GlobalExam\Api\Sdk\Module\BoardModule;
 use GlobalExam\Api\Sdk\Module\CountryModule;
 use GlobalExam\Api\Sdk\Module\CouponModule;
 use GlobalExam\Api\Sdk\Module\ExamModule;
+use GlobalExam\Api\Sdk\Module\MediaModule;
 use GlobalExam\Api\Sdk\Module\OrganizationModule;
 use GlobalExam\Api\Sdk\Module\UserModule;
 use GuzzleHttp\Client;
@@ -22,7 +23,7 @@ use Psr\Http\Message\ResponseInterface;
  */
 class Api
 {
-    use BlogModule, BoardModule, CountryModule, CouponModule, ExamModule, OrganizationModule, UserModule;
+    use BlogModule, BoardModule, CountryModule, CouponModule, ExamModule, MediaModule, OrganizationModule, UserModule;
 
     const API_VERSION = 'v1.0';
 

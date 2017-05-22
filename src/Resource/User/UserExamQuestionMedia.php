@@ -6,18 +6,18 @@ use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
- * Class UserRole
+ * Class UserExamQuestionMedia
  *
  * @package GlobalExam\Api\Sdk\Resource\User
  */
-class UserRole
+class UserExamQuestionMedia
 {
     use Resource;
 
-    const RESOURCE_KEY = 'user-role';
+    const RESOURCE_KEY = 'user-exam-question-media';
 
     /**
-     * UserRole constructor.
+     * UserExamQuestionMedia constructor.
      *
      * @param Api $api
      */

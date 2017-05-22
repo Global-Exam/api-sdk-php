@@ -1,23 +1,23 @@
 <?php
 
-namespace GlobalExam\Api\Sdk\Resource\Exam;
+namespace GlobalExam\Api\Sdk\Resource\Media;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
- * Class ExamSupportType
+ * Class MediaFormat
  *
- * @package GlobalExam\Api\Sdk\Resource\Exam
+ * @package GlobalExam\Api\Sdk\Resource\Coupon
  */
-class ExamSupportType
+class MediaFormat
 {
     use Resource;
 
-    const RESOURCE_KEY = 'exam-support-type';
+    const RESOURCE_KEY = 'media-format';
 
     /**
-     * ExamSupportType constructor.
+     * MediaFormat constructor.
      *
      * @param Api $api
      */

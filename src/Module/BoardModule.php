@@ -3,10 +3,12 @@
 namespace GlobalExam\Api\Sdk\Module;
 
 use GlobalExam\Api\Sdk\Resource\Board\Board;
+use GlobalExam\Api\Sdk\Resource\Board\BoardExamMock;
 use GlobalExam\Api\Sdk\Resource\Board\BoardExercise;
 use GlobalExam\Api\Sdk\Resource\Board\BoardLevel;
 use GlobalExam\Api\Sdk\Resource\Board\BoardMode;
 use GlobalExam\Api\Sdk\Resource\Board\BoardModeType;
+use GlobalExam\Api\Sdk\Resource\Board\BoardNumberingType;
 use GlobalExam\Api\Sdk\Resource\Board\BoardSection;
 use GlobalExam\Api\Sdk\Resource\Board\BoardSession;
 use GlobalExam\Api\Sdk\Resource\Board\BoardTraining;
@@ -24,6 +26,14 @@ trait BoardModule
     public function board()
     {
         return new Board($this);
+    }
+
+    /**
+     * @return BoardExamMock
+     */
+    public function boardExamMock()
+    {
+        return new BoardExamMock($this);
     }
 
     /**
@@ -56,6 +66,14 @@ trait BoardModule
     public function boardModeType()
     {
         return new BoardModeType($this);
+    }
+
+    /**
+     * @return BoardNumberingType
+     */
+    public function boardNumberingType()
+    {
+        return new BoardNumberingType($this);
     }
 
     /**

@@ -1,4 +1,5 @@
 <?php
+
 namespace GlobalExam\Api\Sdk\Resource\Organization;
 
 use GlobalExam\Api\Sdk\Api;

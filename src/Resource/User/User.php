@@ -78,7 +78,7 @@ class User
     }
 
     /**
-     * @param $id
+     * @param       $id
      * @param array $params
      *
      * @return mixed|ResponseInterface
@@ -89,7 +89,7 @@ class User
     }
 
     /**
-     * @param $id
+     * @param       $id
      * @param array $params
      *
      * @return mixed|ResponseInterface
@@ -100,7 +100,7 @@ class User
     }
 
     /**
-     * @param $id
+     * @param       $id
      * @param array $params
      *
      * @return mixed|ResponseInterface

@@ -6,18 +6,18 @@ use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
- * Class ExamQuestionAnswer
+ * Class ExamSupportEvent
  *
  * @package GlobalExam\Api\Sdk\Resource\Exam
  */
-class ExamQuestionAnswer
+class ExamSupportEvent
 {
     use Resource;
 
-    const RESOURCE_KEY = 'exam-question-answer';
+    const RESOURCE_KEY = 'exam-support-event';
 
     /**
-     * ExamQuestionAnswer constructor.
+     * ExamSupportEvent constructor.
      *
      * @param Api $api
      */

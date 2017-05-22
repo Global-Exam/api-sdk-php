@@ -5,6 +5,7 @@ namespace GlobalExam\Api\Sdk\Module;
 use GlobalExam\Api\Sdk\Resource\User\Auth;
 use GlobalExam\Api\Sdk\Resource\User\OAuth;
 use GlobalExam\Api\Sdk\Resource\User\User;
+use GlobalExam\Api\Sdk\Resource\User\UserExamQuestionMedia;
 use GlobalExam\Api\Sdk\Resource\User\UserLicense;
 use GlobalExam\Api\Sdk\Resource\User\UserLicensePayment;
 use GlobalExam\Api\Sdk\Resource\User\UserLicenseStatus;
@@ -44,6 +45,14 @@ trait UserModule
     public function user()
     {
         return new User($this);
+    }
+
+    /**
+     * @return UserExamQuestionMedia
+     */
+    public function userExamQuestionMedia()
+    {
+        return new UserExamQuestionMedia($this);
     }
 
     /**

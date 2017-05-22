@@ -1,23 +1,23 @@
 <?php
 
-namespace GlobalExam\Api\Sdk\Resource\Coupon;
+namespace GlobalExam\Api\Sdk\Resource\Exam;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
- * Class Coupon
+ * Class ExamAnswerGroup
  *
- * @package GlobalExam\Api\Sdk\Resource\Coupon
+ * @package GlobalExam\Api\Sdk\Resource\Exam
  */
-class Coupon
+class ExamAnswerGroup
 {
     use Resource;
 
-    const RESOURCE_KEY = 'coupon';
+    const RESOURCE_KEY = 'exam-answer-group';
 
     /**
-     * Coupon constructor.
+     * ExamAnswerGroup constructor.
      *
      * @param Api $api
      */

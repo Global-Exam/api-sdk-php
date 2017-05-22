@@ -3,19 +3,26 @@
 namespace GlobalExam\Api\Sdk\Module;
 
 use GlobalExam\Api\Sdk\Resource\Exam\Exam;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamAnswer;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamAnswerChoice;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamAnswerFormat;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamAnswerGroup;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamDifficulty;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamExercise;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamLevel;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamPart;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestion;
-use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestionAnswer;
-use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestionAnswerGroup;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestionMedia;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestionPoint;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestionType;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamSection;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamSectionScore;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamSectionType;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamSupport;
-use GlobalExam\Api\Sdk\Resource\Exam\ExamSupportType;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamSupportAction;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamSupportEvent;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamSupportEventAction;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamSupportMedia;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamTraining;
 
 /**
@@ -31,6 +38,46 @@ trait ExamModule
     public function exam()
     {
         return new Exam($this);
+    }
+
+    /**
+     * @return ExamAnswer
+     */
+    public function examAnswer()
+    {
+        return new ExamAnswer($this);
+    }
+
+    /**
+     * @return ExamAnswerChoice
+     */
+    public function examAnswerChoice()
+    {
+        return new ExamAnswerChoice($this);
+    }
+
+    /**
+     * @return ExamAnswerFormat
+     */
+    public function examAnswerFormat()
+    {
+        return new ExamAnswerFormat($this);
+    }
+
+    /**
+     * @return ExamAnswerGroup
+     */
+    public function examAnswerGroup()
+    {
+        return new ExamAnswerGroup($this);
+    }
+
+    /**
+     * @return ExamDifficulty
+     */
+    public function examDifficulty()
+    {
+        return new ExamDifficulty($this);
     }
 
     /**
@@ -66,19 +113,11 @@ trait ExamModule
     }
 
     /**
-     * @return ExamQuestionAnswer
+     * @return ExamQuestionMedia
      */
-    public function examQuestionAnswer()
+    public function examQuestionMedia()
     {
-        return new ExamQuestionAnswer($this);
-    }
-
-    /**
-     * @return ExamQuestionAnswerGroup
-     */
-    public function examQuestionAnswerGroup()
-    {
-        return new ExamQuestionAnswerGroup($this);
+        return new ExamQuestionMedia($this);
     }
 
     /**
@@ -130,11 +169,35 @@ trait ExamModule
     }
 
     /**
-     * @return ExamSupportType
+     * @return ExamSupportAction
      */
-    public function examSupportType()
+    public function examSupportAction()
     {
-        return new ExamSupportType($this);
+        return new ExamSupportAction($this);
+    }
+
+    /**
+     * @return ExamSupportEvent
+     */
+    public function examSupportEvent()
+    {
+        return new ExamSupportEvent($this);
+    }
+
+    /**
+     * @return ExamSupportEventAction
+     */
+    public function examSupportEventAction()
+    {
+        return new ExamSupportEventAction($this);
+    }
+
+    /**
+     * @return ExamSupportMedia
+     */
+    public function examSupportMedia()
+    {
+        return new ExamSupportMedia($this);
     }
 
     /**
