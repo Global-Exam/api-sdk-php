@@ -29,6 +29,26 @@ class BoardSession
     }
 
     /**
+     * @param $id
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function start($id)
+    {
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/start' . $id);
+    }
+
+    /**
+     * @param $id
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function complete($id)
+    {
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/complete' . $id);
+    }
+
+    /**
      * @param       $id
      * @param array $params
      *
