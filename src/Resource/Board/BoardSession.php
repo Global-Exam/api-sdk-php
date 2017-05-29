@@ -35,7 +35,7 @@ class BoardSession
      */
     public function start($id)
     {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/start' . $id);
+        return $this->api->send('PATCH', static::RESOURCE_KEY . $id . '/start');
     }
 
     /**
@@ -45,7 +45,7 @@ class BoardSession
      */
     public function complete($id)
     {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/complete' . $id);
+        return $this->api->send('PATCH', static::RESOURCE_KEY . $id . '/complete');
     }
 
     /**
