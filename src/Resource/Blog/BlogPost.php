@@ -5,6 +5,7 @@ namespace GlobalExam\Api\Sdk\Resource\Blog;
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Exam\Exam;
 use GlobalExam\Api\Sdk\Resource\Resource;
+use GlobalExam\Api\Sdk\Resource\Skill\Skill;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -59,5 +60,16 @@ class BlogPost
     public function syncExam($id, array $body = [])
     {
         return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Exam::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function syncSkill($id, array $body = [])
+    {
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Skill::RESOURCE_KEY, $body);
     }
 }
