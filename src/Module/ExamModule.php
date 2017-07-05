@@ -11,6 +11,7 @@ use GlobalExam\Api\Sdk\Resource\Exam\ExamDifficulty;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamExercise;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamLevel;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamPart;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamPartTemplate;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestion;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestionMedia;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestionPoint;
@@ -102,6 +103,14 @@ trait ExamModule
     public function examPart()
     {
         return new ExamPart($this);
+    }
+
+    /**
+     * @return ExamPartTemplate
+     */
+    public function examPartTemplate()
+    {
+        return new ExamPartTemplate($this);
     }
 
     /**
