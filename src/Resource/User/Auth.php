@@ -38,6 +38,16 @@ class Auth
     }
 
     /**
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function registerDemo(array $body)
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/register-demo', $body);
+    }
+
+    /**
      * @param $token
      *
      * @return mixed|ResponseInterface
