@@ -153,18 +153,15 @@ class Api
     }
 
     /**
-     * @param string $method
-     * @param string $uri
-     * @param array  $body
-     * @param array  $params
-     * @param array  $headers
+     * @param       $uri
+     * @param array $params
+     * @param array $headers
      *
-     * @return mixed|ResponseInterface
+     * @return array
      */
-    public function send($method, $uri, array $body = [], array $params = [], array $headers = [])
+    private function prepareRequest($uri, array $params = [], array $headers = [])
     {
         $defaultHeaders = [
-            'Content-type'  => 'application/json',
             'X-API-VERSION' => self::API_VERSION,
         ];
 
@@ -180,9 +177,47 @@ class Api
             $url .= '?' . http_build_query($params);
         }
 
-        return $this->client->request($method, $url, [
+        return [
+            'url'     => $url,
             'headers' => $headers,
-            'body'    => json_encode($body),
+        ];
+    }
+
+    /**
+     * @param string $method
+     * @param string $uri
+     * @param array  $body
+     * @param array  $params
+     * @param array  $headers
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function send($method, $uri, array $body = [], array $params = [], array $headers = [])
+    {
+        $options = $this->prepareRequest($uri, $params, $headers);
+
+        return $this->client->request($method, $options['url'], [
+            'headers' => $options['headers'],
+            'json'    => $body,
+        ]);
+    }
+
+    /**
+     * @param string $method
+     * @param string $uri
+     * @param array  $body
+     * @param array  $params
+     * @param array  $headers
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function sendFile($method, $uri, array $body = [], array $params = [], array $headers = [])
+    {
+        $options = $this->prepareRequest($uri, $params, $headers);
+
+        return $this->client->request($method, $options['url'], [
+            'headers'   => $options['headers'],
+            'multipart' => $body,
         ]);
     }
 }

@@ -2,7 +2,6 @@
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Authentication\AuthorizationCodeGrant;
-use GlobalExam\Api\Sdk\Authentication\ClientCredentialsGrant;
 use GlobalExam\Api\Sdk\Authentication\OAuthClient;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 
@@ -13,7 +12,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase
 {
     public function testBase()
     {
-        //$oauthClient = new OAuthClient(1, 'vR2iYYhndOn1jpxOwBHYXnwRMtUs9vUTjkKmM6Fc');
+        //$oauthClient = new OAuthClient(3, 'nB1hhpkmm4PyRufOYj9vMHGzSVVnpzp8CMepAefr');
         //
         //$api = new Api(new ClientCredentialsGrant($oauthClient));
         //$api->setBaseUrl('https://api.global-exam.dev');
@@ -27,8 +26,9 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         //$response = $api->send('GET', '/blog-category');
         //
         //var_dump(json_decode($response->getBody()->getContents(), true));
+
         // First login: Email/Password
-        //$api = new Api(new PasswordCredentialsGrant($oauthClient, 'yolo@yopmail.com', 'oklolmdr', '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+        //$api = new Api(new PasswordCredentialsGrant($oauthClient, 'syl@yopmail.com', 'oklolmdr', '', ['country' => 'fr', 'ip' => '0.0.0.0']));
         //$api->setBaseUrl('https://api.global-exam.dev');
 
         // Keep this in memory
@@ -43,8 +43,11 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         //$api = new Api(new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
         //$api->setBaseUrl('https://api.global-exam.dev')->login();
         //
-        //$response = $api->board()->getBoardLevels(1);
-        //var_dump(json_decode($response->getBody()->getContents(), true));
+        //try {
+        //    $api->blogPost()->createCover(1, fopen('26757268-thumb2_9.jpg', 'r'));
+        //} catch (\GuzzleHttp\Exception\ClientException $exception) {
+        //    var_dump($exception->getResponse()->getBody()->getContents());
+        //}
 
         //try {
         //    $api->user()->me();

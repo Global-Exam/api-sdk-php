@@ -3,6 +3,8 @@
 namespace GlobalExam\Api\Sdk\Resource\Skill;
 
 use GlobalExam\Api\Sdk\Api;
+use GlobalExam\Api\Sdk\Resource\Blog\BlogPost;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestion;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
@@ -36,5 +38,27 @@ class Skill
     public function syncLanguage($id, array $body = [])
     {
         return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/language', $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getBlogPosts($id, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BlogPost::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getExamQuestions($id, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . ExamQuestion::RESOURCE_KEY, [], $params);
     }
 }

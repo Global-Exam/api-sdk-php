@@ -4,6 +4,8 @@ namespace GlobalExam\Api\Sdk\Resource\Coupon;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
+use GlobalExam\Api\Sdk\Resource\User\UserPlan;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class Coupon
@@ -24,5 +26,37 @@ class Coupon
     public function __construct(Api $api)
     {
         $this->api = $api;
+    }
+
+    /**
+     * @param $id
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function disable($id)
+    {
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/disable');
+    }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getUserPlans($id, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/relationships/' . UserPlan::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function syncUserPlan($id, array $body = [])
+    {
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . UserPlan::RESOURCE_KEY, $body);
     }
 }

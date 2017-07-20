@@ -4,6 +4,7 @@ namespace GlobalExam\Api\Sdk\Resource\Board;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamPart;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestion;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
@@ -90,5 +91,22 @@ class BoardSession
     public function syncBoardTraining($id, array $body = [])
     {
         return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . BoardTraining::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param $id
+     * @param $examQuestionId
+     * @param $file
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function storeBoardSessionExamQuestionMediaAudio($id, $examQuestionId, $file)
+    {
+        return $this->api->sendFile('POST', static::RESOURCE_KEY . '/' . $id . '/' . ExamQuestion::RESOURCE_KEY . '/' . $examQuestionId . '/audio', [
+            [
+                'name'     => 'media',
+                'contents' => $file,
+            ],
+        ]);
     }
 }

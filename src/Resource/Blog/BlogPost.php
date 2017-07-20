@@ -42,17 +42,6 @@ class BlogPost
 
     /**
      * @param       $id
-     * @param array $params
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getExams($id, array $params = [])
-    {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Exam::RESOURCE_KEY, [], $params);
-    }
-
-    /**
-     * @param       $id
      * @param array $body
      *
      * @return mixed|ResponseInterface
@@ -71,5 +60,31 @@ class BlogPost
     public function syncSkill($id, array $body = [])
     {
         return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Skill::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param $id
+     * @param $file
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function createCover($id, $file)
+    {
+        return $this->api->sendFile('POST', static::RESOURCE_KEY . '/' . $id . '/cover', [
+            [
+                'name'     => 'cover',
+                'contents' => $file,
+            ],
+        ]);
+    }
+
+    /**
+     * @param $id
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function deleteCover($id)
+    {
+        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/cover');
     }
 }

@@ -40,6 +40,16 @@ class User
     }
 
     /**
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function updateMe(array $body = [])
+    {
+        return $this->api->send('PUT', static::RESOURCE_KEY . '/me', $body);
+    }
+
+    /**
      * @param $id
      *
      * @return mixed|ResponseInterface
@@ -47,6 +57,14 @@ class User
     public function disable($id)
     {
         return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/disable');
+    }
+
+    /**
+     * @return mixed|ResponseInterface
+     */
+    public function disableMe()
+    {
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/me/disable');
     }
 
     /**
@@ -97,6 +115,17 @@ class User
     public function getUserLicenses($id, array $params = [])
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . UserLicense::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getUserLicensePayments($id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . UserLicensePayment::RESOURCE_KEY, [], $params);
     }
 
     /**

@@ -4,6 +4,7 @@ namespace GlobalExam\Api\Sdk\Resource\Exam;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class ExamSupport
@@ -24,5 +25,21 @@ class ExamSupport
     public function __construct(Api $api)
     {
         $this->api = $api;
+    }
+
+    /**
+     * @param $id
+     * @param $file
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function storeExamSupportMedia($id, $file)
+    {
+        return $this->api->sendFile('POST', static::RESOURCE_KEY . '/' . $id . '/exam-support-media', [
+            [
+                'name'     => 'media',
+                'contents' => $file,
+            ],
+        ]);
     }
 }
