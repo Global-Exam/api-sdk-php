@@ -153,37 +153,6 @@ class Api
     }
 
     /**
-     * @param       $uri
-     * @param array $params
-     * @param array $headers
-     *
-     * @return array
-     */
-    private function prepareRequest($uri, array $params = [], array $headers = [])
-    {
-        $defaultHeaders = [
-            'X-API-VERSION' => self::API_VERSION,
-        ];
-
-        $headers = array_merge($defaultHeaders, $headers);
-
-        if ($this->isAuthenticated() && $this->authenticator !== null) {
-            $headers = array_merge($headers, $this->authenticator->getHeaders());
-        }
-
-        $url = $this->baseUrl . '/' . $uri;
-
-        if (count($params) > 0) {
-            $url .= '?' . http_build_query($params);
-        }
-
-        return [
-            'url'     => $url,
-            'headers' => $headers,
-        ];
-    }
-
-    /**
      * @param string $method
      * @param string $uri
      * @param array  $body
@@ -219,6 +188,37 @@ class Api
             'headers'   => $options['headers'],
             'multipart' => $body,
         ]);
+    }
+
+    /**
+     * @param       $uri
+     * @param array $params
+     * @param array $headers
+     *
+     * @return array
+     */
+    private function prepareRequest($uri, array $params = [], array $headers = [])
+    {
+        $defaultHeaders = [
+            'X-API-VERSION' => self::API_VERSION,
+        ];
+
+        $headers = array_merge($defaultHeaders, $headers);
+
+        if ($this->isAuthenticated() && $this->authenticator !== null) {
+            $headers = array_merge($headers, $this->authenticator->getHeaders());
+        }
+
+        $url = $this->baseUrl . '/' . $uri;
+
+        if (count($params) > 0) {
+            $url .= '?' . http_build_query($params);
+        }
+
+        return [
+            'url'     => $url,
+            'headers' => $headers,
+        ];
     }
 }
 
