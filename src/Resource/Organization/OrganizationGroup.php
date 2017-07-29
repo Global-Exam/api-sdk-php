@@ -19,7 +19,7 @@ class OrganizationGroup
     const RESOURCE_KEY = 'organization-group';
 
     /**
-     * User constructor.
+     * OrganizationGroup constructor.
      *
      * @param Api $api
      */

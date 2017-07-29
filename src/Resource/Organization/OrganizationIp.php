@@ -6,18 +6,18 @@ use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
 
 /**
- * Class OrganizationType
+ * Class OrganizationIp
  *
  * @package GlobalExam\Api\Sdk\Resource\Organization
  */
-class OrganizationType
+class OrganizationIp
 {
     use Resource;
 
-    const RESOURCE_KEY = 'organization-type';
+    const RESOURCE_KEY = 'organization-ip';
 
     /**
-     * OrganizationType constructor.
+     * OrganizationIp constructor.
      *
      * @param Api $api
      */

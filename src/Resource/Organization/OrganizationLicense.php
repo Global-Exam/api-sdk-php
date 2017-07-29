@@ -20,7 +20,7 @@ class OrganizationLicense
     const RESOURCE_KEY = 'organization-license';
 
     /**
-     * User constructor.
+     * OrganizationLicense constructor.
      *
      * @param Api $api
      */
