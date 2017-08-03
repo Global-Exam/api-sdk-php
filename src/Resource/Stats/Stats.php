@@ -18,7 +18,7 @@ class Stats
     const RESOURCE_KEY = 'stats';
 
     /**
-     * Skill constructor.
+     * Stats constructor.
      *
      * @param Api $api
      */

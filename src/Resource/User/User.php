@@ -68,6 +68,24 @@ class User
     }
 
     /**
+     * @param $id
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function changeBankCard($id)
+    {
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/bank-card');
+    }
+
+    /**
+     * @return mixed|ResponseInterface
+     */
+    public function changeMyBankCard()
+    {
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/me/bank-card');
+    }
+
+    /**
      * @param array $body
      *
      * @return mixed|ResponseInterface
