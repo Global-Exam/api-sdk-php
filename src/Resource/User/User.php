@@ -73,9 +73,9 @@ class User
      *
      * @return mixed|ResponseInterface
      */
-    public function changeBankCard($id, array $body = [])
+    public function changeCreditCard($id, array $body = [])
     {
-        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/bank-card', $body);
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/credit-card', $body);
     }
 
     /**
@@ -83,9 +83,9 @@ class User
      *
      * @return mixed|ResponseInterface
      */
-    public function changeMyBankCard(array $body = [])
+    public function changeMyCreditCard(array $body = [])
     {
-        return $this->api->send('PATCH', self::RESOURCE_KEY . '/me/bank-card', $body);
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/me/credit-card', $body);
     }
 
     /**
