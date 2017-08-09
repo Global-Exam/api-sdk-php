@@ -6,6 +6,7 @@ use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Board\BoardSession;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationLicense;
 use GlobalExam\Api\Sdk\Resource\Resource;
+use GlobalExam\Api\Sdk\Resource\Stats\Stats;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -158,5 +159,35 @@ class User
     public function getOrganizationLicenses($id, array $params = [])
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/relationships/' . OrganizationLicense::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getMyGlobalStats(array $body = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/global', $body);
+    }
+
+    /**
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getMyTrainingModeStats(array $body = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/training-mode', $body);
+    }
+
+    /**
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getMyExamModeStats(array $body = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/exam-mode', $body);
     }
 }
