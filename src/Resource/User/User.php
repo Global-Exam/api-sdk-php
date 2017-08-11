@@ -3,7 +3,10 @@
 namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
+use GlobalExam\Api\Sdk\Resource\Board\BoardExercise;
 use GlobalExam\Api\Sdk\Resource\Board\BoardSession;
+use GlobalExam\Api\Sdk\Resource\Board\BoardTraining;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestion;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationLicense;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use GlobalExam\Api\Sdk\Resource\Stats\Stats;
@@ -179,6 +182,39 @@ class User
     public function getMyTrainingModeStats(array $body = [])
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/training-mode', $body);
+    }
+
+    /**
+     * @param int $boardExerciseId
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getMyBoardSessionsByBoardExercise(int $boardExerciseId)
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/training-mode/' . BoardExercise::RESOURCE_KEY . '/' . $boardExerciseId . '/' . BoardSession::RESOURCE_KEY);
+    }
+
+    /**
+     * @param int $boardSessionId
+     * @param int $boardTrainingId
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getMyBoardSession(int $boardSessionId, int $boardTrainingId)
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/training-mode/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId . '/' . BoardTraining::RESOURCE_KEY . '/' . $boardTrainingId);
+    }
+
+    /**
+     * @param int $boardSessionId
+     * @param int $boardTrainingId
+     * @param int $examQuestionId
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getMyExamQuestion(int $boardSessionId, int $boardTrainingId, int $examQuestionId)
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/training-mode/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId . '/' . BoardTraining::RESOURCE_KEY . '/' . $boardTrainingId . '/' . ExamQuestion::RESOURCE_KEY . '/' . $examQuestionId);
     }
 
     /**
