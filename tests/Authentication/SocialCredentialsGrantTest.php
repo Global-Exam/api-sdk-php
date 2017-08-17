@@ -1,7 +1,6 @@
 <?php
 
 use GlobalExam\Api\Sdk\Authentication\OAuthClient;
-use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 use GlobalExam\Api\Sdk\Authentication\SocialCredentialsGrant;
 
 /**
