@@ -12,8 +12,8 @@ class ApiTest extends \PHPUnit_Framework_TestCase
 {
     public function testBase()
     {
-        //$oauthClient = new OAuthClient(3, 'nB1hhpkmm4PyRufOYj9vMHGzSVVnpzp8CMepAefr');
-        //
+        $oauthClient = new OAuthClient(3, 'cjj3lAy8CHouevJNKtxqzJs1LjClGyMzJ2uQJM2y');
+
         //$api = new Api(new ClientCredentialsGrant($oauthClient));
         //$api->setBaseUrl('https://api.global-exam.dev');
         //
@@ -32,6 +32,14 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         //$api->setBaseUrl('https://api.global-exam.dev');
 
         // Keep this in memory
+        //$tokens = $api->login();
+        //$tokens = json_decode($tokens->getBody()->getContents(), true);
+
+        // Provider
+        //$api = new Api(new \GlobalExam\Api\Sdk\Authentication\SocialCredentialsGrant($oauthClient, 'twitter', '1871639240-RH4mEYLu3i2Biz2QMECLVQuP0N20TXj77gMEV56', 'XcuGLAgeN2wMn9bt9nyqLQV2S2aOUmaOZVvU85rjHtOJV', '', ['country' => 'fr', 'ip' => '0.0.0.0']));
+        //$api->setBaseUrl('https://api.global-exam.dev');
+
+         //Keep this in memory
         //$tokens = $api->login();
         //$tokens = json_decode($tokens->getBody()->getContents(), true);
 

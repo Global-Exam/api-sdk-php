@@ -5,6 +5,7 @@ namespace GlobalExam\Api\Sdk\Resource\User;
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Authentication\AuthorizationCodeGrant;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
+use GlobalExam\Api\Sdk\Authentication\SocialCredentialsGrant;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
@@ -56,6 +57,18 @@ class OAuth
                     'client_id'     => $authenticator->getOAuthClient()->getClientId(),
                     'client_secret' => $authenticator->getOAuthClient()->getClientSecret(),
                     'scope'         => $authenticator->getScope(),
+                ];
+                break;
+            case 'social':
+                /** @var SocialCredentialsGrant $authenticator */
+                $body = [
+                    'grant_type'          => $grantType,
+                    'client_id'           => $authenticator->getOAuthClient()->getClientId(),
+                    'client_secret'       => $authenticator->getOAuthClient()->getClientSecret(),
+                    'network'             => $authenticator->getNetwork(),
+                    'access_token'        => $authenticator->getAccessToken(),
+                    'access_token_secret' => $authenticator->getAccessTokenSecret(),
+                    'scope'               => $authenticator->getScope(),
                 ];
                 break;
             default:

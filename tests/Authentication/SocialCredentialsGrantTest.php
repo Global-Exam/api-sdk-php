@@ -1,21 +1,18 @@
 <?php
 
-use GlobalExam\Api\Sdk\Authentication\AuthorizationCodeGrant;
 use GlobalExam\Api\Sdk\Authentication\OAuthClient;
+use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
+use GlobalExam\Api\Sdk\Authentication\SocialCredentialsGrant;
 
 /**
- * Class AuthorizationCodeGrantTest
+ * Class SocialCredentialsGrantTest
  */
-class AuthorizationCodeGrantTest extends \PHPUnit_Framework_TestCase
+class SocialCredentialsGrantTest extends \PHPUnit_Framework_TestCase
 {
     public function testConstructor()
     {
         $oauthClient   = new OAuthClient('clientId', 'clientSecret');
-        $authenticator = new AuthorizationCodeGrant($oauthClient, [
-            'access_token'  => 'a',
-            'refresh_token' => 'b',
-            'expires_in'    => 1,
-        ], '', [
+        $authenticator = new SocialCredentialsGrant($oauthClient, 'google', 'access_token', null, '', [
             'Accept-Language' => 'fr',
             'x-subdomain'     => 'hec',
             'x-agent-country' => 'fr',
@@ -23,37 +20,29 @@ class AuthorizationCodeGrantTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $this->assertInstanceOf(OAuthClient::class, $authenticator->getOAuthClient());
-        $this->assertEquals('a', $authenticator->getAccessToken());
-        $this->assertEquals('b', $authenticator->getRefreshToken());
-        $this->assertEquals('1', $authenticator->getExpiresIn());
+        $this->assertEquals('google', $authenticator->getNetwork());
+        $this->assertEquals('access_token', $authenticator->getAccessToken());
+        $this->assertEquals(null, $authenticator->getAccessTokenSecret());
         $this->assertEquals('', $authenticator->getScope());
     }
 
     public function testGetGrantType()
     {
         $oauthClient   = new OAuthClient('clientId', 'clientSecret');
-        $authenticator = new AuthorizationCodeGrant($oauthClient, [
-            'access_token'  => 'a',
-            'refresh_token' => 'b',
-            'expires_in'    => 1,
-        ], '', [
+        $authenticator = new SocialCredentialsGrant($oauthClient, 'google', 'access_token', null, '', [
             'Accept-Language' => 'fr',
             'x-subdomain'     => 'hec',
             'x-agent-country' => 'fr',
             'x-forwarded-for' => '0.0.0.0',
         ]);
 
-        $this->assertEquals(null, $authenticator->getGrantType());
+        $this->assertEquals('social', $authenticator->getGrantType());
     }
 
     public function testGetHeaders()
     {
         $oauthClient   = new OAuthClient('clientId', 'clientSecret');
-        $authenticator = new AuthorizationCodeGrant($oauthClient, [
-            'access_token'  => 'a',
-            'refresh_token' => 'b',
-            'expires_in'    => 1,
-        ], '', [
+        $authenticator = new SocialCredentialsGrant($oauthClient, 'google', 'access_token', null, '', [
             'Accept-Language' => 'fr',
             'x-subdomain'     => 'hec',
             'x-agent-country' => 'fr',
@@ -66,6 +55,5 @@ class AuthorizationCodeGrantTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('hec', $headers['x-subdomain']);
         $this->assertEquals('fr', $headers['x-agent-country']);
         $this->assertEquals('0.0.0.0', $headers['x-forwarded-for']);
-        $this->assertEquals('Bearer a', $headers['Authorization']);
     }
 }

@@ -5,6 +5,7 @@ namespace GlobalExam\Api\Sdk;
 use GlobalExam\Api\Sdk\Authentication\AuthenticationInterface;
 use GlobalExam\Api\Sdk\Authentication\ClientCredentialsGrant;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
+use GlobalExam\Api\Sdk\Authentication\SocialCredentialsGrant;
 use GlobalExam\Api\Sdk\Module\BlogModule;
 use GlobalExam\Api\Sdk\Module\BoardModule;
 use GlobalExam\Api\Sdk\Module\CountryModule;
@@ -106,7 +107,7 @@ class Api
 
         $this->isAuthenticated = true;
 
-        if ($this->authenticator instanceof PasswordCredentialsGrant || $this->authenticator instanceof ClientCredentialsGrant) {
+        if ($this->authenticator instanceof PasswordCredentialsGrant || $this->authenticator instanceof ClientCredentialsGrant || $this->authenticator instanceof SocialCredentialsGrant) {
             return $this->oauth()->getToken($this->authenticator->getGrantType());
         }
 

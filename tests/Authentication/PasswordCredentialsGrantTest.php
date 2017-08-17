@@ -4,7 +4,7 @@ use GlobalExam\Api\Sdk\Authentication\OAuthClient;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
 
 /**
- * Class AuthorizationCodeGrantTest
+ * Class PasswordCredentialsGrantTest
  */
 class PasswordCredentialsGrantTest extends \PHPUnit_Framework_TestCase
 {
