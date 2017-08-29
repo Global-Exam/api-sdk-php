@@ -7,6 +7,7 @@ use GlobalExam\Api\Sdk\Resource\Board\BoardExercise;
 use GlobalExam\Api\Sdk\Resource\Board\BoardSession;
 use GlobalExam\Api\Sdk\Resource\Board\BoardTraining;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestion;
+use GlobalExam\Api\Sdk\Resource\Organization\Organization;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationLicense;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use GlobalExam\Api\Sdk\Resource\Stats\Stats;
@@ -151,6 +152,17 @@ class User
     public function getUserLicensePayments($id, array $params = [])
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . UserLicensePayment::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizations($id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/relationships/' . Organization::RESOURCE_KEY, [], $params);
     }
 
     /**

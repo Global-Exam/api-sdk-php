@@ -37,7 +37,7 @@ class Organization
      */
     public function getUsers($id, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/relationships/' . User::RESOURCE_KEY, [], $params);
     }
 
     /**
