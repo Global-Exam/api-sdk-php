@@ -33,6 +33,17 @@ class BoardExamMock
      *
      * @return mixed|ResponseInterface
      */
+    public function attachBoardTraining($id, array $body = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/' . BoardTraining::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
     public function syncBoardTraining($id, array $body = [])
     {
         return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . BoardTraining::RESOURCE_KEY, $body);
@@ -44,8 +55,8 @@ class BoardExamMock
      *
      * @return mixed|ResponseInterface
      */
-    public function syncLanguage($id, array $body = [])
+    public function detachBoardTraining($id, array $body = [])
     {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/language', $body);
+        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . BoardTraining::RESOURCE_KEY, $body);
     }
 }

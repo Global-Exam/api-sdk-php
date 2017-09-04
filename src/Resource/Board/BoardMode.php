@@ -33,9 +33,9 @@ class BoardMode
      *
      * @return mixed|ResponseInterface
      */
-    public function getBoardSections($id, array $params = [])
+    public function getBoardExamMocks($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BoardSection::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BoardExamMock::RESOURCE_KEY, [], $params);
     }
 
     /**
@@ -44,19 +44,8 @@ class BoardMode
      *
      * @return mixed|ResponseInterface
      */
-    public function getBoardExamMocks($id, array $params = [])
+    public function getBoardSections($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BoardExamMock::RESOURCE_KEY, [], $params);
-    }
-
-    /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function syncLanguage($id, array $body = [])
-    {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/language', $body);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BoardSection::RESOURCE_KEY, [], $params);
     }
 }

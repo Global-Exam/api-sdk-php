@@ -55,8 +55,30 @@ class Coupon
      *
      * @return mixed|ResponseInterface
      */
+    public function attachUserPlan($id, array $body = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/' . UserPlan::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
     public function syncUserPlan($id, array $body = [])
     {
         return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . UserPlan::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function detachUserPlan($id, array $body = [])
+    {
+        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . UserPlan::RESOURCE_KEY, $body);
     }
 }

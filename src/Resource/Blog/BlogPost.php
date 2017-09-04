@@ -30,39 +30,6 @@ class BlogPost
     }
 
     /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function syncLanguage($id, array $body = [])
-    {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/language', $body);
-    }
-
-    /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function syncExam($id, array $body = [])
-    {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Exam::RESOURCE_KEY, $body);
-    }
-
-    /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function syncSkill($id, array $body = [])
-    {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Skill::RESOURCE_KEY, $body);
-    }
-
-    /**
      * @param $id
      * @param $file
      *
@@ -86,5 +53,71 @@ class BlogPost
     public function deleteCover($id)
     {
         return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/cover');
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function attachExam($id, array $body = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Exam::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function syncExam($id, array $body = [])
+    {
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Exam::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function detachExam($id, array $body = [])
+    {
+        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Exam::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function attachSkill($id, array $body = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Skill::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function syncSkill($id, array $body = [])
+    {
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Skill::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function detachSkill($id, array $body = [])
+    {
+        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Skill::RESOURCE_KEY, $body);
     }
 }

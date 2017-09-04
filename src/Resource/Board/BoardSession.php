@@ -50,25 +50,20 @@ class BoardSession
     }
 
     /**
-     * @param       $id
-     * @param array $params
+     * @param $id
+     * @param $examQuestionId
+     * @param $file
      *
      * @return mixed|ResponseInterface
      */
-    public function getExamParts($id, array $params = [])
+    public function storeBoardSessionExamQuestionMediaAudio($id, $examQuestionId, $file)
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamPart::RESOURCE_KEY, [], $params);
-    }
-
-    /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function syncExamPart($id, array $body = [])
-    {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamPart::RESOURCE_KEY, $body);
+        return $this->api->sendFile('POST', static::RESOURCE_KEY . '/' . $id . '/' . ExamQuestion::RESOURCE_KEY . '/' . $examQuestionId . '/audio', [
+            [
+                'name'     => 'media',
+                'contents' => $file,
+            ],
+        ]);
     }
 
     /**
@@ -88,25 +83,74 @@ class BoardSession
      *
      * @return mixed|ResponseInterface
      */
+    public function attachBoardTraining($id, array $body = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/' . BoardTraining::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
     public function syncBoardTraining($id, array $body = [])
     {
         return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . BoardTraining::RESOURCE_KEY, $body);
     }
 
     /**
-     * @param $id
-     * @param $examQuestionId
-     * @param $file
+     * @param       $id
+     * @param array $body
      *
      * @return mixed|ResponseInterface
      */
-    public function storeBoardSessionExamQuestionMediaAudio($id, $examQuestionId, $file)
+    public function detachBoardTraining($id, array $body = [])
     {
-        return $this->api->sendFile('POST', static::RESOURCE_KEY . '/' . $id . '/' . ExamQuestion::RESOURCE_KEY . '/' . $examQuestionId . '/audio', [
-            [
-                'name'     => 'media',
-                'contents' => $file,
-            ],
-        ]);
+        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . BoardTraining::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getExamParts($id, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamPart::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function attachExamPart($id, array $body = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamPart::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function syncExamPart($id, array $body = [])
+    {
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamPart::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function detachExamPart($id, array $body = [])
+    {
+        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamPart::RESOURCE_KEY, $body);
     }
 }

@@ -17,7 +17,7 @@ class ExamSectionType
     const RESOURCE_KEY = 'exam-section-type';
 
     /**
-     * ExamSection constructor.
+     * ExamSectionType constructor.
      *
      * @param Api $api
      */

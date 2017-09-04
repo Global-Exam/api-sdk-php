@@ -11,6 +11,7 @@ use GlobalExam\Api\Sdk\Resource\Board\BoardModeType;
 use GlobalExam\Api\Sdk\Resource\Board\BoardNumberingType;
 use GlobalExam\Api\Sdk\Resource\Board\BoardSection;
 use GlobalExam\Api\Sdk\Resource\Board\BoardSession;
+use GlobalExam\Api\Sdk\Resource\Board\BoardSessionExamQuestionMedia;
 use GlobalExam\Api\Sdk\Resource\Board\BoardTraining;
 
 /**
@@ -90,6 +91,14 @@ trait BoardModule
     public function boardSession()
     {
         return new BoardSession($this);
+    }
+
+    /**
+     * @return BoardSessionExamQuestionMedia
+     */
+    public function boardSessionExamQuestionMedia()
+    {
+        return new BoardSessionExamQuestionMedia($this);
     }
 
     /**

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit colors="true" bootstrap="vendor/autoload.php">
     <testsuites>
-        <testsuite name="PHP cURL Test Suite">
+        <testsuite name="PHP Test Suite">
             <directory suffix=".php">./tests</directory>
         </testsuite>
     </testsuites>

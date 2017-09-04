@@ -119,7 +119,7 @@ class User
      */
     public function logout()
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/logout');
+        return $this->api->send('GET', self::RESOURCE_KEY . '/me/logout');
     }
 
     /**
@@ -168,6 +168,39 @@ class User
 
     /**
      * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function attachOrganization($id, array $body = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Organization::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function syncOrganization($id, array $body = [])
+    {
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Organization::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function detachOrganization($id, array $body = [])
+    {
+        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Organization::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
      * @param array $params
      *
      * @return mixed|ResponseInterface
@@ -175,6 +208,16 @@ class User
     public function getOrganizationLicenses($id, array $params = [])
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/relationships/' . OrganizationLicense::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getMyStatsBoardLevels(array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/' . BoardLevel::RESOURCE_KEY, [], $params);
     }
 
     /**
@@ -238,15 +281,5 @@ class User
     public function getMyExamModeStats(array $body = [])
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/exam-mode', $body);
-    }
-
-    /**
-     * @param array $params
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getMyBoardLevelsCompletedSessions(array $params = [])
-    {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . BoardLevel::RESOURCE_KEY . '/completed-sessions', [], $params);
     }
 }

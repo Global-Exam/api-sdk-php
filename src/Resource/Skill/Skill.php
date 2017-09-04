@@ -31,17 +31,6 @@ class Skill
 
     /**
      * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function syncLanguage($id, array $body = [])
-    {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/language', $body);
-    }
-
-    /**
-     * @param       $id
      * @param array $params
      *
      * @return mixed|ResponseInterface
