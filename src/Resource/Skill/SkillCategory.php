@@ -4,7 +4,6 @@ namespace GlobalExam\Api\Sdk\Resource\Skill;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
-use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class SkillCategory
