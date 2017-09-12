@@ -90,7 +90,7 @@ class Organization
      *
      * @return mixed|ResponseInterface
      */
-    public function deleteUser($id, array $body = [])
+    public function detachUser($id, array $body = [])
     {
         return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/relationships/' . User::RESOURCE_KEY, $body);
     }
