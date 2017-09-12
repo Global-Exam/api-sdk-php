@@ -53,6 +53,17 @@ class Organization
 
     /**
      * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizationLicenses($id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
      * @param array $body
      *
      * @return mixed|ResponseInterface
