@@ -308,4 +308,15 @@ class User
     {
         return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/exam-mode/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId, [], $params);
     }
+
+    /**
+     * @param int   $boardSessionId
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getExamMyBoardSessionBoardExercise(int $boardSessionId, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/exam-mode/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId . '/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId . '/' . BoardTraining::RESOURCE_KEY, [], $params);
+    }
 }
