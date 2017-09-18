@@ -297,4 +297,15 @@ class User
     {
         return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/exam-mode/' . BoardExamMock::RESOURCE_KEY . '/' . $boardExamMockId . '/' . BoardSession::RESOURCE_KEY, [], $params);
     }
+
+    /**
+     * @param int   $boardSessionId
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getExamMyBoardSession(int $boardSessionId, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/exam-mode/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId, [], $params);
+    }
 }
