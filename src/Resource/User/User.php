@@ -311,12 +311,25 @@ class User
 
     /**
      * @param int   $boardSessionId
+     * @param int   $boardExerciseId
      * @param array $params
      *
      * @return mixed|ResponseInterface
      */
-    public function getExamMyBoardSessionBoardExercise(int $boardSessionId, array $params = [])
+    public function getExamMyBoardSessionBoardExercise(int $boardSessionId, int $boardExerciseId, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/exam-mode/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId . '/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId . '/' . BoardTraining::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/exam-mode/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId . '/' . BoardExercise::RESOURCE_KEY . '/' . $boardExerciseId . '/' . BoardTraining::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param int   $boardSessionId
+     * @param int   $boardTrainingId
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getExamMyBoardSessionByBoardTraining(int $boardSessionId, int $boardTrainingId, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/exam-mode/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId . '/' . BoardTraining::RESOURCE_KEY . '/' . $boardTrainingId, [], $params);
     }
 }
