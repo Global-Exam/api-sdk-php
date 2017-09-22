@@ -274,7 +274,7 @@ class User
      */
     public function getMyExamQuestion(int $boardSessionId, int $boardTrainingId, int $examQuestionId, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/training-mode/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId . '/' . BoardTraining::RESOURCE_KEY . '/' . $boardTrainingId . '/' . ExamQuestion::RESOURCE_KEY . '/' . $examQuestionId, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/me/' . Stats::RESOURCE_KEY . '/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId . '/' . BoardTraining::RESOURCE_KEY . '/' . $boardTrainingId . '/' . ExamQuestion::RESOURCE_KEY . '/' . $examQuestionId, [], $params);
     }
 
     /**
