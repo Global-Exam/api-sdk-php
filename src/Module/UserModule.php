@@ -10,6 +10,10 @@ use GlobalExam\Api\Sdk\Resource\User\UserLicense;
 use GlobalExam\Api\Sdk\Resource\User\UserLicensePayment;
 use GlobalExam\Api\Sdk\Resource\User\UserLicenseStatus;
 use GlobalExam\Api\Sdk\Resource\User\UserLicenseSubscription;
+use GlobalExam\Api\Sdk\Resource\User\UserMe;
+use GlobalExam\Api\Sdk\Resource\User\UserMeStats;
+use GlobalExam\Api\Sdk\Resource\User\UserMeStatsExamMode;
+use GlobalExam\Api\Sdk\Resource\User\UserMeStatsTrainingMode;
 use GlobalExam\Api\Sdk\Resource\User\UserPaymentStatus;
 use GlobalExam\Api\Sdk\Resource\User\UserPlan;
 use GlobalExam\Api\Sdk\Resource\User\UserPlanPeriod;
@@ -85,6 +89,38 @@ trait UserModule
     public function userLicenseSubscription()
     {
         return new UserLicenseSubscription($this);
+    }
+
+    /**
+     * @return UserMe
+     */
+    public function userMe()
+    {
+        return new UserMe($this);
+    }
+
+    /**
+     * @return UserMeStats
+     */
+    public function userMeStats()
+    {
+        return new UserMeStats($this);
+    }
+
+    /**
+     * @return UserMeStatsExamMode
+     */
+    public function userMeStatsExamMode()
+    {
+        return new UserMeStatsExamMode($this);
+    }
+
+    /**
+     * @return UserMeStatsTrainingMode
+     */
+    public function userMeStatsTrainingMode()
+    {
+        return new UserMeStatsTrainingMode($this);
     }
 
     /**
