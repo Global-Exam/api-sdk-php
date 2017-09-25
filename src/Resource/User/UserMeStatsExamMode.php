@@ -86,6 +86,6 @@ class UserMeStatsExamMode
      */
     public function getBoardSessionBoardTrainingExamQuestions(int $boardSessionId, int $boardTrainingId, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId . '/' . BoardTraining::RESOURCE_KEY . '/' . $boardTrainingId .'/'. ExamQuestion::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId . '/' . BoardTraining::RESOURCE_KEY . '/' . $boardTrainingId . '/' . ExamQuestion::RESOURCE_KEY, [], $params);
     }
 }
