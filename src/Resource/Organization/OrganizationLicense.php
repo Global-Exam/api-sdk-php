@@ -37,7 +37,7 @@ class OrganizationLicense
      */
     public function getUsers($id, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/relationships/' . User::RESOURCE_KEY, [], $params);
     }
 
     /**
@@ -81,7 +81,7 @@ class OrganizationLicense
      */
     public function getBoards($id, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . Board::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/relationships/' . Board::RESOURCE_KEY, [], $params);
     }
 
     /**
