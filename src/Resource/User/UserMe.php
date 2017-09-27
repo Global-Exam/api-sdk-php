@@ -3,6 +3,10 @@
 namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
+use GlobalExam\Api\Sdk\Resource\Board\BoardExamMock;
+use GlobalExam\Api\Sdk\Resource\Board\BoardExercise;
+use GlobalExam\Api\Sdk\Resource\Board\BoardMode;
+use GlobalExam\Api\Sdk\Resource\Board\BoardTraining;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
@@ -91,5 +95,27 @@ class UserMe
     public function logout()
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/logout');
+    }
+
+    /**
+     * @param int   $boardExerciseId
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getBoardExerciseBoardTrainings(int $boardExerciseId, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . BoardExercise::RESOURCE_KEY . '/' . $boardExerciseId . '/' . BoardTraining::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param int   $boardModeId
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getBoardModeBoardExamMocks(int $boardModeId, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . BoardMode::RESOURCE_KEY . '/' . $boardModeId . '/' . BoardExamMock::RESOURCE_KEY, [], $params);
     }
 }
