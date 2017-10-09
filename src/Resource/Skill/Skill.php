@@ -37,7 +37,7 @@ class Skill
      */
     public function getBlogPosts($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BlogPost::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/relationships/' . BlogPost::RESOURCE_KEY, [], $params);
     }
 
     /**
@@ -48,6 +48,6 @@ class Skill
      */
     public function getExamQuestions($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . ExamQuestion::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamQuestion::RESOURCE_KEY, [], $params);
     }
 }
