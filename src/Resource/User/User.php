@@ -3,7 +3,6 @@
 namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
-use GlobalExam\Api\Sdk\Resource\Board\BoardSession;
 use GlobalExam\Api\Sdk\Resource\Organization\Organization;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationLicense;
 use GlobalExam\Api\Sdk\Resource\Resource;
@@ -59,7 +58,7 @@ class User
      */
     public function getBoardSessions($id, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . BoardSession::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/board-session', [], $params);
     }
 
     /**

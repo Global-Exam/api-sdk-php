@@ -1,6 +1,6 @@
 <?php
 
-namespace GlobalExam\Api\Sdk\Resource\Board;
+namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamPart;
@@ -9,15 +9,15 @@ use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class BoardSession
+ * Class UserMeBoardSession
  *
- * @package GlobalExam\Api\Sdk\Resource\Board
+ * @package GlobalExam\Api\Sdk\Resource\User
  */
-class BoardSession
+class UserMeBoardSession
 {
     use Resource;
 
-    const RESOURCE_KEY = 'board-session';
+    const RESOURCE_KEY = 'user/me/board-session';
 
     /**
      * BoardSession constructor.

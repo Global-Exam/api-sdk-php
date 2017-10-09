@@ -4,7 +4,6 @@ namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Board\BoardExercise;
-use GlobalExam\Api\Sdk\Resource\Board\BoardSession;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
@@ -47,7 +46,7 @@ class UserMeStatsTrainingMode
      */
     public function getBoardExerciseBoardSessions(int $boardExerciseId, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . BoardExercise::RESOURCE_KEY . '/' . $boardExerciseId . '/' . BoardSession::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . BoardExercise::RESOURCE_KEY . '/' . $boardExerciseId . '/board-session', [], $params);
     }
 
     /**
@@ -58,6 +57,6 @@ class UserMeStatsTrainingMode
      */
     public function getBoardSession(int $boardSessionId, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . BoardSession::RESOURCE_KEY . '/' . $boardSessionId, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/board-session/' . $boardSessionId, [], $params);
     }
 }
