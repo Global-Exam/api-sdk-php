@@ -90,28 +90,6 @@ class UserMeBoardSession
 
     /**
      * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function syncBoardTraining($id, array $body = [])
-    {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . BoardTraining::RESOURCE_KEY, $body);
-    }
-
-    /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function detachBoardTraining($id, array $body = [])
-    {
-        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . BoardTraining::RESOURCE_KEY, $body);
-    }
-
-    /**
-     * @param       $id
      * @param array $params
      *
      * @return mixed|ResponseInterface
@@ -130,27 +108,5 @@ class UserMeBoardSession
     public function attachExamPart($id, array $body = [])
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamPart::RESOURCE_KEY, $body);
-    }
-
-    /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function syncExamPart($id, array $body = [])
-    {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamPart::RESOURCE_KEY, $body);
-    }
-
-    /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function detachExamPart($id, array $body = [])
-    {
-        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamPart::RESOURCE_KEY, $body);
     }
 }

@@ -44,17 +44,6 @@ class BoardExamMock
      *
      * @return mixed|ResponseInterface
      */
-    public function syncBoardTraining($id, array $body = [])
-    {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . BoardTraining::RESOURCE_KEY, $body);
-    }
-
-    /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
     public function detachBoardTraining($id, array $body = [])
     {
         return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . BoardTraining::RESOURCE_KEY, $body);

@@ -79,17 +79,6 @@ class Organization
      *
      * @return mixed|ResponseInterface
      */
-    public function syncUser($id, array $body = [])
-    {
-        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/relationships/' . User::RESOURCE_KEY, $body);
-    }
-
-    /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
     public function detachUser($id, array $body = [])
     {
         return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/relationships/' . User::RESOURCE_KEY, $body);
@@ -104,17 +93,6 @@ class Organization
     public function attachUserProvider($id, array $body = [])
     {
         return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/relationships/' . UserProvider::RESOURCE_KEY, $body);
-    }
-
-    /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function syncUserProvider($id, array $body = [])
-    {
-        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/relationships/' . UserProvider::RESOURCE_KEY, $body);
     }
 
     /**

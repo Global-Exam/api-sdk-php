@@ -111,17 +111,6 @@ class User
      *
      * @return mixed|ResponseInterface
      */
-    public function syncOrganization($id, array $body = [])
-    {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Organization::RESOURCE_KEY, $body);
-    }
-
-    /**
-     * @param       $id
-     * @param array $body
-     *
-     * @return mixed|ResponseInterface
-     */
     public function detachOrganization($id, array $body = [])
     {
         return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Organization::RESOURCE_KEY, $body);
