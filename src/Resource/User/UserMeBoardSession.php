@@ -3,6 +3,7 @@
 namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
+use GlobalExam\Api\Sdk\Resource\Board\BoardTraining;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamPart;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamQuestion;
 use GlobalExam\Api\Sdk\Resource\Resource;
