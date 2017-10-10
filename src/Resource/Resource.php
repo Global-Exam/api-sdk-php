@@ -3,6 +3,7 @@
 namespace GlobalExam\Api\Sdk\Resource;
 
 use GlobalExam\Api\Sdk\Api;
+use GlobalExam\Api\Sdk\Resource\Language\Language;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -77,7 +78,7 @@ trait Resource
      */
     public function attachLanguage($id, array $body = [])
     {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/language', $body);
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Language::RESOURCE_KEY, $body);
     }
 
     /**
@@ -88,6 +89,6 @@ trait Resource
      */
     public function detachLanguage($id, array $body = [])
     {
-        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/language', $body);
+        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Language::RESOURCE_KEY, $body);
     }
 }

@@ -11,6 +11,7 @@ use GlobalExam\Api\Sdk\Module\BoardModule;
 use GlobalExam\Api\Sdk\Module\CountryModule;
 use GlobalExam\Api\Sdk\Module\CouponModule;
 use GlobalExam\Api\Sdk\Module\ExamModule;
+use GlobalExam\Api\Sdk\Module\LanguageModule;
 use GlobalExam\Api\Sdk\Module\MediaModule;
 use GlobalExam\Api\Sdk\Module\OrganizationModule;
 use GlobalExam\Api\Sdk\Module\SkillModule;
@@ -26,7 +27,7 @@ use Psr\Http\Message\ResponseInterface;
  */
 class Api
 {
-    use BlogModule, BoardModule, CountryModule, CouponModule, ExamModule, MediaModule, OrganizationModule, SkillModule, StatsModule, UserModule;
+    use BlogModule, BoardModule, CountryModule, CouponModule, ExamModule, LanguageModule, MediaModule, OrganizationModule, SkillModule, StatsModule, UserModule;
 
     const API_VERSION = 'v1.0';
 
