@@ -37,4 +37,15 @@ class ExamSection
     {
         return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . ExamExercise::RESOURCE_KEY, [], $params);
     }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getExamSectionScores($id, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . ExamSectionScore::RESOURCE_KEY, [], $params);
+    }
 }
