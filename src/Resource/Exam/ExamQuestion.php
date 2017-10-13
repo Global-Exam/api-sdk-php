@@ -45,7 +45,7 @@ class ExamQuestion
      *
      * @return mixed|ResponseInterface
      */
-    public function deleteSkill($id, array $body = [])
+    public function detachSkill($id, array $body = [])
     {
         return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Skill::RESOURCE_KEY, $body);
     }
