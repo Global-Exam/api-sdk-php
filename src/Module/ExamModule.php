@@ -50,22 +50,6 @@ trait ExamModule
     }
 
     /**
-     * @return ExamAnswerChoice
-     */
-    public function examAnswerChoice()
-    {
-        return new ExamAnswerChoice($this);
-    }
-
-    /**
-     * @return ExamAnswerFormat
-     */
-    public function examAnswerFormat()
-    {
-        return new ExamAnswerFormat($this);
-    }
-
-    /**
      * @return ExamAnswerGroup
      */
     public function examAnswerGroup()
