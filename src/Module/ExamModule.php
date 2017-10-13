@@ -4,8 +4,6 @@ namespace GlobalExam\Api\Sdk\Module;
 
 use GlobalExam\Api\Sdk\Resource\Exam\Exam;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamAnswer;
-use GlobalExam\Api\Sdk\Resource\Exam\ExamAnswerChoice;
-use GlobalExam\Api\Sdk\Resource\Exam\ExamAnswerFormat;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamAnswerGroup;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamDifficulty;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamExercise;
