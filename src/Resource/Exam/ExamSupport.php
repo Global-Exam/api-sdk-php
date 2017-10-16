@@ -42,4 +42,14 @@ class ExamSupport
             ],
         ]);
     }
+
+    /**
+     * @param $id
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function deleteExamSupportMedia($id)
+    {
+        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/exam-support-media');
+    }
 }
