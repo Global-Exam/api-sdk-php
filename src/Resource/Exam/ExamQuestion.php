@@ -49,4 +49,26 @@ class ExamQuestion
     {
         return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Skill::RESOURCE_KEY, $body);
     }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function attachExamSupport($id, array $body = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamSupport::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function detachExamSupport($id, array $body = [])
+    {
+        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamSupport::RESOURCE_KEY, $body);
+    }
 }
