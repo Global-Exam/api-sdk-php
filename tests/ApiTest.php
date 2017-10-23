@@ -12,7 +12,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase
 {
     public function testBase()
     {
-        $oauthClient = new OAuthClient(3, 'cjj3lAy8CHouevJNKtxqzJs1LjClGyMzJ2uQJM2y');
+        //$oauthClient = new OAuthClient(2, 'qzCWu49ljLcXX2IyWJQ3P3VxP420eqoNtGuwXVqN');
 
         //$api = new Api(new ClientCredentialsGrant($oauthClient));
         //$api->setBaseUrl('https://api.global-exam.dev');
@@ -39,7 +39,7 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         //$api = new Api(new \GlobalExam\Api\Sdk\Authentication\SocialCredentialsGrant($oauthClient, 'twitter', '1871639240-RH4mEYLu3i2Biz2QMECLVQuP0N20TXj77gMEV56', 'XcuGLAgeN2wMn9bt9nyqLQV2S2aOUmaOZVvU85rjHtOJV', '', ['country' => 'fr', 'ip' => '0.0.0.0']));
         //$api->setBaseUrl('https://api.global-exam.dev');
 
-         //Keep this in memory
+        //Keep this in memory
         //$tokens = $api->login();
         //$tokens = json_decode($tokens->getBody()->getContents(), true);
 
@@ -50,9 +50,32 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         // Play authenticated calls
         //$api = new Api(new AuthorizationCodeGrant($oauthClient, $tokens, '', ['country' => 'fr', 'ip' => '0.0.0.0']));
         //$api->setBaseUrl('https://api.global-exam.dev')->login();
-        //
+
         //try {
         //    $api->blogPost()->createCover(1, fopen('26757268-thumb2_9.jpg', 'r'));
+        //} catch (\GuzzleHttp\Exception\ClientException $exception) {
+        //    var_dump($exception->getResponse()->getBody()->getContents());
+        //}
+
+        //try {
+        //    $api->organization()->basicUserImport(1, fopen('users.csv', 'r'), [
+        //        [
+        //            'name'     => 'create_password_url',
+        //            'contents' => 'http://test.com/{token}',
+        //        ],
+        //        [
+        //            'name'     => 'language_code',
+        //            'contents' => 'fr',
+        //        ],
+        //        [
+        //            'name'     => 'organization_license_id',
+        //            'contents' => '1,79',
+        //        ],
+        //        [
+        //            'name'     => 'organization_group_id',
+        //            'contents' => '145',
+        //        ],
+        //    ]);
         //} catch (\GuzzleHttp\Exception\ClientException $exception) {
         //    var_dump($exception->getResponse()->getBody()->getContents());
         //}
