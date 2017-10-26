@@ -52,6 +52,17 @@ class User
 
     /**
      * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function changePassword($id, array $body = [])
+    {
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/change-password', $body);
+    }
+
+    /**
+     * @param       $id
      * @param array $params
      *
      * @return mixed|ResponseInterface
