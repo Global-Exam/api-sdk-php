@@ -48,4 +48,15 @@ class BoardMode
     {
         return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BoardSection::RESOURCE_KEY, [], $params);
     }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getBoardTrainings($id, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BoardTraining::RESOURCE_KEY, [], $params);
+    }
 }
