@@ -27,7 +27,7 @@ use Psr\Http\Message\ResponseInterface;
  */
 class Api
 {
-    use BlogModule, BoardModule, CountryModule, CouponModule, ExamModule, LanguageModule, MediaModule, OrganizationModule, SkillModule, StatsModule, UserModule;
+    use BlogModule, BoardModule, CountryModule, CouponModule, ExamModule, LanguageModule, MediaModule, OrganizationModule, SkillModule, UserModule;
 
     const API_VERSION = 'v1.0';
 
