@@ -15,7 +15,6 @@ use GlobalExam\Api\Sdk\Module\LanguageModule;
 use GlobalExam\Api\Sdk\Module\MediaModule;
 use GlobalExam\Api\Sdk\Module\OrganizationModule;
 use GlobalExam\Api\Sdk\Module\SkillModule;
-use GlobalExam\Api\Sdk\Module\StatsModule;
 use GlobalExam\Api\Sdk\Module\UserModule;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
