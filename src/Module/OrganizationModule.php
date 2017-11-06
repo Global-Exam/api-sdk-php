@@ -7,6 +7,7 @@ use GlobalExam\Api\Sdk\Resource\Organization\OrganizationBusinessType;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationGroup;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationIp;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationLicense;
+use GlobalExam\Api\Sdk\Resource\Organization\OrganizationStats;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationType;
 
 /**
@@ -54,6 +55,14 @@ trait OrganizationModule
     public function organizationLicense()
     {
         return new OrganizationLicense($this);
+    }
+
+    /**
+     * @return OrganizationStats
+     */
+    public function organizationStats()
+    {
+        return new OrganizationStats($this);
     }
 
     /**
