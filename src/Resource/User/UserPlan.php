@@ -72,4 +72,16 @@ class UserPlan
     {
         return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Coupon::RESOURCE_KEY, [], $params);
     }
+
+    /**
+     * @param       $id
+     * @param       $code
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOneCoupon($id, $code, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Coupon::RESOURCE_KEY . '/' . $code, [], $params);
+    }
 }
