@@ -90,6 +90,16 @@ class UserMe
     }
 
     /**
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function subscribe(array $body = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/subscribe', $body);
+    }
+
+    /**
      * @return mixed|ResponseInterface
      */
     public function logout()
