@@ -90,13 +90,25 @@ class UserMe
     }
 
     /**
+     * @param int   $id
      * @param array $body
      *
      * @return mixed|ResponseInterface
      */
-    public function subscribe(array $body = [])
+    public function subscribe(int $id, array $body = [])
     {
-        return $this->api->send('POST', self::RESOURCE_KEY . '/subscribe', $body);
+        return $this->api->send('POST', self::RESOURCE_KEY .'/' . UserPlan::RESOURCE_KEY .'/'. $id . '/subscription', $body);
+    }
+
+    /**
+     * @param int   $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function unsubscribe(int $id, array $body = [])
+    {
+        return $this->api->send('DELETE', self::RESOURCE_KEY .'/' . UserPlan::RESOURCE_KEY .'/'. $id . '/subscription', $body);
     }
 
     /**
