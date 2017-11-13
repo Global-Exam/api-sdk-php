@@ -97,7 +97,7 @@ class UserMe
      */
     public function subscribe(int $id, array $body = [])
     {
-        return $this->api->send('POST', self::RESOURCE_KEY .'/' . UserPlan::RESOURCE_KEY .'/'. $id . '/subscription', $body);
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . UserPlan::RESOURCE_KEY . '/' . $id . '/subscription', $body);
     }
 
     /**
@@ -108,7 +108,7 @@ class UserMe
      */
     public function unsubscribe(int $id, array $body = [])
     {
-        return $this->api->send('DELETE', self::RESOURCE_KEY .'/' . UserPlan::RESOURCE_KEY .'/'. $id . '/subscription', $body);
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . UserPlan::RESOURCE_KEY . '/' . $id . '/subscription', $body);
     }
 
     /**
