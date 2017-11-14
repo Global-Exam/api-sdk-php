@@ -150,4 +150,15 @@ class UserMe
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/' . UserLicenseSubscription::RESOURCE_KEY, [], $params);
     }
+
+    /**
+     * @param int   $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOneUserLicenseSubscriptionWithInvoices(int $id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . UserLicenseSubscription::RESOURCE_KEY . '/' . $id . '/invoices', [], $params);
+    }
 }
