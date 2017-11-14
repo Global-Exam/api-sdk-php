@@ -140,4 +140,14 @@ class UserMe
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/' . BoardMode::RESOURCE_KEY . '/' . $boardModeId . '/' . BoardExamMock::RESOURCE_KEY, [], $params);
     }
+
+    /**
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getUserLicenseSubscriptions(array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . UserLicenseSubscription::RESOURCE_KEY, [], $params);
+    }
 }
