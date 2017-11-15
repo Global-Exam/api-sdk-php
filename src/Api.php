@@ -60,6 +60,7 @@ class Api
     {
         $this->authenticator = $authenticator;
         $this->client        = $client === null ? new Client() : $client;
+        $this->client->setDefaultOption('verify', false);
     }
 
     /**
