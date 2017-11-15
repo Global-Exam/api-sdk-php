@@ -60,7 +60,6 @@ class Api
     {
         $this->authenticator = $authenticator;
         $this->client        = $client === null ? new Client() : $client;
-        $this->client->setDefaultOption('verify', false);
     }
 
     /**
@@ -171,6 +170,7 @@ class Api
         return $this->client->request($method, $options['url'], [
             'headers' => $options['headers'],
             'json'    => $body,
+            'verify'  => false,
         ]);
     }
 
