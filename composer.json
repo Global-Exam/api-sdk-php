@@ -9,7 +9,7 @@
         "issues": "https://github.com/global-exam/api-sdk-php/issues"
     },
     "require": {
-        "guzzlehttp/guzzle": "6.3.*"
+        "guzzlehttp/guzzle": "6.2.*"
     },
     "require-dev": {
         "phpunit/phpunit": "6.4.*",
