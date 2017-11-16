@@ -51,15 +51,22 @@ class Api
     private $client;
 
     /**
+     * @var bool
+     */
+    private $verifiySsl;
+
+    /**
      * Api constructor.
      *
      * @param AuthenticationInterface|null $authenticator
      * @param Client|null                  $client
+     * @param bool                         $verifiySsl
      */
-    public function __construct(AuthenticationInterface $authenticator = null, Client $client = null)
+    public function __construct(AuthenticationInterface $authenticator = null, Client $client = null, $verifiySsl = true)
     {
         $this->authenticator = $authenticator;
         $this->client        = $client === null ? new Client() : $client;
+        $this->verifiySsl    = $verifiySsl;
     }
 
     /**
@@ -170,7 +177,7 @@ class Api
         return $this->client->request($method, $options['url'], [
             'headers' => $options['headers'],
             'json'    => $body,
-            'verify'  => false,
+            'verify'  => $this->verifiySsl,
         ]);
     }
 
@@ -190,6 +197,7 @@ class Api
         return $this->client->request($method, $options['url'], [
             'headers'   => $options['headers'],
             'multipart' => $body,
+            'verify'    => $this->verifiySsl,
         ]);
     }
 
