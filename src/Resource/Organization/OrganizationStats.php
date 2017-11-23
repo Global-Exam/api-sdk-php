@@ -122,4 +122,28 @@ class OrganizationStats
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/exam/export', $body, $params);
     }
+
+    /**
+     * @param int   $id
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getSkill(int $id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/skill', $body, $params);
+    }
+
+    /**
+     * @param int   $id
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getSkillExport(int $id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/skill/export', $body, $params);
+    }
 }
