@@ -34,9 +34,9 @@ class OrganizationStats
      *
      * @return mixed|ResponseInterface
      */
-    public function getLogin(int $id, array $body = [], array $params = [])
+    public function getAttendance(int $id, array $body = [], array $params = [])
     {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/login', $body, $params);
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/attendance', $body, $params);
     }
 
     /**
@@ -46,9 +46,9 @@ class OrganizationStats
      *
      * @return mixed|ResponseInterface
      */
-    public function getLoginExport(int $id, array $body = [], array $params = [])
+    public function getAttendanceExport(int $id, array $body = [], array $params = [])
     {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/login/export', $body, $params);
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/attendance/export', $body, $params);
     }
 
     /**
