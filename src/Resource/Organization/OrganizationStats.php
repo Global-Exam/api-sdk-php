@@ -4,6 +4,7 @@ namespace GlobalExam\Api\Sdk\Resource\Organization;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
+use GlobalExam\Api\Sdk\Resource\User\User;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -145,5 +146,17 @@ class OrganizationStats
     public function getSkillExport(int $id, array $body = [], array $params = [])
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/skill/export', $body, $params);
+    }
+
+    /**
+     * @param int   $id
+     * @param int   $userId
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getUserExport(int $id, int $userId, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/stats/' . User::RESOURCE_KEY . '/' . $userId . '/export', [], $params);
     }
 }
