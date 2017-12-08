@@ -7,18 +7,18 @@ use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class SkillCategory
+ * Class SkillSubCategory
  *
  * @package GlobalExam\Api\Sdk\Resource\Skill
  */
-class SkillCategory
+class SkillSubCategory
 {
     use Resource;
 
-    const RESOURCE_KEY = 'skill-category';
+    const RESOURCE_KEY = 'skill-sub-category';
 
     /**
-     * SkillCategory constructor.
+     * SkillSubCategory constructor.
      *
      * @param Api $api
      */
@@ -33,8 +33,8 @@ class SkillCategory
      *
      * @return mixed|ResponseInterface
      */
-    public function getSkillSubCategories($id, array $params = [])
+    public function getSkills($id, array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . SkillSubCategory::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . Skill::RESOURCE_KEY, [], $params);
     }
 }
