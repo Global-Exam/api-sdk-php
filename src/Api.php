@@ -124,8 +124,9 @@ class Api
     /**
      * @param bool $clearCredentials
      *
-     * @return $this
      * @throws ApiException
+     *
+     * @return $this
      */
     public function logout($clearCredentials = false)
     {
