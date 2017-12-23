@@ -123,7 +123,7 @@ trait UserModule
     /**
      * @return UserMeBoardTraining
      */
-    public function userMeBoarTraining()
+    public function userMeBoardTraining()
     {
         return new UserMeBoardTraining($this);
     }
