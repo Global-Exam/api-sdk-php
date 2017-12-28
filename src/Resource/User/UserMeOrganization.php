@@ -48,7 +48,7 @@ class UserMeOrganization
      */
     public function getUsers($id, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/relationships/' . User::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY, [], $params);
     }
 
     /**
@@ -60,7 +60,7 @@ class UserMeOrganization
      */
     public function getOneUser($id, $userId, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/relationships/' . User::RESOURCE_KEY . '/' . $userId, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY . '/' . $userId, [], $params);
     }
 
     /**
@@ -93,7 +93,7 @@ class UserMeOrganization
      */
     public function attachUser($id, array $body = [])
     {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/' . User::RESOURCE_KEY, $body);
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY, $body);
     }
 
     /**
@@ -104,7 +104,7 @@ class UserMeOrganization
      */
     public function detachUser($id, array $body = [])
     {
-        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . User::RESOURCE_KEY, $body);
+        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY, $body);
     }
 
     /**
@@ -123,7 +123,7 @@ class UserMeOrganization
             ],
         ];
 
-        return $this->api->sendFile('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/' . User::RESOURCE_KEY . '/basic-import', array_merge($body, $data));
+        return $this->api->sendFile('POST', static::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY . '/basic-import', array_merge($body, $data));
     }
 
     /**
@@ -142,7 +142,7 @@ class UserMeOrganization
             ],
         ];
 
-        return $this->api->sendFile('POST', static::RESOURCE_KEY . '/' . $id . '/relationships/' . User::RESOURCE_KEY . '/advanced-import', array_merge($body, $data));
+        return $this->api->sendFile('POST', static::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY . '/advanced-import', array_merge($body, $data));
     }
 
     /**
@@ -153,7 +153,7 @@ class UserMeOrganization
      */
     public function attachUserProvider($id, array $body = [])
     {
-        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/relationships/' . UserProvider::RESOURCE_KEY, $body);
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/' . UserProvider::RESOURCE_KEY, $body);
     }
 
     /**
@@ -164,6 +164,6 @@ class UserMeOrganization
      */
     public function detachUserProvider($id, array $body = [])
     {
-        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/relationships/' . UserProvider::RESOURCE_KEY, $body);
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/' . UserProvider::RESOURCE_KEY, $body);
     }
 }
