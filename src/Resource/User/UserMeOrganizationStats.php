@@ -4,7 +4,6 @@ namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
-use GlobalExam\Api\Sdk\Resource\User\User;
 use Psr\Http\Message\ResponseInterface;
 
 /**
