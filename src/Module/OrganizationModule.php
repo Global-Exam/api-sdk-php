@@ -58,14 +58,6 @@ trait OrganizationModule
     }
 
     /**
-     * @return UserMeOrganizationStats
-     */
-    public function organizationStats()
-    {
-        return new UserMeOrganizationStats($this);
-    }
-
-    /**
      * @return OrganizationType
      */
     public function organizationType()

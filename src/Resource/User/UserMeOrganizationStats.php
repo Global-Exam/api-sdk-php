@@ -1,6 +1,6 @@
 <?php
 
-namespace GlobalExam\Api\Sdk\Resource\Organization;
+namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
@@ -8,18 +8,18 @@ use GlobalExam\Api\Sdk\Resource\User\User;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class OrganizationStats
+ * Class UserMeOrganizationStats
  *
- * @package GlobalExam\Api\Sdk\Resource\Organization
+ * @package GlobalExam\Api\Sdk\Resource\User
  */
-class OrganizationStats
+class UserMeOrganizationStats
 {
     use Resource;
 
-    const RESOURCE_KEY = 'organization';
+    const RESOURCE_KEY = 'user/me/relationships/organization';
 
     /**
-     * OrganizationStats constructor.
+     * UserMeOrganizationStats constructor.
      *
      * @param Api $api
      */
