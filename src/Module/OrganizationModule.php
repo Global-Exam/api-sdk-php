@@ -4,9 +4,7 @@ namespace GlobalExam\Api\Sdk\Module;
 
 use GlobalExam\Api\Sdk\Resource\Organization\Organization;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationBusinessType;
-use GlobalExam\Api\Sdk\Resource\Organization\OrganizationGroup;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationIp;
-use GlobalExam\Api\Sdk\Resource\Organization\OrganizationLicense;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationType;
 
 /**
