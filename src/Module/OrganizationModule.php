@@ -33,27 +33,11 @@ trait OrganizationModule
     }
 
     /**
-     * @return OrganizationGroup
-     */
-    public function organizationGroup()
-    {
-        return new OrganizationGroup($this);
-    }
-
-    /**
      * @return OrganizationIp
      */
     public function organizationIp()
     {
         return new OrganizationIp($this);
-    }
-
-    /**
-     * @return OrganizationLicense
-     */
-    public function organizationLicense()
-    {
-        return new OrganizationLicense($this);
     }
 
     /**

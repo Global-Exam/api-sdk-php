@@ -3,6 +3,7 @@
 namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
+use GlobalExam\Api\Sdk\Resource\Board\Board;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationGroup;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationLicense;
 use GlobalExam\Api\Sdk\Resource\Resource;
@@ -76,6 +77,78 @@ class UserMeOrganization
 
     /**
      * @param       $id
+     * @param       $organizationGroupId
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizationGroup($id, $organizationGroupId, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY . '/' . $organizationGroupId, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function createOrganizationGroup($id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY, $body, $params);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationGroupId
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function updateOrganizationGroup($id, $organizationGroupId, array $body = [], array $params = [])
+    {
+        return $this->api->send('PUT', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY . '/' . $organizationGroupId, $body, $params);
+    }
+
+    /**
+     * @param $id
+     * @param $organizationGroupId
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function deleteOrganizationGroup($id, $organizationGroupId)
+    {
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY . '/' . $organizationGroupId);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationGroupId
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function attachOrganizationGroupUser($id, $organizationGroupId, array $body = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY . '/' . $organizationGroupId . '/relationships/' . User::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationGroupId
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function detachOrganizationGroupUser($id, $organizationGroupId, array $body = [])
+    {
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY . '/' . $organizationGroupId . '/relationships/' . User::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
      * @param array $params
      *
      * @return mixed|ResponseInterface
@@ -83,6 +156,126 @@ class UserMeOrganization
     public function getOrganizationLicenses($id, array $params = [])
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationLicenseId
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizationLicense($id, $organizationLicenseId, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function createOrganizationLicense($id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY, $body, $params);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationLicenseId
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function updateOrganizationLicense($id, $organizationLicenseId, array $body = [], array $params = [])
+    {
+        return $this->api->send('PUT', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId, $body, $params);
+    }
+
+    /**
+     * @param $id
+     * @param $organizationLicenseId
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function deleteOrganizationLicense($id, $organizationLicenseId)
+    {
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationLicenseId
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizationLicenseUsers($id, $organizationLicenseId, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId . '/relationships/' . User::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationLicenseId
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function attachOrganizationLicenseUser($id, $organizationLicenseId, array $body = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId . '/relationships/' . User::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationLicenseId
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function detachOrganizationLicenseUser($id, $organizationLicenseId, array $body = [])
+    {
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId . '/relationships/' . User::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationLicenseId
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizationLicenseBoards($id, $organizationLicenseId, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId . '/relationships/' . Board::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationLicenseId
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function attachOrganizationLicenseBoard($id, $organizationLicenseId, array $body = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId . '/relationships/' . Board::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationLicenseId
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function detachOrganizationLicenseBoard($id, $organizationLicenseId, array $body = [])
+    {
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId . '/relationships/' . Board::RESOURCE_KEY, $body);
     }
 
     /**
