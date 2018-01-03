@@ -4,8 +4,6 @@ namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Board\Board;
-use GlobalExam\Api\Sdk\Resource\Organization\OrganizationGroup;
-use GlobalExam\Api\Sdk\Resource\Organization\OrganizationLicense;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
@@ -72,7 +70,7 @@ class UserMeOrganization
      */
     public function getOrganizationGroups($id, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/organization-group', [], $params);
     }
 
     /**
@@ -84,7 +82,7 @@ class UserMeOrganization
      */
     public function getOrganizationGroup($id, $organizationGroupId, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY . '/' . $organizationGroupId, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/organization-group/' . $organizationGroupId, [], $params);
     }
 
     /**
@@ -96,7 +94,7 @@ class UserMeOrganization
      */
     public function createOrganizationGroup($id, array $body = [], array $params = [])
     {
-        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY, $body, $params);
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/organization-group', $body, $params);
     }
 
     /**
@@ -109,7 +107,7 @@ class UserMeOrganization
      */
     public function updateOrganizationGroup($id, $organizationGroupId, array $body = [], array $params = [])
     {
-        return $this->api->send('PUT', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY . '/' . $organizationGroupId, $body, $params);
+        return $this->api->send('PUT', self::RESOURCE_KEY . '/' . $id . '/organization-group/' . $organizationGroupId, $body, $params);
     }
 
     /**
@@ -120,7 +118,19 @@ class UserMeOrganization
      */
     public function deleteOrganizationGroup($id, $organizationGroupId)
     {
-        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY . '/' . $organizationGroupId);
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/organization-group/' . $organizationGroupId);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationGroupId
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizationGroupUsers($id, $organizationGroupId, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/organization-group/' . $organizationGroupId . '/relationships/' . User::RESOURCE_KEY, [], $params);
     }
 
     /**
@@ -132,7 +142,7 @@ class UserMeOrganization
      */
     public function attachOrganizationGroupUser($id, $organizationGroupId, array $body = [])
     {
-        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY . '/' . $organizationGroupId . '/relationships/' . User::RESOURCE_KEY, $body);
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/organization-group/' . $organizationGroupId . '/relationships/' . User::RESOURCE_KEY, $body);
     }
 
     /**
@@ -144,7 +154,7 @@ class UserMeOrganization
      */
     public function detachOrganizationGroupUser($id, $organizationGroupId, array $body = [])
     {
-        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationGroup::RESOURCE_KEY . '/' . $organizationGroupId . '/relationships/' . User::RESOURCE_KEY, $body);
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/organization-group/' . $organizationGroupId . '/relationships/' . User::RESOURCE_KEY, $body);
     }
 
     /**
@@ -155,7 +165,7 @@ class UserMeOrganization
      */
     public function getOrganizationLicenses($id, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/organization-license', [], $params);
     }
 
     /**
@@ -167,7 +177,7 @@ class UserMeOrganization
      */
     public function getOrganizationLicense($id, $organizationLicenseId, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/organization-license/' . $organizationLicenseId, [], $params);
     }
 
     /**
@@ -179,7 +189,7 @@ class UserMeOrganization
      */
     public function createOrganizationLicense($id, array $body = [], array $params = [])
     {
-        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY, $body, $params);
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/organization-license', $body, $params);
     }
 
     /**
@@ -192,7 +202,7 @@ class UserMeOrganization
      */
     public function updateOrganizationLicense($id, $organizationLicenseId, array $body = [], array $params = [])
     {
-        return $this->api->send('PUT', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId, $body, $params);
+        return $this->api->send('PUT', self::RESOURCE_KEY . '/' . $id . '/organization-license/' . $organizationLicenseId, $body, $params);
     }
 
     /**
@@ -203,7 +213,7 @@ class UserMeOrganization
      */
     public function deleteOrganizationLicense($id, $organizationLicenseId)
     {
-        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId);
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/organization-license/' . $organizationLicenseId);
     }
 
     /**
@@ -215,7 +225,7 @@ class UserMeOrganization
      */
     public function getOrganizationLicenseUsers($id, $organizationLicenseId, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId . '/relationships/' . User::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/organization-license/' . $organizationLicenseId . '/relationships/' . User::RESOURCE_KEY, [], $params);
     }
 
     /**
@@ -227,7 +237,7 @@ class UserMeOrganization
      */
     public function attachOrganizationLicenseUser($id, $organizationLicenseId, array $body = [])
     {
-        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId . '/relationships/' . User::RESOURCE_KEY, $body);
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/organization-license/' . $organizationLicenseId . '/relationships/' . User::RESOURCE_KEY, $body);
     }
 
     /**
@@ -239,7 +249,7 @@ class UserMeOrganization
      */
     public function detachOrganizationLicenseUser($id, $organizationLicenseId, array $body = [])
     {
-        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId . '/relationships/' . User::RESOURCE_KEY, $body);
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/organization-license/' . $organizationLicenseId . '/relationships/' . User::RESOURCE_KEY, $body);
     }
 
     /**
@@ -251,7 +261,7 @@ class UserMeOrganization
      */
     public function getOrganizationLicenseBoards($id, $organizationLicenseId, array $params = [])
     {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId . '/relationships/' . Board::RESOURCE_KEY, [], $params);
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/organization-license/' . $organizationLicenseId . '/relationships/' . Board::RESOURCE_KEY, [], $params);
     }
 
     /**
@@ -263,7 +273,7 @@ class UserMeOrganization
      */
     public function attachOrganizationLicenseBoard($id, $organizationLicenseId, array $body = [])
     {
-        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId . '/relationships/' . Board::RESOURCE_KEY, $body);
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/organization-license/' . $organizationLicenseId . '/relationships/' . Board::RESOURCE_KEY, $body);
     }
 
     /**
@@ -275,7 +285,7 @@ class UserMeOrganization
      */
     public function detachOrganizationLicenseBoard($id, $organizationLicenseId, array $body = [])
     {
-        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicense::RESOURCE_KEY . '/' . $organizationLicenseId . '/relationships/' . Board::RESOURCE_KEY, $body);
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/organization-license/' . $organizationLicenseId . '/relationships/' . Board::RESOURCE_KEY, $body);
     }
 
     /**
