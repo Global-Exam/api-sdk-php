@@ -104,8 +104,9 @@ class Api
     /**
      * @param array $body
      *
-     * @return $this|mixed|ResponseInterface
      * @throws ApiException
+     *
+     * @return $this|mixed|ResponseInterface
      */
     public function login($body = [])
     {
