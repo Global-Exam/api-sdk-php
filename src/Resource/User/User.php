@@ -158,4 +158,15 @@ class User
     {
         return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/organization-license', $body);
     }
+
+    /**
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function search(array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/search', $body, $params);
+    }
 }
