@@ -31,11 +31,12 @@ class OAuth
     }
 
     /**
-     * @param string $grantType
+     * @param       $grantType
+     * @param array $extraBody
      *
      * @return mixed|ResponseInterface
      */
-    public function getToken($grantType)
+    public function getToken($grantType, $extraBody = [])
     {
         $authenticator = $this->api->getAuthenticator();
 
@@ -76,7 +77,7 @@ class OAuth
                 break;
         }
 
-        return $this->api->send('POST', self::RESOURCE_KEY . '/token', $body);
+        return $this->api->send('POST', self::RESOURCE_KEY . '/token', array_merge($body, $extraBody));
     }
 
     /**

@@ -102,11 +102,12 @@ class Api
     }
 
     /**
-     * @throws ApiException
+     * @param array $body
      *
      * @return $this|mixed|ResponseInterface
+     * @throws ApiException
      */
-    public function login()
+    public function login($body = [])
     {
         if ($this->authenticator === null) {
             throw new ApiException('Cannot login. You must specify the credentials first.');
@@ -115,7 +116,7 @@ class Api
         $this->isAuthenticated = true;
 
         if ($this->authenticator instanceof PasswordCredentialsGrant || $this->authenticator instanceof ClientCredentialsGrant || $this->authenticator instanceof SocialCredentialsGrant) {
-            return $this->oauth()->getToken($this->authenticator->getGrantType());
+            return $this->oauth()->getToken($this->authenticator->getGrantType(), $body);
         }
 
         return $this;
