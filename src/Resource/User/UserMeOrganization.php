@@ -369,4 +369,16 @@ class UserMeOrganization
     {
         return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/' . UserProvider::RESOURCE_KEY, $body);
     }
+
+    /**
+     * @param       $id
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function searchUsers($id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY . '/search', $body, $params);
+    }
 }
