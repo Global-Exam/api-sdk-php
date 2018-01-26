@@ -40,6 +40,17 @@ class Coupon
 
     /**
      * @param       $id
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function duplicate($id, array $body = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/duplicate', $body);
+    }
+
+    /**
+     * @param       $id
      * @param array $params
      *
      * @return mixed|ResponseInterface
