@@ -381,4 +381,17 @@ class UserMeOrganization
     {
         return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY . '/search', $body, $params);
     }
+
+    /**
+     * @param       $id
+     * @param       $userId
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function changeRole($id, $userId, array $body = [], array $params = [])
+    {
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY . '/' . $userId . '/change-role', $body, $params);
+    }
 }
