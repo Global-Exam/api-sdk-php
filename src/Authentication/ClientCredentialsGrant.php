@@ -74,4 +74,14 @@ class ClientCredentialsGrant implements AuthenticationInterface
     {
         return $this->headers;
     }
+
+    /**
+     * @param array $headers
+     *
+     * @return mixed|void
+     */
+    public function setHeaders(array $headers = [])
+    {
+        $this->headers = array_merge($this->headers, $headers);
+    }
 }

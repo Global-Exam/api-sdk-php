@@ -23,4 +23,11 @@ interface AuthenticationInterface
      * @return array
      */
     public function getHeaders();
+
+    /**
+     * @param array $headers
+     *
+     * @return mixed
+     */
+    public function setHeaders(array $headers = []);
 }

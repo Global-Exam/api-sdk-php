@@ -119,4 +119,14 @@ class AuthorizationCodeGrant implements AuthenticationInterface
 
         return array_merge($headers, $this->headers);
     }
+
+    /**
+     * @param array $headers
+     *
+     * @return mixed|void
+     */
+    public function setHeaders(array $headers = [])
+    {
+        $this->headers = array_merge($this->headers, $headers);
+    }
 }
