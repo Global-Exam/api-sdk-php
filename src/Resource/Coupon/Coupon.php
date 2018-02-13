@@ -4,6 +4,7 @@ namespace GlobalExam\Api\Sdk\Resource\Coupon;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
+use GlobalExam\Api\Sdk\Resource\User\UserLicensePayment;
 use GlobalExam\Api\Sdk\Resource\User\UserPlan;
 use Psr\Http\Message\ResponseInterface;
 
@@ -80,5 +81,16 @@ class Coupon
     public function detachUserPlan($id, array $body = [])
     {
         return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . UserPlan::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getUserLicensePayments($id, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . UserLicensePayment::RESOURCE_KEY, [], $params);
     }
 }
