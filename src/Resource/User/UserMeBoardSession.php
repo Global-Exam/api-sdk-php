@@ -51,6 +51,17 @@ class UserMeBoardSession
     }
 
     /**
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function search(array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/search', $body, $params);
+    }
+
+    /**
      * @param $id
      * @param $examQuestionId
      * @param $file
