@@ -217,14 +217,15 @@ class UserMeOrganization
     }
 
     /**
+     * @param       $id
      * @param array $body
      * @param array $params
      *
      * @return mixed|ResponseInterface
      */
-    public function searchOrganizationLicense(array $body = [], array $params = [])
+    public function searchOrganizationLicense($id, array $body = [], array $params = [])
     {
-        return $this->api->send('POST', self::RESOURCE_KEY . '/organization-license/search', $body, $params);
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/organization-license/search', $body, $params);
     }
 
     /**
