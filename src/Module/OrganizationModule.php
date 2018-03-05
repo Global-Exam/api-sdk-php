@@ -5,6 +5,7 @@ namespace GlobalExam\Api\Sdk\Module;
 use GlobalExam\Api\Sdk\Resource\Organization\Organization;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationBusinessType;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationIp;
+use GlobalExam\Api\Sdk\Resource\Organization\OrganizationPartnerUser;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationType;
 
 /**
@@ -36,6 +37,14 @@ trait OrganizationModule
     public function organizationIp()
     {
         return new OrganizationIp($this);
+    }
+
+    /**
+     * @return OrganizationPartnerUser
+     */
+    public function organizationPartnerUser()
+    {
+        return new OrganizationPartnerUser($this);
     }
 
     /**
