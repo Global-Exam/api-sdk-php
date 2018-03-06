@@ -4,6 +4,7 @@ namespace GlobalExam\Api\Sdk\Resource\User;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Board\Board;
+use GlobalExam\Api\Sdk\Resource\Organization\OrganizationLicensePayment;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
@@ -178,6 +179,41 @@ class UserMeOrganization
     public function getOrganizationLicense($id, $organizationLicenseId, array $params = [])
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/organization-license/' . $organizationLicenseId, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizationLicensePayments($id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicensePayment::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationLicensePaymentId
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizationLicensePayment($id, $organizationLicensePaymentId, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicensePayment::RESOURCE_KEY . '/' . $organizationLicensePaymentId, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationLicensePaymentId
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizationLicensePaymentInvoice($id, $organizationLicensePaymentId, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . OrganizationLicensePayment::RESOURCE_KEY . '/' . $organizationLicensePaymentId . '/invoice', [], $params);
     }
 
     /**
