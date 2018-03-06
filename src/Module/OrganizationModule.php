@@ -5,7 +5,9 @@ namespace GlobalExam\Api\Sdk\Module;
 use GlobalExam\Api\Sdk\Resource\Organization\Organization;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationBusinessType;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationIp;
+use GlobalExam\Api\Sdk\Resource\Organization\OrganizationLicensePayment;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationPartnerUser;
+use GlobalExam\Api\Sdk\Resource\Organization\OrganizationSeatPricing;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationType;
 
 /**
@@ -40,11 +42,27 @@ trait OrganizationModule
     }
 
     /**
+     * @return OrganizationLicensePayment
+     */
+    public function organizationLicensePayment()
+    {
+        return new OrganizationLicensePayment($this);
+    }
+
+    /**
      * @return OrganizationPartnerUser
      */
     public function organizationPartnerUser()
     {
         return new OrganizationPartnerUser($this);
+    }
+
+    /**
+     * @return OrganizationSeatPricing
+     */
+    public function organizationSeatPricing()
+    {
+        return new OrganizationSeatPricing($this);
     }
 
     /**
