@@ -218,6 +218,29 @@ class UserMeOrganization
 
     /**
      * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizationSeats($id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/organization-seat', [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function orderOrganizationSeat($id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/organization-seat/order', $body, $params);
+    }
+
+    /**
+     * @param       $id
      * @param array $body
      * @param array $params
      *
