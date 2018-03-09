@@ -246,6 +246,30 @@ class UserMeOrganization
      *
      * @return mixed|ResponseInterface
      */
+    public function assignOneOrganizationSeat($id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/organization-seat/assign-one', $body, $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function assignMultipleOrganizationSeat($id, array $body = [], array $params = [])
+    {
+        return $this->api->sendFile('POST', self::RESOURCE_KEY . '/' . $id . '/organization-seat/assign-multiple', $body, $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
     public function createOrganizationLicense($id, array $body = [], array $params = [])
     {
         return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/organization-license', $body, $params);
