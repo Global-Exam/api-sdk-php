@@ -253,14 +253,21 @@ class UserMeOrganization
 
     /**
      * @param       $id
-     * @param array $body
-     * @param array $params
+     * @param       $file
+     * @param array $data
      *
      * @return mixed|ResponseInterface
      */
-    public function assignMultipleOrganizationSeat($id, array $body = [], array $params = [])
+    public function assignMultipleOrganizationSeat($id, $file, array $data = [])
     {
-        return $this->api->sendFile('POST', self::RESOURCE_KEY . '/' . $id . '/organization-seat/assign-multiple', $body, $params);
+        $body = [
+            [
+                'name'     => 'file',
+                'contents' => $file,
+            ],
+        ];
+
+        return $this->api->sendFile('POST', self::RESOURCE_KEY . '/' . $id . '/organization-seat/assign-multiple', array_merge($body, $data));
     }
 
     /**
