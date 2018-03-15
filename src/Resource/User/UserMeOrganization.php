@@ -419,25 +419,6 @@ class UserMeOrganization
      *
      * @return mixed|ResponseInterface
      */
-    public function basicUserImport($id, $file, array $data = [])
-    {
-        $body = [
-            [
-                'name'     => 'file',
-                'contents' => $file,
-            ],
-        ];
-
-        return $this->api->sendFile('POST', static::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY . '/basic-import', array_merge($body, $data));
-    }
-
-    /**
-     * @param       $id
-     * @param       $file
-     * @param array $data
-     *
-     * @return mixed|ResponseInterface
-     */
     public function advancedUserImport($id, $file, array $data = [])
     {
         $body = [
