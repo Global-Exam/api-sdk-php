@@ -210,12 +210,13 @@ class UserMeOrganizationStats
     /**
      * @param int   $id
      * @param int   $userId
+     * @param array $body
      * @param array $params
      *
      * @return mixed|ResponseInterface
      */
-    public function getUserExport(int $id, int $userId, array $params = [])
+    public function getUserExport(int $id, int $userId, array $body = [], array $params = [])
     {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/stats/' . User::RESOURCE_KEY . '/' . $userId . '/export', [], $params);
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/' . User::RESOURCE_KEY . '/' . $userId . '/export', $body, $params);
     }
 }

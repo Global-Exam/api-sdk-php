@@ -123,6 +123,19 @@ class UserMeOrganization
     }
 
     /**
+     * @param int   $id
+     * @param int   $organizationGroupId
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOrganizationGroupStatsExport(int $id, int $organizationGroupId, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/organization-group/' . $organizationGroupId . '/stats/export', $body, $params);
+    }
+
+    /**
      * @param       $id
      * @param       $organizationGroupId
      * @param array $params
