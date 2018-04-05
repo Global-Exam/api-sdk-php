@@ -73,4 +73,16 @@ class Exam
     {
         return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/relationships/' . BlogPost::RESOURCE_KEY, [], $params);
     }
+
+    /**
+     * @param       $id
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function duplicate($id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/duplicate', $body, $params);
+    }
 }
