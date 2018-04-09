@@ -490,4 +490,17 @@ class UserMeOrganization
     {
         return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY . '/' . $userId . '/change-role', $body, $params);
     }
+
+    /**
+     * @param       $id
+     * @param       $userId
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function updateUser($id, $userId, array $body = [], array $params = [])
+    {
+        return $this->api->send('PUT', self::RESOURCE_KEY . '/' . $id . '/' . User::RESOURCE_KEY . '/' . $userId, $body, $params);
+    }
 }
