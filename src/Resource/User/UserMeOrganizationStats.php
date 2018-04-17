@@ -219,4 +219,16 @@ class UserMeOrganizationStats
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/' . User::RESOURCE_KEY . '/' . $userId . '/export', $body, $params);
     }
+
+    /**
+     * @param int   $id
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getCorrectionsExport(int $id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/corrections/export', $body, $params);
+    }
 }
