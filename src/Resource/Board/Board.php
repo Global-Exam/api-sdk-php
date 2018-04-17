@@ -33,6 +33,17 @@ class Board
      *
      * @return mixed|ResponseInterface
      */
+    public function getBoardExamMocks($id, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BoardExamMock::RESOURCE_KEY, [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     */
     public function getBoardLevels($id, array $params = [])
     {
         return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . BoardLevel::RESOURCE_KEY, [], $params);
