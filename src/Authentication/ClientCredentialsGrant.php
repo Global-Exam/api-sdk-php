@@ -40,7 +40,7 @@ class ClientCredentialsGrant implements AuthenticationInterface
     {
         $this->OAuthClient = $OAuthClient;
         $this->scope       = $scope;
-        $this->headers     = $headers;
+        $this->headers     = array_merge(['X-CLIENT-ID' => $OAuthClient->getClientId()], $headers);
     }
 
     /**

@@ -59,7 +59,7 @@ class SocialCredentialsGrant implements AuthenticationInterface
         $this->OAuthClient       = $OAuthClient;
         $this->network           = $network;
         $this->scope             = $scope;
-        $this->headers           = $headers;
+        $this->headers           = array_merge(['X-CLIENT-ID' => $OAuthClient->getClientId()], $headers);
         $this->accessToken       = $accessToken;
         $this->accessTokenSecret = $accessTokenSecret;
     }

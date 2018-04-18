@@ -166,13 +166,14 @@ class Api
     }
 
     /**
-     * @param string $method
-     * @param string $uri
-     * @param array  $body
-     * @param array  $params
-     * @param array  $headers
+     * @param       $method
+     * @param       $uri
+     * @param array $body
+     * @param array $params
+     * @param array $headers
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function send($method, $uri, array $body = [], array $params = [], array $headers = [])
     {
@@ -186,13 +187,14 @@ class Api
     }
 
     /**
-     * @param string $method
-     * @param string $uri
-     * @param array  $body
-     * @param array  $params
-     * @param array  $headers
+     * @param       $method
+     * @param       $uri
+     * @param array $body
+     * @param array $params
+     * @param array $headers
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function sendFile($method, $uri, array $body = [], array $params = [], array $headers = [])
     {

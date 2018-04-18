@@ -59,7 +59,7 @@ class AuthorizationCodeGrant implements AuthenticationInterface
         $this->refreshToken = isset($tokens['refresh_token']) === true ? $tokens['refresh_token'] : null;
         $this->expiresIn    = isset($tokens['expires_in']) === true ? $tokens['expires_in'] : null;
         $this->scope        = $scope;
-        $this->headers      = $headers;
+        $this->headers      = array_merge(['X-CLIENT-ID' => $OAuthClient->getClientId()], $headers);
     }
 
     /**
