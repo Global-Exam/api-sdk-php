@@ -172,8 +172,9 @@ class Api
      * @param array $params
      * @param array $headers
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function send($method, $uri, array $body = [], array $params = [], array $headers = [])
     {
@@ -193,8 +194,9 @@ class Api
      * @param array $params
      * @param array $headers
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function sendFile($method, $uri, array $body = [], array $params = [], array $headers = [])
     {
