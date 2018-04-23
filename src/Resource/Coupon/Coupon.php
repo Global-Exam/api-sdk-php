@@ -33,6 +33,7 @@ class Coupon
      * @param $id
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function disable($id)
     {
@@ -44,6 +45,7 @@ class Coupon
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function duplicate($id, array $body = [])
     {
@@ -55,6 +57,7 @@ class Coupon
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function search(array $body = [], array $params = [])
     {
@@ -66,6 +69,7 @@ class Coupon
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getUserPlans($id, array $params = [])
     {
@@ -77,6 +81,7 @@ class Coupon
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function attachUserPlan($id, array $body = [])
     {
@@ -88,6 +93,7 @@ class Coupon
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function detachUserPlan($id, array $body = [])
     {
@@ -99,6 +105,7 @@ class Coupon
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getUserLicensePayments($id, array $params = [])
     {

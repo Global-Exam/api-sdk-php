@@ -35,6 +35,7 @@ class Exam
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getExamLevels($id, array $params = [])
     {
@@ -46,6 +47,7 @@ class Exam
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoards($id, array $params = [])
     {
@@ -57,6 +59,7 @@ class Exam
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getUserPlans($id, array $params = [])
     {
@@ -68,6 +71,7 @@ class Exam
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBlogPosts($id, array $params = [])
     {
@@ -80,6 +84,7 @@ class Exam
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function duplicate($id, array $body = [], array $params = [])
     {

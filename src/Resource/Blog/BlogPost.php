@@ -34,6 +34,7 @@ class BlogPost
      * @param $file
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function createCover($id, $file)
     {
@@ -49,6 +50,7 @@ class BlogPost
      * @param $id
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function deleteCover($id)
     {
@@ -60,6 +62,7 @@ class BlogPost
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function attachExam($id, array $body = [])
     {
@@ -71,6 +74,7 @@ class BlogPost
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function detachExam($id, array $body = [])
     {
@@ -82,6 +86,7 @@ class BlogPost
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function attachSkill($id, array $body = [])
     {
@@ -93,6 +98,7 @@ class BlogPost
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function detachSkill($id, array $body = [])
     {
@@ -104,6 +110,7 @@ class BlogPost
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function search(array $body = [], array $params = [])
     {

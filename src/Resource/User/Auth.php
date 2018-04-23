@@ -31,6 +31,7 @@ class Auth
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function register(array $body)
     {
@@ -41,6 +42,7 @@ class Auth
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function registerDemo(array $body)
     {
@@ -51,6 +53,7 @@ class Auth
      * @param $token
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function confirm($token)
     {
@@ -61,6 +64,7 @@ class Auth
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function forgottenPassword(array $body)
     {
@@ -71,6 +75,7 @@ class Auth
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function resetPassword(array $body)
     {
@@ -81,6 +86,7 @@ class Auth
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function createPassword(array $body)
     {

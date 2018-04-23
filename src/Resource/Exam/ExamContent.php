@@ -1,24 +1,24 @@
 <?php
 
-namespace GlobalExam\Api\Sdk\Resource\User;
+namespace GlobalExam\Api\Sdk\Resource\Exam;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class UserLicenseSubscription
+ * Class ExamContent
  *
- * @package GlobalExam\Api\Sdk\Resource\User
+ * @package GlobalExam\Api\Sdk\Resource\Exam
  */
-class UserLicenseSubscription
+class ExamContent
 {
     use Resource;
 
-    const RESOURCE_KEY = 'user-license-subscription';
+    const RESOURCE_KEY = 'exam';
 
     /**
-     * UserLicenseSubscription constructor.
+     * ExamContent constructor.
      *
      * @param Api $api
      */
@@ -28,14 +28,14 @@ class UserLicenseSubscription
     }
 
     /**
-     * @param       $id
+     * @param int   $id
      * @param array $params
      *
      * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function cancel($id, array $params = [])
+    public function getExport(int $id, array $params = [])
     {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/cancel', [], $params);
+        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/content/export', $params);
     }
 }

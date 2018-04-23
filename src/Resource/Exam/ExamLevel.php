@@ -32,6 +32,7 @@ class ExamLevel
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getExamSections($id, array $params = [])
     {

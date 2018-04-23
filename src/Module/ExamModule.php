@@ -6,6 +6,7 @@ use GlobalExam\Api\Sdk\Resource\Exam\Exam;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamAnswer;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamAnswerGroup;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamCecrlLevel;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamContent;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamDifficulty;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamExercise;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamLevel;
@@ -62,6 +63,14 @@ trait ExamModule
     public function examCecrlLevel()
     {
         return new ExamCecrlLevel($this);
+    }
+
+    /**
+     * @return ExamContent
+     */
+    public function examContent()
+    {
+        return new ExamContent($this);
     }
 
     /**

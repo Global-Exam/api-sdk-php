@@ -34,6 +34,7 @@ class Skill
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBlogPosts($id, array $params = [])
     {
@@ -45,6 +46,7 @@ class Skill
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getExamQuestions($id, array $params = [])
     {

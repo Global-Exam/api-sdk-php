@@ -33,6 +33,7 @@ class UserMeStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardLevels(array $params = [])
     {
@@ -43,6 +44,7 @@ class UserMeStats
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getGlobal(array $body = [])
     {
@@ -55,6 +57,7 @@ class UserMeStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardSessionExamQuestion(int $boardSessionId, int $examQuestionId, array $params = [])
     {

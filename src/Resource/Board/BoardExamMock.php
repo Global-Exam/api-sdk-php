@@ -32,6 +32,7 @@ class BoardExamMock
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardTrainings($id, array $params = [])
     {
@@ -43,6 +44,7 @@ class BoardExamMock
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function attachBoardTraining($id, array $body = [])
     {
@@ -54,6 +56,7 @@ class BoardExamMock
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function detachBoardTraining($id, array $body = [])
     {

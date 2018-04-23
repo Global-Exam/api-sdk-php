@@ -33,6 +33,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getAttendance(int $id, array $body = [], array $params = [])
     {
@@ -45,6 +46,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getAttendanceExport(int $id, array $body = [], array $params = [])
     {
@@ -57,6 +59,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getGlobal(int $id, array $body = [], array $params = [])
     {
@@ -69,6 +72,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getGlobalExport(int $id, array $body = [], array $params = [])
     {
@@ -81,6 +85,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getTraining(int $id, array $body = [], array $params = [])
     {
@@ -93,6 +98,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getTrainingExport(int $id, array $body = [], array $params = [])
     {
@@ -105,6 +111,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getExam(int $id, array $body = [], array $params = [])
     {
@@ -117,6 +124,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getExamExport(int $id, array $body = [], array $params = [])
     {
@@ -129,6 +137,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getSkill(int $id, array $body = [], array $params = [])
     {
@@ -141,6 +150,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getSkillExport(int $id, array $body = [], array $params = [])
     {
@@ -153,6 +163,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getActivity(int $id, array $body = [], array $params = [])
     {
@@ -165,6 +176,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getActivityExport(int $id, array $body = [], array $params = [])
     {
@@ -177,6 +189,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getLogin(int $id, array $body = [], array $params = [])
     {
@@ -189,6 +202,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getLoginExport(int $id, array $body = [], array $params = [])
     {
@@ -201,6 +215,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getTheoreticalTimeExport(int $id, array $body = [], array $params = [])
     {
@@ -214,6 +229,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getUserExport(int $id, int $userId, array $body = [], array $params = [])
     {
@@ -226,6 +242,7 @@ class UserMeOrganizationStats
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getCorrectionsExport(int $id, array $body = [], array $params = [])
     {

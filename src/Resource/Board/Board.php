@@ -32,6 +32,7 @@ class Board
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardExamMocks($id, array $params = [])
     {
@@ -43,6 +44,7 @@ class Board
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardLevels($id, array $params = [])
     {
@@ -54,6 +56,7 @@ class Board
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardTrainings($id, array $params = [])
     {
@@ -66,6 +69,7 @@ class Board
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function duplicate($id, array $body = [], array $params = [])
     {
@@ -77,6 +81,7 @@ class Board
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function search(array $body = [], array $params = [])
     {

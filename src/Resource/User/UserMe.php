@@ -35,6 +35,7 @@ class UserMe
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get(array $params = [])
     {
@@ -45,6 +46,7 @@ class UserMe
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function update(array $body = [])
     {
@@ -53,6 +55,7 @@ class UserMe
 
     /**
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function disable()
     {
@@ -63,6 +66,7 @@ class UserMe
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function changeCreditCard(array $body = [])
     {
@@ -73,6 +77,7 @@ class UserMe
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function changePassword(array $body = [])
     {
@@ -83,6 +88,7 @@ class UserMe
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function sendAccountConfirmation(array $body = [])
     {
@@ -95,6 +101,7 @@ class UserMe
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function subscribe(int $id, array $body = [], array $params = [])
     {
@@ -107,6 +114,7 @@ class UserMe
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function unsubscribe(int $id, array $body = [], array $params = [])
     {
@@ -115,6 +123,7 @@ class UserMe
 
     /**
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function logout()
     {
@@ -126,6 +135,7 @@ class UserMe
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardExerciseBoardTrainings(int $boardExerciseId, array $params = [])
     {
@@ -137,6 +147,7 @@ class UserMe
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardModeBoardExamMocks(int $boardModeId, array $params = [])
     {
@@ -144,9 +155,23 @@ class UserMe
     }
 
     /**
+     * @param int   $userId
+     * @param array $body
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function storeLoggedAs(int $userId, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . User::RESOURCE_KEY . '/' . $userId . '/logged-as', $body, $params);
+    }
+
+    /**
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getUserLicenseSubscriptions(array $params = [])
     {
@@ -158,6 +183,7 @@ class UserMe
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getOneUserLicenseSubscriptionWithInvoices(int $id, array $params = [])
     {
@@ -170,6 +196,7 @@ class UserMe
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getOneUserLicenseSubscriptionInvoice(int $id, array $body = [], array $params = [])
     {

@@ -32,6 +32,7 @@ class BlogCategory
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBlogPosts($id, array $params = [])
     {

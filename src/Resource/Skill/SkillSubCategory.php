@@ -32,6 +32,7 @@ class SkillSubCategory
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getSkills($id, array $params = [])
     {

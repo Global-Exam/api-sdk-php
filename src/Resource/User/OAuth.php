@@ -35,6 +35,7 @@ class OAuth
      * @param array $extraBody
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getToken($grantType, $extraBody = [])
     {
@@ -82,6 +83,7 @@ class OAuth
 
     /**
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function renewToken()
     {

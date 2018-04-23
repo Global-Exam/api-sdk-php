@@ -35,6 +35,7 @@ class UserMeStatsExamMode
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getGlobal(array $body = [])
     {
@@ -46,6 +47,7 @@ class UserMeStatsExamMode
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardExamMockBoardSessions(int $boardExamMockId, array $params = [])
     {
@@ -56,7 +58,8 @@ class UserMeStatsExamMode
      * @param int   $boardSessionId
      * @param array $params
      *
-     * @return mixed|ResponseInterface$
+     * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardSession(int $boardSessionId, array $params = [])
     {
@@ -69,6 +72,7 @@ class UserMeStatsExamMode
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardSessionBoardExerciseBoardTrainings(int $boardSessionId, int $boardExerciseId, array $params = [])
     {
@@ -81,6 +85,7 @@ class UserMeStatsExamMode
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardSessionBoardTrainingExamQuestions(int $boardSessionId, int $boardTrainingId, array $params = [])
     {

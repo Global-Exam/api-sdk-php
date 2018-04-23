@@ -32,6 +32,7 @@ class UserMeStatsTrainingMode
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getGlobal(array $body = [])
     {
@@ -43,6 +44,7 @@ class UserMeStatsTrainingMode
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardExerciseBoardSessions(int $boardExerciseId, array $params = [])
     {
@@ -53,7 +55,8 @@ class UserMeStatsTrainingMode
      * @param int   $boardSessionId
      * @param array $params
      *
-     * @return mixed|ResponseInterface$
+     * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardSession(int $boardSessionId, array $params = [])
     {

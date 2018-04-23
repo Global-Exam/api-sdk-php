@@ -34,6 +34,7 @@ class UserPlan
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoards($id, array $params = [])
     {
@@ -45,6 +46,7 @@ class UserPlan
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function attachBoard($id, array $body = [])
     {
@@ -56,6 +58,7 @@ class UserPlan
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function detachBoard($id, array $body = [])
     {
@@ -67,6 +70,7 @@ class UserPlan
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getCoupons($id, array $params = [])
     {
@@ -79,6 +83,7 @@ class UserPlan
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getOneCoupon($id, $code, array $params = [])
     {

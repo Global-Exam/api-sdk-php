@@ -32,6 +32,7 @@ class ExamExercise
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getExamTrainings($id, array $params = [])
     {

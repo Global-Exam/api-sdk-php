@@ -32,6 +32,7 @@ class ExamSupport
      * @param $file
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function storeExamSupportMedia($id, $file)
     {
@@ -47,6 +48,7 @@ class ExamSupport
      * @param $id
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function deleteExamSupportMedia($id)
     {

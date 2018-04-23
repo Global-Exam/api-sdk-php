@@ -34,6 +34,7 @@ class UserMeBoardSession
      * @param $id
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function start($id)
     {
@@ -44,6 +45,7 @@ class UserMeBoardSession
      * @param $id
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function complete($id)
     {
@@ -55,6 +57,7 @@ class UserMeBoardSession
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function search(array $body = [], array $params = [])
     {
@@ -67,6 +70,7 @@ class UserMeBoardSession
      * @param $file
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function storeBoardSessionExamQuestionMediaAudio($id, $examQuestionId, $file)
     {
@@ -83,6 +87,7 @@ class UserMeBoardSession
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getBoardTrainings($id, array $params = [])
     {
@@ -94,6 +99,7 @@ class UserMeBoardSession
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function attachBoardTraining($id, array $body = [])
     {
@@ -105,6 +111,7 @@ class UserMeBoardSession
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getExamParts($id, array $params = [])
     {
@@ -116,6 +123,7 @@ class UserMeBoardSession
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function attachExamPart($id, array $body = [])
     {

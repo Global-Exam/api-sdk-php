@@ -32,6 +32,7 @@ class ExamQuestionMedia
      * @param $file
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function upload($id, $file)
     {

@@ -22,6 +22,7 @@ trait Resource
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getAll(array $params = [])
     {
@@ -33,6 +34,7 @@ trait Resource
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getOne($id, array $params = [])
     {
@@ -43,6 +45,7 @@ trait Resource
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function create(array $body = [])
     {
@@ -54,6 +57,7 @@ trait Resource
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function update($id, array $body = [])
     {
@@ -64,6 +68,7 @@ trait Resource
      * @param $id
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function delete($id)
     {
@@ -75,6 +80,7 @@ trait Resource
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function attachLanguage($id, array $body = [])
     {
@@ -86,6 +92,7 @@ trait Resource
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function detachLanguage($id, array $body = [])
     {

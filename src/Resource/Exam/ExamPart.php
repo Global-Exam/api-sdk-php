@@ -32,6 +32,7 @@ class ExamPart
      * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getExamQuestions($id, array $params = [])
     {

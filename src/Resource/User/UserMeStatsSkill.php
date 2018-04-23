@@ -31,6 +31,7 @@ class UserMeStatsSkill
      * @param array $body
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getGlobal(array $body = [])
     {
