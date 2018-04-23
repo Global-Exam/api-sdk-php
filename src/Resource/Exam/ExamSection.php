@@ -31,8 +31,9 @@ class ExamSection
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getExamExercises($id, array $params = [])
     {
@@ -43,8 +44,9 @@ class ExamSection
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getExamSectionScores($id, array $params = [])
     {

@@ -33,8 +33,9 @@ class UserMeBoardSession
     /**
      * @param $id
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function start($id)
     {
@@ -44,8 +45,9 @@ class UserMeBoardSession
     /**
      * @param $id
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function complete($id)
     {
@@ -56,8 +58,9 @@ class UserMeBoardSession
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function search(array $body = [], array $params = [])
     {
@@ -69,8 +72,9 @@ class UserMeBoardSession
      * @param $examQuestionId
      * @param $file
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function storeBoardSessionExamQuestionMediaAudio($id, $examQuestionId, $file)
     {
@@ -86,8 +90,9 @@ class UserMeBoardSession
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getBoardTrainings($id, array $params = [])
     {
@@ -98,8 +103,9 @@ class UserMeBoardSession
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function attachBoardTraining($id, array $body = [])
     {
@@ -110,8 +116,9 @@ class UserMeBoardSession
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getExamParts($id, array $params = [])
     {
@@ -122,8 +129,9 @@ class UserMeBoardSession
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function attachExamPart($id, array $body = [])
     {

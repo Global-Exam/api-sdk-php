@@ -31,8 +31,9 @@ class ExamContent
      * @param int   $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getExport(int $id, array $params = [])
     {

@@ -33,8 +33,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function search(array $body = [], array $params = [])
     {
@@ -45,8 +46,9 @@ class UserMeOrganization
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getUsers($id, array $params = [])
     {
@@ -58,8 +60,9 @@ class UserMeOrganization
      * @param       $userId
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOneUser($id, $userId, array $params = [])
     {
@@ -70,8 +73,9 @@ class UserMeOrganization
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOrganizationGroups($id, array $params = [])
     {
@@ -83,8 +87,9 @@ class UserMeOrganization
      * @param       $organizationGroupId
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOrganizationGroup($id, $organizationGroupId, array $params = [])
     {
@@ -96,8 +101,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function createOrganizationGroup($id, array $body = [], array $params = [])
     {
@@ -110,8 +116,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function updateOrganizationGroup($id, $organizationGroupId, array $body = [], array $params = [])
     {
@@ -122,8 +129,9 @@ class UserMeOrganization
      * @param $id
      * @param $organizationGroupId
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function deleteOrganizationGroup($id, $organizationGroupId)
     {
@@ -136,8 +144,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOrganizationGroupStatsExport(int $id, int $organizationGroupId, array $body = [], array $params = [])
     {
@@ -149,8 +158,9 @@ class UserMeOrganization
      * @param       $organizationGroupId
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOrganizationGroupUsers($id, $organizationGroupId, array $params = [])
     {
@@ -162,8 +172,9 @@ class UserMeOrganization
      * @param       $organizationGroupId
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function attachOrganizationGroupUser($id, $organizationGroupId, array $body = [])
     {
@@ -175,8 +186,9 @@ class UserMeOrganization
      * @param       $organizationGroupId
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function detachOrganizationGroupUser($id, $organizationGroupId, array $body = [])
     {
@@ -187,8 +199,9 @@ class UserMeOrganization
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOrganizationLicenses($id, array $params = [])
     {
@@ -200,8 +213,9 @@ class UserMeOrganization
      * @param       $organizationLicenseId
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOrganizationLicense($id, $organizationLicenseId, array $params = [])
     {
@@ -212,8 +226,9 @@ class UserMeOrganization
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOrganizationLicensePayments($id, array $params = [])
     {
@@ -225,8 +240,9 @@ class UserMeOrganization
      * @param       $organizationLicensePaymentId
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOrganizationLicensePayment($id, $organizationLicensePaymentId, array $params = [])
     {
@@ -238,8 +254,9 @@ class UserMeOrganization
      * @param       $organizationLicensePaymentId
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOrganizationLicensePaymentInvoice($id, $organizationLicensePaymentId, array $params = [])
     {
@@ -250,8 +267,9 @@ class UserMeOrganization
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOrganizationSeats($id, array $params = [])
     {
@@ -263,8 +281,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function orderOrganizationSeat($id, array $body = [], array $params = [])
     {
@@ -276,8 +295,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function assignOneOrganizationSeat($id, array $body = [], array $params = [])
     {
@@ -289,8 +309,9 @@ class UserMeOrganization
      * @param       $file
      * @param array $data
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function assignMultipleOrganizationSeat($id, $file, array $data = [])
     {
@@ -309,8 +330,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function createOrganizationLicense($id, array $body = [], array $params = [])
     {
@@ -323,8 +345,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function updateOrganizationLicense($id, $organizationLicenseId, array $body = [], array $params = [])
     {
@@ -335,8 +358,9 @@ class UserMeOrganization
      * @param $id
      * @param $organizationLicenseId
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function deleteOrganizationLicense($id, $organizationLicenseId)
     {
@@ -348,8 +372,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function searchOrganizationLicense($id, array $body = [], array $params = [])
     {
@@ -361,8 +386,9 @@ class UserMeOrganization
      * @param       $organizationLicenseId
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOrganizationLicenseUsers($id, $organizationLicenseId, array $params = [])
     {
@@ -374,8 +400,9 @@ class UserMeOrganization
      * @param       $organizationLicenseId
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function attachOrganizationLicenseUser($id, $organizationLicenseId, array $body = [])
     {
@@ -387,8 +414,9 @@ class UserMeOrganization
      * @param       $organizationLicenseId
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function detachOrganizationLicenseUser($id, $organizationLicenseId, array $body = [])
     {
@@ -400,8 +428,9 @@ class UserMeOrganization
      * @param       $organizationLicenseId
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOrganizationLicenseBoards($id, $organizationLicenseId, array $params = [])
     {
@@ -413,8 +442,9 @@ class UserMeOrganization
      * @param       $organizationLicenseId
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function attachOrganizationLicenseBoard($id, $organizationLicenseId, array $body = [])
     {
@@ -426,8 +456,9 @@ class UserMeOrganization
      * @param       $organizationLicenseId
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function detachOrganizationLicenseBoard($id, $organizationLicenseId, array $body = [])
     {
@@ -438,8 +469,9 @@ class UserMeOrganization
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function attachUser($id, array $body = [])
     {
@@ -450,8 +482,9 @@ class UserMeOrganization
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function detachUser($id, array $body = [])
     {
@@ -463,8 +496,9 @@ class UserMeOrganization
      * @param       $file
      * @param array $data
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function advancedUserImport($id, $file, array $data = [])
     {
@@ -482,8 +516,9 @@ class UserMeOrganization
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function attachUserProvider($id, array $body = [])
     {
@@ -494,8 +529,9 @@ class UserMeOrganization
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function detachUserProvider($id, array $body = [])
     {
@@ -507,8 +543,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function searchUsers($id, array $body = [], array $params = [])
     {
@@ -521,8 +558,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function changeRole($id, $userId, array $body = [], array $params = [])
     {
@@ -535,8 +573,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function updateUser($id, $userId, array $body = [], array $params = [])
     {

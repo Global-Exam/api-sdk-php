@@ -32,8 +32,9 @@ class OrganizationPartnerUser
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function detachUser($id, array $body = [])
     {
