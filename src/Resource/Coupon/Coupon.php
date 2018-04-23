@@ -32,8 +32,9 @@ class Coupon
     /**
      * @param $id
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function disable($id)
     {
@@ -44,8 +45,9 @@ class Coupon
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function duplicate($id, array $body = [])
     {
@@ -56,8 +58,9 @@ class Coupon
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function search(array $body = [], array $params = [])
     {
@@ -68,8 +71,9 @@ class Coupon
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getUserPlans($id, array $params = [])
     {
@@ -80,8 +84,9 @@ class Coupon
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function attachUserPlan($id, array $body = [])
     {
@@ -92,8 +97,9 @@ class Coupon
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function detachUserPlan($id, array $body = [])
     {
@@ -104,8 +110,9 @@ class Coupon
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getUserLicensePayments($id, array $params = [])
     {

@@ -104,9 +104,10 @@ class Api
     /**
      * @param array $body
      *
-     * @return $this|mixed|ResponseInterface
      * @throws ApiException
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return $this|mixed|ResponseInterface
      */
     public function login($body = [])
     {

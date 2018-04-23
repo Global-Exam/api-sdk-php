@@ -34,8 +34,9 @@ class UserMe
     /**
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function get(array $params = [])
     {
@@ -45,8 +46,9 @@ class UserMe
     /**
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function update(array $body = [])
     {
@@ -54,8 +56,9 @@ class UserMe
     }
 
     /**
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function disable()
     {
@@ -65,8 +68,9 @@ class UserMe
     /**
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function changeCreditCard(array $body = [])
     {
@@ -76,8 +80,9 @@ class UserMe
     /**
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function changePassword(array $body = [])
     {
@@ -87,8 +92,9 @@ class UserMe
     /**
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function sendAccountConfirmation(array $body = [])
     {
@@ -100,8 +106,9 @@ class UserMe
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function subscribe(int $id, array $body = [], array $params = [])
     {
@@ -113,8 +120,9 @@ class UserMe
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function unsubscribe(int $id, array $body = [], array $params = [])
     {
@@ -122,8 +130,9 @@ class UserMe
     }
 
     /**
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function logout()
     {
@@ -134,8 +143,9 @@ class UserMe
      * @param int   $boardExerciseId
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getBoardExerciseBoardTrainings(int $boardExerciseId, array $params = [])
     {
@@ -146,8 +156,9 @@ class UserMe
      * @param int   $boardModeId
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getBoardModeBoardExamMocks(int $boardModeId, array $params = [])
     {
@@ -159,8 +170,9 @@ class UserMe
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function storeLoggedAs(int $userId, array $body = [], array $params = [])
     {
@@ -170,8 +182,9 @@ class UserMe
     /**
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getUserLicenseSubscriptions(array $params = [])
     {
@@ -182,8 +195,9 @@ class UserMe
      * @param int   $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOneUserLicenseSubscriptionWithInvoices(int $id, array $params = [])
     {
@@ -195,8 +209,9 @@ class UserMe
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOneUserLicenseSubscriptionInvoice(int $id, array $body = [], array $params = [])
     {

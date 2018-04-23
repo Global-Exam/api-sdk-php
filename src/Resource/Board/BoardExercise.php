@@ -31,8 +31,9 @@ class BoardExercise
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getBoardTrainings($id, array $params = [])
     {

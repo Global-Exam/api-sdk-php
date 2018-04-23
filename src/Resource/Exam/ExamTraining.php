@@ -31,8 +31,9 @@ class ExamTraining
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getExamParts($id, array $params = [])
     {

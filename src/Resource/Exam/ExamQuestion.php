@@ -32,8 +32,9 @@ class ExamQuestion
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function attachSkill($id, array $body = [])
     {
@@ -44,8 +45,9 @@ class ExamQuestion
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function detachSkill($id, array $body = [])
     {
@@ -56,8 +58,9 @@ class ExamQuestion
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function attachExamSupport($id, array $body = [])
     {
@@ -68,8 +71,9 @@ class ExamQuestion
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function detachExamSupport($id, array $body = [])
     {

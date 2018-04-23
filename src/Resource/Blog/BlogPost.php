@@ -33,8 +33,9 @@ class BlogPost
      * @param $id
      * @param $file
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function createCover($id, $file)
     {
@@ -49,8 +50,9 @@ class BlogPost
     /**
      * @param $id
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function deleteCover($id)
     {
@@ -61,8 +63,9 @@ class BlogPost
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function attachExam($id, array $body = [])
     {
@@ -73,8 +76,9 @@ class BlogPost
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function detachExam($id, array $body = [])
     {
@@ -85,8 +89,9 @@ class BlogPost
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function attachSkill($id, array $body = [])
     {
@@ -97,8 +102,9 @@ class BlogPost
      * @param       $id
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function detachSkill($id, array $body = [])
     {
@@ -109,8 +115,9 @@ class BlogPost
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function search(array $body = [], array $params = [])
     {
