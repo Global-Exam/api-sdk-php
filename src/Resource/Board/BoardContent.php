@@ -32,8 +32,9 @@ class BoardContent
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getExport(int $id, array $body = [], array $params = [])
     {
