@@ -3,6 +3,7 @@
 namespace GlobalExam\Api\Sdk\Module;
 
 use GlobalExam\Api\Sdk\Resource\Board\Board;
+use GlobalExam\Api\Sdk\Resource\Board\BoardContent;
 use GlobalExam\Api\Sdk\Resource\Board\BoardExamMock;
 use GlobalExam\Api\Sdk\Resource\Board\BoardExercise;
 use GlobalExam\Api\Sdk\Resource\Board\BoardLevel;
@@ -26,6 +27,14 @@ trait BoardModule
     public function board()
     {
         return new Board($this);
+    }
+
+    /**
+     * @return BoardContent
+     */
+    public function boardContent()
+    {
+        return new BoardContent($this);
     }
 
     /**
