@@ -66,6 +66,16 @@ class UserMe
     }
 
     /**
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function deleteLoggedAs()
+    {
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/logged-as');
+    }
+
+    /**
      * @param array $body
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
