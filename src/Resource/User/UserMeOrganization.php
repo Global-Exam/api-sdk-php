@@ -334,6 +334,20 @@ class UserMeOrganization
      *
      * @return mixed|ResponseInterface
      */
+    public function changeOrganizationSeat($id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/organization-seat/change', $body, $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     * @param array $params
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
     public function createOrganizationLicense($id, array $body = [], array $params = [])
     {
         return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/organization-license', $body, $params);
