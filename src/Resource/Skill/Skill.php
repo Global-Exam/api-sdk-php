@@ -54,4 +54,17 @@ class Skill
     {
         return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/relationships/' . ExamQuestion::RESOURCE_KEY, [], $params);
     }
+
+    /**
+     * @param array $body
+     * @param array $params
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function search(array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/search', $body, $params);
+    }
 }
