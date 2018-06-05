@@ -5,6 +5,7 @@ namespace GlobalExam\Api\Sdk\Module;
 use GlobalExam\Api\Sdk\Resource\Board\Board;
 use GlobalExam\Api\Sdk\Resource\Board\BoardContent;
 use GlobalExam\Api\Sdk\Resource\Board\BoardExamMock;
+use GlobalExam\Api\Sdk\Resource\Board\BoardExamMockCecrlLevelScore;
 use GlobalExam\Api\Sdk\Resource\Board\BoardExercise;
 use GlobalExam\Api\Sdk\Resource\Board\BoardLevel;
 use GlobalExam\Api\Sdk\Resource\Board\BoardMode;
@@ -43,6 +44,14 @@ trait BoardModule
     public function boardExamMock()
     {
         return new BoardExamMock($this);
+    }
+
+    /**
+     * @return BoardExamMockCecrlLevelScore
+     */
+    public function boardExamMockCecrlLevelScore()
+    {
+        return new BoardExamMockCecrlLevelScore($this);
     }
 
     /**
