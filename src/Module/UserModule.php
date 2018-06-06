@@ -18,6 +18,7 @@ use GlobalExam\Api\Sdk\Resource\User\UserMeOrganization;
 use GlobalExam\Api\Sdk\Resource\User\UserMeOrganizationLicense;
 use GlobalExam\Api\Sdk\Resource\User\UserMeOrganizationStats;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStats;
+use GlobalExam\Api\Sdk\Resource\User\UserMeStatsAssessmentMode;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStatsExamMode;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStatsSkill;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStatsTrainingMode;
@@ -160,6 +161,14 @@ trait UserModule
     public function userMeStats()
     {
         return new UserMeStats($this);
+    }
+
+    /**
+     * @return UserMeStatsAssessmentMode
+     */
+    public function userMeStatsAssessmentMode()
+    {
+        return new UserMeStatsAssessmentMode($this);
     }
 
     /**
