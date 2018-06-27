@@ -23,6 +23,7 @@ use GlobalExam\Api\Sdk\Resource\User\UserMeStatsExamMode;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStatsSkill;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStatsTrainingMode;
 use GlobalExam\Api\Sdk\Resource\User\UserMeUserPlan;
+use GlobalExam\Api\Sdk\Resource\User\UserMeUserPlanning;
 use GlobalExam\Api\Sdk\Resource\User\UserPaymentStatus;
 use GlobalExam\Api\Sdk\Resource\User\UserPlan;
 use GlobalExam\Api\Sdk\Resource\User\UserPlanPeriod;
@@ -202,6 +203,14 @@ trait UserModule
     public function userMeUserPlan()
     {
         return new UserMeUserPlan($this);
+    }
+
+    /**
+     * @return UserMeUserPlanning
+     */
+    public function userMeUserPlanning()
+    {
+        return new UserMeUserPlanning($this);
     }
 
     /**
