@@ -18,7 +18,7 @@ class UserMeUserPlanning
     const RESOURCE_KEY = 'user/me/user-planning';
 
     /**
-     * UserMeStatsSkill constructor.
+     * UserMeUserPlanning constructor.
      *
      * @param Api $api
      */
@@ -38,5 +38,16 @@ class UserMeUserPlanning
     public function search(array $body = [], array $params = [])
     {
         return $this->api->send('POST', self::RESOURCE_KEY . '/search', $body, $params);
+    }
+
+    /**
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function stats(array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/stats', [], $params);
     }
 }
