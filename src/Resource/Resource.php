@@ -47,8 +47,9 @@ trait Resource
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function create(array $body = [], array $params = [])
     {
@@ -60,8 +61,9 @@ trait Resource
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function update($id, array $body = [], array $params = [])
     {
