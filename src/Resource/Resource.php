@@ -45,27 +45,27 @@ trait Resource
 
     /**
      * @param array $body
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function create(array $body = [])
+    public function create(array $body = [], array $params = [])
     {
-        return $this->api->send('POST', static::RESOURCE_KEY, $body);
+        return $this->api->send('POST', static::RESOURCE_KEY, $body, $params);
     }
 
     /**
      * @param       $id
      * @param array $body
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function update($id, array $body = [])
+    public function update($id, array $body = [], array $params = [])
     {
-        return $this->api->send('PUT', static::RESOURCE_KEY . '/' . $id, $body);
+        return $this->api->send('PUT', static::RESOURCE_KEY . '/' . $id, $body, $params);
     }
 
     /**
