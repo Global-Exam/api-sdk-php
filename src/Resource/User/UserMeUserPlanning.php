@@ -43,8 +43,9 @@ class UserMeUserPlanning
     /**
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function stats(array $params = [])
     {
