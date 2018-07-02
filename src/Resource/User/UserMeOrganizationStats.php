@@ -176,6 +176,34 @@ class UserMeOrganizationStats
      *
      * @return mixed|ResponseInterface
      */
+    public function getPlanning(int $id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/planning', $body, $params);
+    }
+
+    /**
+     * @param int   $id
+     * @param array $body
+     * @param array $params
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getPlanningExport(int $id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/planning/export', $body, $params);
+    }
+
+    /**
+     * @param int   $id
+     * @param array $body
+     * @param array $params
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
     public function getSkill(int $id, array $body = [], array $params = [])
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/skill', $body, $params);
