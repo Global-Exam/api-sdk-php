@@ -47,8 +47,9 @@ class UserMeBoardSession
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function complete($id, array $body = [], array $params = [])
     {
