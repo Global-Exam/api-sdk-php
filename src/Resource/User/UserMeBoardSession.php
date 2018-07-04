@@ -43,15 +43,16 @@ class UserMeBoardSession
     }
 
     /**
-     * @param $id
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @param       $id
+     * @param array $body
+     * @param array $params
      *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function complete($id)
+    public function complete($id, array $body = [], array $params = [])
     {
-        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/complete');
+        return $this->api->send('PATCH', static::RESOURCE_KEY . '/' . $id . '/complete', $body, $params);
     }
 
     /**
