@@ -25,4 +25,15 @@ class PartnerWizbiiUser
     {
         $this->api = $api;
     }
+
+    /**
+     * @param array $body
+     *
+     * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function deleteUser(array $body = [])
+    {
+        return $this->api->send('DELETE', self::RESOURCE_KEY, $body);
+    }
 }
