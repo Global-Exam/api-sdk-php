@@ -29,8 +29,9 @@ class PartnerWizbiiUser
     /**
      * @param array $body
      *
-     * @return mixed|\Psr\Http\Message\ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|\Psr\Http\Message\ResponseInterface
      */
     public function deleteUser(array $body = [])
     {
