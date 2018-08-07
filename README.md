@@ -26,7 +26,7 @@ use GlobalExam\Api\Sdk\Api;
 $api = new Api();
 ```
 
-### As a guest who wants a token
+### As a guest who needs a token
 
 ```php
 use GlobalExam\Api\Sdk\Api;
