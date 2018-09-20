@@ -30,8 +30,9 @@ class UserMeSkillStudySheet
     /**
      * @param int $id
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function storeView(int $id)
     {
