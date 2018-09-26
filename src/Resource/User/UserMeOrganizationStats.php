@@ -295,6 +295,20 @@ class UserMeOrganizationStats
 
     /**
      * @param int   $id
+     * @param array $body
+     * @param array $params
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getMultipleUserExport(int $id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/multiple-user/export', $body, $params);
+    }
+
+    /**
+     * @param int   $id
      * @param int   $userId
      * @param array $body
      * @param array $params
