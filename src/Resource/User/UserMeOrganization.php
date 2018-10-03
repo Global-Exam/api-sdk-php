@@ -252,8 +252,9 @@ class UserMeOrganization
      * @param       $id
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function getOrganizationReportings($id, array $params = [])
     {
@@ -265,8 +266,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function createOrganizationReporting($id, array $body = [], array $params = [])
     {
@@ -279,8 +281,9 @@ class UserMeOrganization
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function updateOrganizationReporting($id, $organizationReportingId, array $body = [], array $params = [])
     {
@@ -291,8 +294,9 @@ class UserMeOrganization
      * @param $id
      * @param $organizationReportingId
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function deleteOrganizationReporting($id, $organizationReportingId)
     {
