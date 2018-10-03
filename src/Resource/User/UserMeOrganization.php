@@ -252,6 +252,57 @@ class UserMeOrganization
      * @param       $id
      * @param array $params
      *
+     * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function getOrganizationReportings($id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/organization-reporting', [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function createOrganizationReporting($id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/organization-reporting', $body, $params);
+    }
+
+    /**
+     * @param       $id
+     * @param       $organizationReportingId
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function updateOrganizationReporting($id, $organizationReportingId, array $body = [], array $params = [])
+    {
+        return $this->api->send('PUT', self::RESOURCE_KEY . '/' . $id . '/organization-reporting/' . $organizationReportingId, $body, $params);
+    }
+
+    /**
+     * @param $id
+     * @param $organizationReportingId
+     *
+     * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function deleteOrganizationReporting($id, $organizationReportingId)
+    {
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . $id . '/organization-reporting/' . $organizationReportingId);
+    }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
      * @return mixed|ResponseInterface
