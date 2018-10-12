@@ -114,8 +114,9 @@ trait Resource
      * @param       $languageCode
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function createTranslation($id, $languageCode, array $body = [])
     {
@@ -127,8 +128,9 @@ trait Resource
      * @param       $languageCode
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function updateTranslation($id, $languageCode, array $body = [])
     {
@@ -139,8 +141,9 @@ trait Resource
      * @param $id
      * @param $languageCode
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function deleteTranslation($id, $languageCode)
     {
