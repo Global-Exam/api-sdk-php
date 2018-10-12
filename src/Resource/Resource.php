@@ -4,6 +4,7 @@ namespace GlobalExam\Api\Sdk\Resource;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Language\Language;
+use GlobalExam\Api\Sdk\Resource\Translation\Translation;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -106,5 +107,43 @@ trait Resource
     public function detachLanguage($id, array $body = [])
     {
         return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . Language::RESOURCE_KEY, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param       $languageCode
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function createTranslation($id, $languageCode, array $body = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/' . Translation::RESOURCE_KEY . '/' . $languageCode, $body);
+    }
+
+    /**
+     * @param       $id
+     * @param       $languageCode
+     * @param array $body
+     *
+     * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function updateTranslation($id, $languageCode, array $body = [])
+    {
+        return $this->api->send('PUT', static::RESOURCE_KEY . '/' . $id . '/' . Translation::RESOURCE_KEY . '/' . $languageCode, $body);
+    }
+
+    /**
+     * @param $id
+     * @param $languageCode
+     *
+     * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function deleteTranslation($id, $languageCode)
+    {
+        return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/' . Translation::RESOURCE_KEY . '/' . $languageCode);
     }
 }
