@@ -288,6 +288,20 @@ class UserMeOrganizationStats
      *
      * @return mixed|ResponseInterface
      */
+    public function getScoringExport(int $id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/scoring/export', $body, $params);
+    }
+
+    /**
+     * @param int   $id
+     * @param array $body
+     * @param array $params
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
     public function getMultipleUserExport(int $id, array $body = [], array $params = [])
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/multiple-user/export', $body, $params);
