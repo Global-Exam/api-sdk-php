@@ -50,37 +50,9 @@ class UserMeOrganizationStats
      *
      * @return mixed|ResponseInterface
      */
-    public function getAttendanceExport(int $id, array $body = [], array $params = [])
-    {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/attendance/export', $body, $params);
-    }
-
-    /**
-     * @param int   $id
-     * @param array $body
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
     public function getGlobal(int $id, array $body = [], array $params = [])
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/global', $body, $params);
-    }
-
-    /**
-     * @param int   $id
-     * @param array $body
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getGlobalExport(int $id, array $body = [], array $params = [])
-    {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/global/export', $body, $params);
     }
 
     /**
@@ -106,37 +78,9 @@ class UserMeOrganizationStats
      *
      * @return mixed|ResponseInterface
      */
-    public function getTrainingExport(int $id, array $body = [], array $params = [])
-    {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/training/export', $body, $params);
-    }
-
-    /**
-     * @param int   $id
-     * @param array $body
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
     public function getExam(int $id, array $body = [], array $params = [])
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/exam', $body, $params);
-    }
-
-    /**
-     * @param int   $id
-     * @param array $body
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getExamExport(int $id, array $body = [], array $params = [])
-    {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/exam/export', $body, $params);
     }
 
     /**
@@ -162,37 +106,9 @@ class UserMeOrganizationStats
      *
      * @return mixed|ResponseInterface
      */
-    public function getAssessmentExport(int $id, array $body = [], array $params = [])
-    {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/assessment/export', $body, $params);
-    }
-
-    /**
-     * @param int   $id
-     * @param array $body
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
     public function getPlanning(int $id, array $body = [], array $params = [])
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/planning', $body, $params);
-    }
-
-    /**
-     * @param int   $id
-     * @param array $body
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getPlanningExport(int $id, array $body = [], array $params = [])
-    {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/planning/export', $body, $params);
     }
 
     /**
@@ -218,93 +134,9 @@ class UserMeOrganizationStats
      *
      * @return mixed|ResponseInterface
      */
-    public function getSkillExport(int $id, array $body = [], array $params = [])
-    {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/skill/export', $body, $params);
-    }
-
-    /**
-     * @param int   $id
-     * @param array $body
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getActivityExport(int $id, array $body = [], array $params = [])
-    {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/activity/export', $body, $params);
-    }
-
-    /**
-     * @param int   $id
-     * @param array $body
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
     public function getLogin(int $id, array $body = [], array $params = [])
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/login', $body, $params);
-    }
-
-    /**
-     * @param int   $id
-     * @param array $body
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getLoginExport(int $id, array $body = [], array $params = [])
-    {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/login/export', $body, $params);
-    }
-
-    /**
-     * @param int   $id
-     * @param array $body
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getTheoreticalTimeExport(int $id, array $body = [], array $params = [])
-    {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/theoretical-time/export', $body, $params);
-    }
-
-    /**
-     * @param int   $id
-     * @param array $body
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getScoringExport(int $id, array $body = [], array $params = [])
-    {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/scoring/export', $body, $params);
-    }
-
-    /**
-     * @param int   $id
-     * @param array $body
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getMultipleUserExport(int $id, array $body = [], array $params = [])
-    {
-        return $this->api->send('POST', static::RESOURCE_KEY . '/' . $id . '/stats/multiple-user/export', $body, $params);
     }
 
     /**

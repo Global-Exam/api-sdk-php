@@ -305,6 +305,20 @@ class UserMeOrganization
 
     /**
      * @param       $id
+     * @param array $body
+     * @param array $params
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function exportOrganizationReporting($id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . $id . '/organization-reporting/export', $body, $params);
+    }
+
+    /**
+     * @param       $id
      * @param array $params
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
