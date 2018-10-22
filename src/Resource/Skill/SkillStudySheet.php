@@ -17,7 +17,7 @@ class SkillStudySheet
     const RESOURCE_KEY = 'skill-study-sheet';
 
     /**
-     * Skill constructor.
+     * SkillStudySheet constructor.
      *
      * @param Api $api
      */
