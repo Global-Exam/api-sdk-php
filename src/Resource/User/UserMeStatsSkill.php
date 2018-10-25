@@ -38,4 +38,16 @@ class UserMeStatsSkill
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/global', $body);
     }
+
+    /**
+     * @param array $body
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getPractice(array $body = [])
+    {
+        return $this->api->send('POST', static::RESOURCE_KEY . '/practice', $body);
+    }
 }
