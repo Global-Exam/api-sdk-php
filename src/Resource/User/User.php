@@ -152,6 +152,19 @@ class User
      *
      * @return mixed|ResponseInterface
      */
+    public function getOrganizationGroups($id, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/relationships/organization-group', [], $params);
+    }
+
+    /**
+     * @param       $id
+     * @param array $params
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
     public function getOrganizationLicenses($id, array $params = [])
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/relationships/organization-license', [], $params);
