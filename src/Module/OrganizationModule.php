@@ -13,7 +13,7 @@ use GlobalExam\Api\Sdk\Resource\Organization\OrganizationSeatPricing;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationType;
 
 /**
- * Class OrganizationModule
+ * Trait OrganizationModule
  *
  * @package GlobalExam\Api\Sdk\Module
  */
