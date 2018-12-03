@@ -3,6 +3,7 @@
 namespace GlobalExam\Api\Sdk\Module;
 
 use GlobalExam\Api\Sdk\Resource\Organization\Organization;
+use GlobalExam\Api\Sdk\Resource\Organization\OrganizationAttendanceScoringType;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationBusinessType;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationIp;
 use GlobalExam\Api\Sdk\Resource\Organization\OrganizationLicensePayment;
@@ -24,6 +25,14 @@ trait OrganizationModule
     public function organization()
     {
         return new Organization($this);
+    }
+
+    /**
+     * @return OrganizationAttendanceScoringType
+     */
+    public function organizationAttendanceScoringType()
+    {
+        return new OrganizationAttendanceScoringType($this);
     }
 
     /**
