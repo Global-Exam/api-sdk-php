@@ -5,6 +5,7 @@ namespace GlobalExam\Api\Sdk\Module;
 use GlobalExam\Api\Sdk\Resource\Exam\Exam;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamAnswer;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamAnswerGroup;
+use GlobalExam\Api\Sdk\Resource\Exam\ExamAnswerMedia;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamCecrlLevel;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamContent;
 use GlobalExam\Api\Sdk\Resource\Exam\ExamDifficulty;
@@ -55,6 +56,14 @@ trait ExamModule
     public function examAnswerGroup()
     {
         return new ExamAnswerGroup($this);
+    }
+
+    /**
+     * @return ExamAnswerMedia
+     */
+    public function examAnswerMedia()
+    {
+        return new ExamAnswerMedia($this);
     }
 
     /**
