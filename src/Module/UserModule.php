@@ -12,6 +12,7 @@ use GlobalExam\Api\Sdk\Resource\User\UserLicenseStatus;
 use GlobalExam\Api\Sdk\Resource\User\UserLicenseSubscription;
 use GlobalExam\Api\Sdk\Resource\User\UserMe;
 use GlobalExam\Api\Sdk\Resource\User\UserMeBoard;
+use GlobalExam\Api\Sdk\Resource\User\UserMeBoardExamMock;
 use GlobalExam\Api\Sdk\Resource\User\UserMeBoardSession;
 use GlobalExam\Api\Sdk\Resource\User\UserMeBoardTraining;
 use GlobalExam\Api\Sdk\Resource\User\UserMeOrganization;
@@ -116,6 +117,14 @@ trait UserModule
     public function userMeBoard()
     {
         return new UserMeBoard($this);
+    }
+
+    /**
+     * @return UserMeBoardExamMock
+     */
+    public function userMeBoardExamMock()
+    {
+        return new UserMeBoardExamMock($this);
     }
 
     /**
