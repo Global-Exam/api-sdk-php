@@ -11,7 +11,7 @@ use GlobalExam\Api\Sdk\Resource\User\UserLicensePayment;
 use GlobalExam\Api\Sdk\Resource\User\UserLicenseStatus;
 use GlobalExam\Api\Sdk\Resource\User\UserLicenseSubscription;
 use GlobalExam\Api\Sdk\Resource\User\UserMe;
-use GlobalExam\Api\Sdk\Resource\User\UserMeAdaptative;
+use GlobalExam\Api\Sdk\Resource\User\UserMeAdaptive;
 use GlobalExam\Api\Sdk\Resource\User\UserMeBoard;
 use GlobalExam\Api\Sdk\Resource\User\UserMeBoardExamMock;
 use GlobalExam\Api\Sdk\Resource\User\UserMeBoardSession;
@@ -114,11 +114,11 @@ trait UserModule
     }
 
     /**
-     * @return UserMeAdaptative
+     * @return UserMeAdaptive
      */
-    public function userMeAdaptative()
+    public function userMeAdaptive()
     {
-        return new UserMeAdaptative($this);
+        return new UserMeAdaptive($this);
     }
 
     /**

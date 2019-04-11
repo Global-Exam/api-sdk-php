@@ -7,18 +7,18 @@ use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class UserMeAdaptative
+ * Class UserMeAdaptive
  *
  * @package GlobalExam\Api\Sdk\Resource\User
  */
-class UserMeAdaptative
+class UserMeAdaptive
 {
     use Resource;
 
-    const RESOURCE_KEY = 'user/me/adaptative';
+    const RESOURCE_KEY = 'user/me/adaptive';
 
     /**
-     * UserMeAdaptative constructor.
+     * UserMeAdaptive constructor.
      *
      * @param Api $api
      */
