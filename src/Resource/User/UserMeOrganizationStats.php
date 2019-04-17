@@ -33,9 +33,9 @@ class UserMeOrganizationStats
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
+     * @return mixed|ResponseInterface
      */
     public function getUserExport(int $id, int $userId, array $body = [], array $params = [])
     {
@@ -47,9 +47,9 @@ class UserMeOrganizationStats
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
+     * @return mixed|ResponseInterface
      */
     public function getCorrectionsExport(int $id, array $body = [], array $params = [])
     {
