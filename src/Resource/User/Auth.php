@@ -40,18 +40,6 @@ class Auth
     }
 
     /**
-     * @param array $body
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function registerDemo(array $body)
-    {
-        return $this->api->send('POST', self::RESOURCE_KEY . '/register-demo', $body);
-    }
-
-    /**
      * @param $token
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
