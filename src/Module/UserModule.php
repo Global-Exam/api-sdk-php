@@ -9,7 +9,6 @@ use GlobalExam\Api\Sdk\Resource\User\UserExamQuestionMedia;
 use GlobalExam\Api\Sdk\Resource\User\UserLicense;
 use GlobalExam\Api\Sdk\Resource\User\UserLicensePayment;
 use GlobalExam\Api\Sdk\Resource\User\UserLicenseStatus;
-use GlobalExam\Api\Sdk\Resource\User\UserLicenseSubscription;
 use GlobalExam\Api\Sdk\Resource\User\UserMe;
 use GlobalExam\Api\Sdk\Resource\User\UserMeAdaptive;
 use GlobalExam\Api\Sdk\Resource\User\UserMeBoard;

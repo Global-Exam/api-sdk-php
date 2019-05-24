@@ -4,7 +4,6 @@ namespace GlobalExam\Api\Sdk\Resource\Coupon;
 
 use GlobalExam\Api\Sdk\Api;
 use GlobalExam\Api\Sdk\Resource\Resource;
-use GlobalExam\Api\Sdk\Resource\User\UserLicensePayment;
 use GlobalExam\Api\Sdk\Resource\User\UserPlan;
 use Psr\Http\Message\ResponseInterface;
 

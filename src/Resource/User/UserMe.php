@@ -130,8 +130,9 @@ class UserMe
      * @param array $body
      * @param array $params
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
      */
     public function unsubscribe(int $id, array $body = [], array $params = [])
     {
