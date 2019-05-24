@@ -98,14 +98,6 @@ trait UserModule
     }
 
     /**
-     * @return UserLicenseSubscription
-     */
-    public function userLicenseSubscription()
-    {
-        return new UserLicenseSubscription($this);
-    }
-
-    /**
      * @return UserMe
      */
     public function userMe()

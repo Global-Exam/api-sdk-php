@@ -130,13 +130,12 @@ class UserMe
      * @param array $body
      * @param array $params
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
      * @return mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function unsubscribe(int $id, array $body = [], array $params = [])
     {
-        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . UserPlan::RESOURCE_KEY . '/' . $id . '/subscription', $body, $params);
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . UserLicenseSubscription::RESOURCE_KEY . '/' . $id, $body, $params);
     }
 
     /**
@@ -212,19 +211,5 @@ class UserMe
     public function getOneUserLicenseSubscriptionWithInvoices(int $id, array $params = [])
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/' . UserLicenseSubscription::RESOURCE_KEY . '/' . $id . '/invoices', [], $params);
-    }
-
-    /**
-     * @param int   $id
-     * @param array $body
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getOneUserLicenseSubscriptionInvoice(int $id, array $body = [], array $params = [])
-    {
-        return $this->api->send('POST', self::RESOURCE_KEY . '/' . UserLicenseSubscription::RESOURCE_KEY . '/' . $id . '/invoice', $body, $params);
     }
 }

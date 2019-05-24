@@ -100,19 +100,6 @@ class User
      *
      * @return mixed|ResponseInterface
      */
-    public function getUserLicensePayments($id, array $params = [])
-    {
-        return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . UserLicensePayment::RESOURCE_KEY, [], $params);
-    }
-
-    /**
-     * @param       $id
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
     public function getUserPlannings($id, array $params = [])
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/' . $id . '/' . UserPlanning::RESOURCE_KEY, [], $params);

@@ -105,17 +105,4 @@ class Coupon
     {
         return $this->api->send('DELETE', static::RESOURCE_KEY . '/' . $id . '/relationships/' . UserPlan::RESOURCE_KEY, $body);
     }
-
-    /**
-     * @param       $id
-     * @param array $params
-     *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
-     */
-    public function getUserLicensePayments($id, array $params = [])
-    {
-        return $this->api->send('GET', static::RESOURCE_KEY . '/' . $id . '/' . UserLicensePayment::RESOURCE_KEY, [], $params);
-    }
 }
