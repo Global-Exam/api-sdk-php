@@ -7,18 +7,18 @@ use GlobalExam\Api\Sdk\Resource\Resource;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class UserMeStatsAssessmentMode
+ * Class UserMeStatsAdaptiveMode
  *
  * @package GlobalExam\Api\Sdk\Resource\User
  */
-class UserMeStatsAssessmentMode
+class UserMeStatsAdaptiveMode
 {
     use Resource;
 
-    const RESOURCE_KEY = 'user/me/stats/assessment-mode';
+    const RESOURCE_KEY = 'user/me/stats/adaptive-mode';
 
     /**
-     * UserMeStatsAssessmentMode constructor.
+     * UserMeStatsAdaptiveMode constructor.
      *
      * @param Api $api
      */
@@ -37,5 +37,18 @@ class UserMeStatsAssessmentMode
     public function getGlobal(array $body = [])
     {
         return $this->api->send('POST', static::RESOURCE_KEY . '/global', $body);
+    }
+
+    /**
+     * @param int   $boardSessionId
+     * @param array $params
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getBoardSession(int $boardSessionId, array $params = [])
+    {
+        return $this->api->send('GET', static::RESOURCE_KEY . '/board-session/' . $boardSessionId, [], $params);
     }
 }

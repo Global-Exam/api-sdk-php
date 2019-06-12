@@ -22,7 +22,7 @@ use GlobalExam\Api\Sdk\Resource\User\UserMeOrganizationStats;
 use GlobalExam\Api\Sdk\Resource\User\UserMeSkill;
 use GlobalExam\Api\Sdk\Resource\User\UserMeSkillStudySheet;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStats;
-use GlobalExam\Api\Sdk\Resource\User\UserMeStatsAssessmentMode;
+use GlobalExam\Api\Sdk\Resource\User\UserMeStatsAdaptiveMode;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStatsExamMode;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStatsSkill;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStatsTrainingMode;
@@ -202,11 +202,11 @@ trait UserModule
     }
 
     /**
-     * @return UserMeStatsAssessmentMode
+     * @return UserMeStatsAdaptiveMode
      */
-    public function userMeStatsAssessmentMode()
+    public function userMeStatsAdaptiveMode()
     {
-        return new UserMeStatsAssessmentMode($this);
+        return new UserMeStatsAdaptiveMode($this);
     }
 
     /**
