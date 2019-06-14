@@ -136,7 +136,8 @@ class UserMe
      */
     public function unsubscribe(int $id, array $body = [], array $params = [])
     {
-        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . UserLicenseSubscription::RESOURCE_KEY . '/' . $id, $body, $params);
+        return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . UserPlan::RESOURCE_KEY . '/' . $id . '/subscription', $body, $params);
+        //return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . UserLicenseSubscription::RESOURCE_KEY . '/' . $id, $body, $params);
     }
 
     /**
