@@ -214,4 +214,18 @@ class UserMe
     {
         return $this->api->send('GET', self::RESOURCE_KEY . '/' . UserLicenseSubscription::RESOURCE_KEY . '/' . $id . '/invoices', [], $params);
     }
+
+    /**
+     * @param int   $id
+     * @param array $body
+     * @param array $params
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function getOneUserLicenseSubscriptionInvoice(int $id, array $body = [], array $params = [])
+    {
+        return $this->api->send('POST', self::RESOURCE_KEY . '/' . UserLicenseSubscription::RESOURCE_KEY . '/' . $id . '/invoice', $body, $params);
+    }
 }
