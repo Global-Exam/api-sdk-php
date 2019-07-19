@@ -106,6 +106,18 @@ class UserMe
      *
      * @return mixed|ResponseInterface
      */
+    public function changeLanguage(array $body = [])
+    {
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/change-language', $body);
+    }
+
+    /**
+     * @param array $body
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
     public function sendAccountConfirmation(array $body = [])
     {
         return $this->api->send('POST', self::RESOURCE_KEY . '/send-account-confirmation', $body);
