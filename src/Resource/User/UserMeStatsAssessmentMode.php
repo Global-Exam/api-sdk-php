@@ -30,9 +30,9 @@ class UserMeStatsAssessmentMode
     /**
      * @param array $body
      *
-     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
+     * @return mixed|ResponseInterface
      */
     public function getGlobal(array $body = [])
     {
