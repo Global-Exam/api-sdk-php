@@ -24,6 +24,7 @@ use GlobalExam\Api\Sdk\Resource\User\UserMeSkill;
 use GlobalExam\Api\Sdk\Resource\User\UserMeSkillStudySheet;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStats;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStatsAdaptiveMode;
+use GlobalExam\Api\Sdk\Resource\User\UserMeStatsAssessmentMode;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStatsExamMode;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStatsSkill;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStatsTrainingMode;
@@ -216,6 +217,14 @@ trait UserModule
     public function userMeStatsAdaptiveMode()
     {
         return new UserMeStatsAdaptiveMode($this);
+    }
+
+    /**
+     * @return UserMeStatsAssessmentMode
+     */
+    public function userMeStatsAssessmentMode()
+    {
+        return new UserMeStatsAssessmentMode($this);
     }
 
     /**
