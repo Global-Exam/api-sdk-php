@@ -56,6 +56,18 @@ class UserMe
     }
 
     /**
+     * @param array $body
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
+    public function updateContent(array $body = [])
+    {
+        return $this->api->send('PUT', static::RESOURCE_KEY . '/content', $body);
+    }
+
+    /**
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
      * @return mixed|ResponseInterface
