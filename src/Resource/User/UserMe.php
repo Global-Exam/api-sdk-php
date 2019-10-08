@@ -158,6 +158,20 @@ class UserMe
      *
      * @return mixed|ResponseInterface
      */
+    public function resume(int $id, array $body = [], array $params = [])
+    {
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . UserPlan::RESOURCE_KEY . '/' . $id . '/subscription', $body, $params);
+    }
+
+    /**
+     * @param int   $id
+     * @param array $body
+     * @param array $params
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed|ResponseInterface
+     */
     public function unsubscribe(int $id, array $body = [], array $params = [])
     {
         return $this->api->send('DELETE', self::RESOURCE_KEY . '/' . UserPlan::RESOURCE_KEY . '/' . $id . '/subscription', $body, $params);
