@@ -160,7 +160,7 @@ class UserMe
      */
     public function resume(int $id, array $body = [], array $params = [])
     {
-        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . UserPlan::RESOURCE_KEY . '/' . $id . '/subscription', $body, $params);
+        return $this->api->send('PATCH', self::RESOURCE_KEY . '/' . UserLicenseSubscription::RESOURCE_KEY . '/' . $id . '/resume', $body, $params);
     }
 
     /**
