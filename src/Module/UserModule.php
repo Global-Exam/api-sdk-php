@@ -16,6 +16,7 @@ use GlobalExam\Api\Sdk\Resource\User\UserMeBoard;
 use GlobalExam\Api\Sdk\Resource\User\UserMeBoardExamMock;
 use GlobalExam\Api\Sdk\Resource\User\UserMeBoardSession;
 use GlobalExam\Api\Sdk\Resource\User\UserMeBoardTraining;
+use GlobalExam\Api\Sdk\Resource\User\UserMeBusinessEnglishOrganizationLicense;
 use GlobalExam\Api\Sdk\Resource\User\UserMeExam;
 use GlobalExam\Api\Sdk\Resource\User\UserMeOrganization;
 use GlobalExam\Api\Sdk\Resource\User\UserMeOrganizationLicense;
@@ -30,6 +31,7 @@ use GlobalExam\Api\Sdk\Resource\User\UserMeStatsSkill;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStatsTrainingMode;
 use GlobalExam\Api\Sdk\Resource\User\UserMeUserPlan;
 use GlobalExam\Api\Sdk\Resource\User\UserMeUserPlanning;
+use GlobalExam\Api\Sdk\Resource\User\UserMeUserToken;
 use GlobalExam\Api\Sdk\Resource\User\UserPaymentStatus;
 use GlobalExam\Api\Sdk\Resource\User\UserPlan;
 use GlobalExam\Api\Sdk\Resource\User\UserPlanPeriod;
@@ -156,6 +158,14 @@ trait UserModule
     }
 
     /**
+     * @return UserMeBusinessEnglishOrganizationLicense
+     */
+    public function userMeBusinessEnglishOrganizationLicense()
+    {
+        return new UserMeBusinessEnglishOrganizationLicense($this);
+    }
+
+    /**
      * @return UserMeExam
      */
     public function userMeExam()
@@ -265,6 +275,14 @@ trait UserModule
     public function userMeUserPlanning()
     {
         return new UserMeUserPlanning($this);
+    }
+
+    /**
+     * @return UserMeUserToken
+     */
+    public function userMeUserToken()
+    {
+        return new UserMeUserToken($this);
     }
 
     /**
