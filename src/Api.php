@@ -105,10 +105,10 @@ class Api
     /**
      * @param array $body
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @return $this|mixed|ResponseInterface
      * @throws ApiException
      *
-     * @return $this|mixed|ResponseInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function login($body = [])
     {
@@ -128,9 +128,9 @@ class Api
     /**
      * @param bool $clearCredentials
      *
+     * @return $this
      * @throws ApiException
      *
-     * @return $this
      */
     public function logout($clearCredentials = false)
     {
@@ -144,9 +144,9 @@ class Api
     }
 
     /**
+     * @return $this
      * @throws ApiException
      *
-     * @return $this
      */
     public function clearCredentials()
     {
@@ -174,9 +174,9 @@ class Api
      * @param array $params
      * @param array $headers
      *
+     * @return mixed
      * @throws Exception
      *
-     * @return mixed
      */
     public function send($method, $uri, array $body = [], array $params = [], array $headers = [])
     {
@@ -198,19 +198,20 @@ class Api
      * @param array $params
      * @param array $headers
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
+     * @return mixed
+     * @throws Exception
      */
     public function sendFile($method, $uri, array $body = [], array $params = [], array $headers = [])
     {
         $options = $this->prepareRequest($uri, $params, $headers);
 
-        return $this->client->request($method, $options['url'], [
-            'headers'   => $options['headers'],
-            'multipart' => $body,
-            'verify'    => $this->verifiySsl,
-        ]);
+        return $this->retry(5, function () use ($options, $method, $body) {
+            return $this->client->request($method, $options['url'], [
+                'headers'   => $options['headers'],
+                'multipart' => $body,
+                'verify'    => $this->verifiySsl,
+            ]);
+        }, 200);
     }
 
     /**
@@ -250,9 +251,9 @@ class Api
      * @param int      $sleep
      * @param null     $when
      *
+     * @return mixed
      * @throws Exception
      *
-     * @return mixed
      */
     private function retry($times, callable $callback, $sleep = 0, $when = null)
     {
