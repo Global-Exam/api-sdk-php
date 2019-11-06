@@ -2,6 +2,7 @@
 
 namespace GlobalExam\Api\Sdk;
 
+use Exception;
 use GlobalExam\Api\Sdk\Authentication\AuthenticationInterface;
 use GlobalExam\Api\Sdk\Authentication\ClientCredentialsGrant;
 use GlobalExam\Api\Sdk\Authentication\PasswordCredentialsGrant;
@@ -104,10 +105,10 @@ class Api
     /**
      * @param array $body
      *
-     * @throws ApiException
+     * @return $this|mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
-     * @return $this|mixed|ResponseInterface
+     * @throws ApiException
      */
     public function login($body = [])
     {
@@ -127,9 +128,9 @@ class Api
     /**
      * @param bool $clearCredentials
      *
+     * @return $this
      * @throws ApiException
      *
-     * @return $this
      */
     public function logout($clearCredentials = false)
     {
@@ -143,9 +144,9 @@ class Api
     }
 
     /**
+     * @return $this
      * @throws ApiException
      *
-     * @return $this
      */
     public function clearCredentials()
     {
@@ -173,19 +174,20 @@ class Api
      * @param array $params
      * @param array $headers
      *
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return mixed|ResponseInterface
+     * @return mixed
+     * @throws Exception
      */
     public function send($method, $uri, array $body = [], array $params = [], array $headers = [])
     {
         $options = $this->prepareRequest($uri, $params, $headers);
 
-        return $this->client->request($method, $options['url'], [
-            'headers' => $options['headers'],
-            'json'    => $body,
-            'verify'  => $this->verifiySsl,
-        ]);
+        return $this->retry(5, function () use ($options, $method, $body) {
+            return $this->client->request($method, $options['url'], [
+                'headers' => $options['headers'],
+                'json'    => $body,
+                'verify'  => $this->verifiySsl,
+            ]);
+        }, 200);
     }
 
     /**
@@ -195,9 +197,9 @@ class Api
      * @param array $params
      * @param array $headers
      *
+     * @return mixed|ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
      *
-     * @return mixed|ResponseInterface
      */
     public function sendFile($method, $uri, array $body = [], array $params = [], array $headers = [])
     {
@@ -239,6 +241,39 @@ class Api
             'url'     => $url,
             'headers' => $headers,
         ];
+    }
+
+    /**
+     * @param          $times
+     * @param callable $callback
+     * @param int      $sleep
+     * @param null     $when
+     *
+     * @return mixed
+     * @throws Exception
+     */
+    private function retry($times, callable $callback, $sleep = 0, $when = null)
+    {
+        $attempts = 0;
+
+        beginning:
+
+        $attempts++;
+        $times--;
+
+        try {
+            return $callback($attempts);
+        } catch (Exception $e) {
+            if ($times < 1 || ($when && !$when($e))) {
+                throw $e;
+            }
+
+            if ($sleep) {
+                usleep($sleep * 1000);
+            }
+
+            goto beginning;
+        }
     }
 }
 
