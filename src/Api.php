@@ -105,10 +105,10 @@ class Api
     /**
      * @param array $body
      *
-     * @return $this|mixed|ResponseInterface
      * @throws ApiException
-     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return $this|mixed|ResponseInterface
      */
     public function login($body = [])
     {
@@ -128,9 +128,9 @@ class Api
     /**
      * @param bool $clearCredentials
      *
-     * @return $this
      * @throws ApiException
      *
+     * @return $this
      */
     public function logout($clearCredentials = false)
     {
@@ -144,9 +144,9 @@ class Api
     }
 
     /**
-     * @return $this
      * @throws ApiException
      *
+     * @return $this
      */
     public function clearCredentials()
     {
@@ -174,9 +174,9 @@ class Api
      * @param array $params
      * @param array $headers
      *
-     * @return mixed
      * @throws Exception
      *
+     * @return mixed
      */
     public function send($method, $uri, array $body = [], array $params = [], array $headers = [])
     {
@@ -198,8 +198,9 @@ class Api
      * @param array $params
      * @param array $headers
      *
-     * @return mixed
      * @throws Exception
+     *
+     * @return mixed
      */
     public function sendFile($method, $uri, array $body = [], array $params = [], array $headers = [])
     {
@@ -251,9 +252,9 @@ class Api
      * @param int      $sleep
      * @param null     $when
      *
-     * @return mixed
      * @throws Exception
      *
+     * @return mixed
      */
     private function retry($times, callable $callback, $sleep = 0, $when = null)
     {
