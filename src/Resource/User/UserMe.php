@@ -168,8 +168,9 @@ class UserMe
      * @param array $body
      * @param array $params
      *
-     * @return mixed
      * @throws \Exception
+     *
+     * @return mixed
      */
     public function enableRef($ref, array $params = [])
     {
