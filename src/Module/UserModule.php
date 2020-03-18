@@ -21,6 +21,7 @@ use GlobalExam\Api\Sdk\Resource\User\UserMeExam;
 use GlobalExam\Api\Sdk\Resource\User\UserMeOrganization;
 use GlobalExam\Api\Sdk\Resource\User\UserMeOrganizationLicense;
 use GlobalExam\Api\Sdk\Resource\User\UserMeOrganizationStats;
+use GlobalExam\Api\Sdk\Resource\User\UserMePaypal;
 use GlobalExam\Api\Sdk\Resource\User\UserMeSkill;
 use GlobalExam\Api\Sdk\Resource\User\UserMeSkillStudySheet;
 use GlobalExam\Api\Sdk\Resource\User\UserMeStats;
@@ -195,6 +196,14 @@ trait UserModule
     public function userMeOrganizationStats()
     {
         return new UserMeOrganizationStats($this);
+    }
+
+    /**
+     * @return UserMePaypal
+     */
+    public function userMePaypal()
+    {
+        return new UserMePaypal($this);
     }
 
     /**

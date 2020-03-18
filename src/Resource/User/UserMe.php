@@ -164,6 +164,19 @@ class UserMe
     }
 
     /**
+     * @param       $ref
+     * @param array $body
+     * @param array $params
+     *
+     * @return mixed
+     * @throws \Exception
+     */
+    public function enableRef($ref, array $params = [])
+    {
+        return $this->api->send('GET', self::RESOURCE_KEY . '/' . UserLicenseSubscription::RESOURCE_KEY . '/ref/' . $ref . '/enable', [], $params);
+    }
+
+    /**
      * @param int   $id
      * @param array $body
      * @param array $params
