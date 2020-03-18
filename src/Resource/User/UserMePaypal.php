@@ -30,8 +30,9 @@ class UserMePaypal
      * @param array $body
      * @param array $params
      *
-     * @return mixed
      * @throws \Exception
+     *
+     * @return mixed
      */
     public function subscribe(array $body = [], array $params = [])
     {
